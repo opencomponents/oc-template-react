@@ -1,13 +1,18 @@
 /* jshint camelcase:false */
 const webpack = require('webpack');
+const BabiliPlugin = require('babili-webpack-plugin');
+const path = require('path');
 
-module.exports = function webpackConfigGenerator(options) {
+module.exports = function webpackConfigGenerator(viewPath) {
   return {
-    entry: options.viewPath,
+    entry: viewPath,
     output: {
       path: '/build',
-      filename: 'client.js',
-      libraryTarget: 'var'
+      filename: 'client.js'
+    },
+    externals: {
+      react: 'React',
+      'react-dom': 'ReactDOM'
     },
     module: {
       rules: [
@@ -20,8 +25,9 @@ module.exports = function webpackConfigGenerator(options) {
               options: {
                 cacheDirectory: true,
                 presets: [
-                  'es2015'
-                ]
+                  'babel-preset-es2015',
+                  'babel-preset-react'
+                ].map(require.resolve)
               }
             }
           ]
@@ -31,7 +37,11 @@ module.exports = function webpackConfigGenerator(options) {
     plugins: [
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production')
-      })
-    ]
+      }),
+      new BabiliPlugin() // ! needed for pure bundle minification
+    ],
+    resolveLoader: {
+      modules: ['node_modules', path.resolve(__dirname, '../node_modules')]
+    }
   };
 };
