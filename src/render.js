@@ -1,1 +1,2 @@
-module.exports = (options, callback) => ({ options, callback });
+module.exports = (options, callback) =>
+  callback(null, options.template(options.model));

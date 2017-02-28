@@ -1,4 +1,5 @@
-/* eslint quotes: "off", prefer-template: "off", no-useless-escape: "off", vars-on-top: "off" */
+/* eslint strict: "off", quotes: "off", prefer-template: "off", no-useless-escape: "off", vars-on-top: "off" */
+'use strict';
 
 const MemoryFS = require('memory-fs');
 const webpack = require('webpack');
@@ -9,7 +10,7 @@ const uuid = require('uuid/v4')();
 
 const memoryFs = new MemoryFS();
 
-module.exports = (options, callBack) => {
+module.exports = (options, callback) => {
   // create a temporary entry file to require react from oc.template.src
   const clientPath = path.resolve(__dirname, 'client.js');
   const clientContent = `
@@ -28,14 +29,14 @@ module.exports = (options, callBack) => {
 
     // handleFatalError
     if (error) {
-      return callBack(error);
+      return callback(error);
     }
 
     const info = stats.toJson();
     // handleSoftErrors
     if (stats.hasErrors()) {
       softError = info.errors.toString();
-      return callBack(softError);
+      return callback(softError);
     }
 
     console.log(stats.toString({
@@ -60,6 +61,6 @@ module.exports = (options, callBack) => {
       + "</script>'"
       + "};";
 
-    return callBack(templateString);
+    return callback(templateString);
   });
 };
