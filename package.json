@@ -5,7 +5,7 @@
   "main": "src",
   "scripts": {
     "precommit": "npm run test",
-    "lint": "eslint .",
+    "lint": "eslint --ignore-pattern '/__mocks__/' .",
     "test": "npm run lint && jest"
   },
   "info": {
@@ -29,7 +29,8 @@
       "test": true,
       "it": true,
       "jest": true,
-      "expect": true
+      "expect": true,
+      "jasmine": true
     }
   },
   "devDependencies": {
