@@ -11,7 +11,8 @@ const uuid = require('uuid/v4')();
 const memoryFs = new MemoryFS();
 
 module.exports = (options, callback) => {
-  // create a temporary entry file to require react from oc.template.src
+  // create a temporary entry file to require the react app from oc.template.src
+  // exposing a function: modelView => reactElement to be used for bundling with webpack
   const clientPath = path.resolve(__dirname, 'client.js');
   const clientContent = `
     import src from '${options.viewPath}';
@@ -39,18 +40,15 @@ module.exports = (options, callback) => {
       return callback(softError);
     }
 
-    console.log(stats.toString({
-      chunks: false,
-      colors: true,
-      version: false,
-      hash: false
-    }));
+    console.log(stats.toString("errors-only"));
 
     // delete temporary entry file
     fs.removeSync(clientPath);
 
-    // read bundle from memory
+    // read in-memory bundle
     const bundle = memoryFs.readFileSync('/build/client.js', 'UTF8');
+
+    // return a templateString including the in-memory bundle
     const templateString = "function(model) {"
       + "return '<div id=\"" + uuid + "\"></div>"
       + "<script>"
