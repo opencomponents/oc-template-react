@@ -8,9 +8,6 @@
     "lint": "eslint --ignore-pattern '/__mocks__/' .",
     "test": "npm run lint && jest"
   },
-  "info": {
-    "type": "react"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/opentable/oc-template-react.git"
@@ -53,5 +50,15 @@
     "react-dom": "^15.4.2",
     "uuid": "^3.0.1",
     "webpack": "^2.2.1"
+  },
+  "externals": {
+    "react": {
+      "global": "React",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js"
+    },
+    "react-dom": {
+      "global": "ReactDOM",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js"
+    }
   }
 }

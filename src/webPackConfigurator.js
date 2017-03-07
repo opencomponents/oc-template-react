@@ -1,7 +1,9 @@
-/* jshint camelcase:false */
+/* eslint-disable camelcase, dot-notation */
+
 const webpack = require('webpack');
 const BabiliPlugin = require('babili-webpack-plugin');
 const path = require('path');
+const packageJson = require('../package.json');
 
 module.exports = function webpackConfigGenerator(viewPath) {
   return {
@@ -11,8 +13,8 @@ module.exports = function webpackConfigGenerator(viewPath) {
       filename: 'client.js'
     },
     externals: {
-      react: 'React',
-      'react-dom': 'ReactDOM'
+      react: packageJson.externals['react'].global,
+      'react-dom': packageJson.externals['react-dom'].global
     },
     module: {
       rules: [
