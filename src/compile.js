@@ -15,7 +15,7 @@ module.exports = (options, callback) => {
   // exposing a function: modelView => reactElement to be used for bundling with webpack
   const clientPath = path.resolve(__dirname, 'client.js');
   const clientContent = `
-    import src from '${options.viewPath}';
+    var src = require('${options.viewPath}').default;
     module.exports = mv => React.createElement(src, mv, null)
   `;
   fs.outputFileSync(clientPath, clientContent, 'UTF8');
@@ -59,6 +59,6 @@ module.exports = (options, callback) => {
       + "</script>'"
       + "};";
 
-    return callback(templateString);
+    return callback(null, templateString);
   });
 };

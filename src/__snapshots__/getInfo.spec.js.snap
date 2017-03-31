@@ -17,12 +17,13 @@ Object {
 
 exports[`getInfo method when invoking the method should return the list of dependencies 2`] = `
 Array [
-  Array [
-    Object {
-      "global": "React",
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js",
-    },
-    undefined,
-  ],
+  Object {
+    "global": "React",
+    "url": "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js",
+  },
+  Object {
+    "global": "ReactDOM",
+    "url": "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js",
+  },
 ]
 `;

@@ -7,6 +7,7 @@ module.exports = () => ({
   version: packageJson.version,
   dependencies: packageJson.dependencies,
   externals: [
-    [packageJson.externals['react'], packageJson.externals['react- dom']]
+    packageJson.externals['react'],
+    packageJson.externals['react-dom']
   ]
 });
