@@ -1,12 +1,12 @@
 {
   "name": "oc-template-react",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "description": "OC-template-react",
   "main": "src",
   "scripts": {
     "precommit": "npm run test",
     "lint": "eslint --ignore-pattern '/__mocks__/' .",
-    "test": "npm run lint && jest"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

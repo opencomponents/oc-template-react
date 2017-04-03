@@ -1,4 +1,4 @@
-/* eslint strict: "off", quotes: "off", prefer-template: "off", no-useless-escape: "off", vars-on-top: "off" */
+/* eslint strict: "off", quotes: "off", prefer-template: "off", no-useless-escape: "off", vars-on-top: "off", no-console: "off" */
 'use strict';
 
 const MemoryFS = require('memory-fs');

@@ -1,0 +1,16 @@
+{
+  "name": "oc-template-react starter component",
+  "version": "0.0.1",
+  "oc": {
+    "files": {
+      "data": "server.js",
+      "template": {
+        "src": "app.js",
+        "type": "oc-template-react"
+      }
+    }
+  },
+  "dependencies": {
+    "oc-template-react": "^0.0.2"
+  }
+}
