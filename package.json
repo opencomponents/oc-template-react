@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/opentable/oc-template-react.git"
   },
-  "keywords": [],
+  "keywords": ["oc-template", "opencomponent", "oc"],
   "author": "Nick Balestra <nick@balestra.ch>",
   "license": "MIT",
   "bugs": {
