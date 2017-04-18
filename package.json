@@ -1,6 +1,6 @@
 {
   "name": "oc-template-react",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "OC-template-react",
   "main": "src",
   "scripts": {
@@ -12,7 +12,11 @@
     "type": "git",
     "url": "git+https://github.com/opentable/oc-template-react.git"
   },
-  "keywords": ["oc-template", "opencomponent", "oc"],
+  "keywords": [
+    "oc-template",
+    "opencomponent",
+    "oc"
+  ],
   "author": "Nick Balestra <nick@balestra.ch>",
   "license": "MIT",
   "bugs": {
@@ -31,11 +35,14 @@
     }
   },
   "devDependencies": {
+    "cross-spawn": "^5.1.0",
     "eslint": "^3.14.0",
     "eslint-config-opentable": "^6.0.0",
     "eslint-plugin-import": "^1.16.0",
+    "fs-extra": "^2.1.2",
     "husky": "^0.13.1",
-    "jest": "^18.1.0"
+    "jest": "^18.1.0",
+    "jsdom": "^9.12.0"
   },
   "dependencies": {
     "babel-core": "^6.23.1",

@@ -1,4 +1,4 @@
-exports[`getInfo method when invoking the method should return the list of dependencies 1`] = `
+exports[`when invoking getInfo() should return the list of dependencies 1`] = `
 Object {
   "babel-core": "^6.23.1",
   "babel-loader": "^6.3.2",
@@ -15,7 +15,7 @@ Object {
 }
 `;
 
-exports[`getInfo method when invoking the method should return the list of dependencies 2`] = `
+exports[`when invoking getInfo() should return the list of dependencies 2`] = `
 Array [
   Object {
     "global": "React",
