@@ -26,9 +26,6 @@ module.exports = (options, callback) => {
   compiler.outputFileSystem = memoryFs;
 
   compiler.run((error, stats) => {
-    // delete temporary entry file
-    fs.removeSync(clientPath);
-
     let softError;
     // handleFatalError
     if (error) {
@@ -43,6 +40,9 @@ module.exports = (options, callback) => {
     }
 
     console.log(stats.toString("errors-only"));
+
+    // delete temporary entry file
+    fs.removeSync(clientPath);
 
     // read in-memory bundle
     const bundle = memoryFs.readFileSync('/build/client.js', 'UTF8');
