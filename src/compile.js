@@ -9,6 +9,7 @@ const uuid = require('uuid/v4')();
 const webpackConfigurator = require('./webPackConfigurator');
 const memoryFs = new MemoryFS();
 const jsStringEscape = require('js-string-escape');
+const console = require('console');
 
 module.exports = (options, callback) => {
   // create a temporary entry file to require the react app from oc.template.src
