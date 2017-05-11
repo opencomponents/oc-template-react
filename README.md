@@ -1,6 +1,8 @@
 oc-template-react
 =================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/opencomponents/oc-template-react.svg)](https://greenkeeper.io/)
+
 Module for handling React templates in OC
 
 [![Build Status](https://secure.travis-ci.org/opencomponents/oc-template-react.png?branch=master)](http://travis-ci.org/opencomponents/oc-template-react)
