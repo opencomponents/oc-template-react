@@ -3,19 +3,19 @@
 const path = require('path');
 var jsdom = require("jsdom");
 const vm = require('vm');
-const { compile, getInfo, render, getCompiledTemplate } = require('../src/index.js');
+const ocTemplate = require('../src/index.js');
 const viewPath = path.join(__dirname, '..', 'blueprint/src/app.js');
-const externals = getInfo().externals;
+const externals = ocTemplate.getInfo().externals;
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 50000;
 
 describe('An packaged oc-template-react view', () => {
   test('should correctly render client side using external dependencies', done => {
-    compile({ viewPath }, (err, bundle) => {
-      const template = getCompiledTemplate('var oc = {components: {}}; oc.components[0] = ' + bundle, 0)      
+    ocTemplate.compile({ viewPath }, (err, bundle) => {
+      const template = ocTemplate.getCompiledTemplate('var oc = {components: {}}; oc.components[0] = ' + bundle, 0)      
       const model = {name: 'Beautiful Test'}
 
-      render({model, template}, function(err, rendered) {
+      ocTemplate.render({model, template}, function(err, rendered) {
         jsdom.defaultDocumentFeatures = { 
           FetchExternalResources   : ['script'],
           ProcessExternalResources : ['script']
