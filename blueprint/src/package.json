@@ -1,0 +1,25 @@
+{
+  "name": "base-component",
+  "description": "oc-template-react base component",
+  "version": "1.0.0",
+  "oc": {
+    "files": {
+      "data": "server.js",
+      "template": {
+        "src": "app.js",
+        "type": "oc-template-react"
+      }
+    },
+    "parameters": {
+      "name": {
+        "type": "string",
+        "description": "the name to show",
+        "example": "World",
+        "default": "React"
+      }
+    }
+  },
+  "dependencies": {
+    "oc-template-react": "*"
+  }
+}

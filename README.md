@@ -9,3 +9,5 @@ Module for handling React templates in OC
 ### License
 MIT
 
+## conventions:
+`template.src` should export default react component

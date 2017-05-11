@@ -1,0 +1,14 @@
+exports[`when invoking getInfo() should return the list of dependencies 1`] = `undefined`;
+
+exports[`when invoking getInfo() should return the list of dependencies 2`] = `
+Array [
+  Object {
+    "global": "React",
+    "url": "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js",
+  },
+  Object {
+    "global": "ReactDOM",
+    "url": "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js",
+  },
+]
+`;
