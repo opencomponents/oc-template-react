@@ -1,13 +1,17 @@
 {
   "name": "oc-template-react",
-  "version": "0.0.4",
+  "version": "0.0.14",
   "description": "OC-template-react",
-  "main": "src",
+  "main": "src/index.js",
   "scripts": {
     "precommit": "npm run test",
     "lint": "eslint --ignore-pattern '/__mocks__/' .",
     "test": "jest"
   },
+  "files": [
+    "src",
+    "blueprint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/opentable/oc-template-react.git"
@@ -34,7 +38,7 @@
       "jasmine": true
     }
   },
-  "devDependencies": {
+  "compileDependencies": {
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
     "babel-preset-babili": "0.0.11",
@@ -42,20 +46,21 @@
     "babel-preset-react": "^6.23.0",
     "babili-webpack-plugin": "0.0.10",
     "cross-spawn": "^5.1.0",
-    "eslint": "^3.14.0",
-    "eslint-config-opentable": "^6.0.0",
-    "eslint-plugin-import": "^1.16.0",
     "fs-extra": "^2.1.2",
-    "husky": "^0.13.1",
-    "jest": "^18.1.0",
-    "jsdom": "^9.12.0",
     "memory-fs": "^0.4.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "js-string-escape": "^1.0.1",
     "uuid": "^3.0.1",
     "webpack": "^2.2.1"
   },
-  "dependencies": {
+  "devDependencies": {
+    "eslint": "^3.14.0",
+    "eslint-config-opentable": "^6.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "husky": "^0.13.1",
+    "jest": "^18.1.0",
+    "jsdom": "^9.12.0"
   },
   "externals": {
     "react": {

@@ -3,12 +3,12 @@
 
 const MemoryFS = require('memory-fs');
 const webpack = require('webpack');
-const webpackConfigurator = require('./webPackConfigurator');
 const path = require('path');
 const fs = require('fs-extra');
 const uuid = require('uuid/v4')();
-
+const webpackConfigurator = require('./webPackConfigurator');
 const memoryFs = new MemoryFS();
+const jsStringEscape = require('js-string-escape');
 
 module.exports = (options, callback) => {
   // create a temporary entry file to require the react app from oc.template.src
@@ -53,7 +53,7 @@ module.exports = (options, callback) => {
       + "<script>"
       + "var targetNode = document.getElementById(\"" + uuid + "\");"
       + "targetNode.setAttribute(\"id\",\"\");"
-      + 'var reactApp = ' + bundle.replace(/'/g, '\\\"') + ';'
+      + 'var reactApp = ' + jsStringEscape(bundle) + ';'
       + "ReactDOM.render(reactApp(\'+ JSON.stringify(model) + \'), targetNode);"
       + "</script>'"
       + "};";

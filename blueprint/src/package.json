@@ -20,6 +20,6 @@
     }
   },
   "dependencies": {
-    "oc-template-react": "^0.0.4"
+    "oc-template-react": "*"
   }
 }
