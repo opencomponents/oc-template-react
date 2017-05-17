@@ -33,6 +33,10 @@ module.exports = function webpackConfigGenerator(viewPath) {
               }
             }
           ]
+        },
+        {
+          test: /\.css$/,
+          use: [ 'style-loader', 'css-loader' ]
         }
       ]
     },

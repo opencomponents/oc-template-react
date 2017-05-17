@@ -20,6 +20,13 @@ Object {
           },
         ],
       },
+      Object {
+        "test": /\\.css$/,
+        "use": Array [
+          "style-loader",
+          "css-loader",
+        ],
+      },
     ],
   },
   "output": Object {
