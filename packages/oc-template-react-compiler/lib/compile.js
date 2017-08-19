@@ -2,7 +2,7 @@
 
 const _ = require("lodash");
 const async = require("async");
-const compileServer = require("oc-server-compiler");
+const compileServer = require("./compileServer");
 const compileStatics = require("./compileStatics");
 const compileView = require("./compileView");
 const fs = require("fs-extra");
@@ -34,27 +34,31 @@ module.exports = (options, callback) => {
             return cb(error);
           }
           // USE COMPILATION INFO TO MASSAGE COMPONENT'S PACKAGE
+          const originalTemplateInfo = componentPackage.oc.files.template;
           componentPackage.oc.files.template = compiledViewInfo;
           delete componentPackage.oc.files.client;
-          cb(error, componentPackage);
+          cb(error, { componentPackage, originalTemplateInfo });
         });
       },
       // Compile dataProvider
-      function(componentPackage, cb) {
+      function({ componentPackage, originalTemplateInfo }, cb) {
         if (!componentPackage.oc.files.data) {
           return cb(null, componentPackage);
         }
 
-        compileServer(options, (error, compiledServerInfo) => {
-          if (error) {
-            return cb(error);
-          }
+        compileServer(
+          { options, originalTemplateInfo },
+          (error, compiledServerInfo) => {
+            if (error) {
+              return cb(error);
+            }
 
-          // USE COMPILATION INFO TO MASSAGE COMPONENT'S PACKAGE
-          componentPackage.oc.files.dataProvider = compiledServerInfo;
-          delete componentPackage.oc.files.data;
-          cb(error, componentPackage);
-        });
+            // USE COMPILATION INFO TO MASSAGE COMPONENT'S PACKAGE
+            componentPackage.oc.files.dataProvider = compiledServerInfo;
+            delete componentPackage.oc.files.data;
+            cb(error, componentPackage);
+          }
+        );
       },
       // Compile package.json
       function(componentPackage, cb) {

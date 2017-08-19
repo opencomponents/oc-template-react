@@ -44,7 +44,11 @@ module.exports = (options, callback) => {
     }, {});
 
     const componentName = `__${camelize(options.componentPackage.name)}__`;
-    const config = webpackConfigurator({ viewPath, externals, componentName });
+    const config = webpackConfigurator("view", {
+      viewPath,
+      externals,
+      componentName
+    });
     compiler(config, (err, bundle) => {
       if (err) {
         return cb(err);
@@ -56,7 +60,7 @@ module.exports = (options, callback) => {
       fs.outputFileSync(bundlePath, bundle);
 
       const templateString = `function(model){
-        return \`<div id="${uuid}"></div>
+        return \`<div id="${uuid}">\${ model.html ? model.html : '' }</div>
           <script>
             (function(){
               oc.require(['${componentName}', 'default'], '\${model.staticPath}${bundleDir}${bundleName}', function(App){
