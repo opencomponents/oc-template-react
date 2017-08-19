@@ -1,4 +1,4 @@
-const vm = require('vm');
+const vm = require("vm");
 
 module.exports = (templateString, key) => {
   const context = {};

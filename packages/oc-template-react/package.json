@@ -1,0 +1,44 @@
+{
+  "name": "oc-template-react",
+  "version": "1.0.0",
+  "description": "OC-Template-React",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opencomponents/oc-template-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opencomponents/oc-template-react/issues"
+  },
+  "homepage": "https://github.com/opencomponents/oc-template-react#readme",
+  "keywords": [
+    "oc",
+    "opencomponents",
+    "react",
+    "oc-template"
+  ],
+  "author": {
+    "name": "Nick Balestra",
+    "email": "nick@balestra.ch"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "oc-templates-messages": "^1.0.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "externals": {
+    "react": {
+      "global": "React",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js"
+    },
+    "react-dom": {
+      "global": "ReactDOM",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js"
+    }
+  }
+}
