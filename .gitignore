@@ -20,4 +20,5 @@ results
 
 npm-debug.log
 node_modules
-src/client.js
+coverage
+old
