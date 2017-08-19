@@ -26,7 +26,8 @@ module.exports = ({ options, originalTemplateInfo }, callback) => {
     export const data = (context, callback) => {
       dataProvider(context, (error, model) => {
         const extendedModel = Object.assign({}, model, {
-          html: ReactDOMServer.renderToString(React.createElement(App, model))
+          html: ReactDOMServer.renderToString(React.createElement(App, model)),
+          staticPath: context.staticPath
         })
         return callback(null, extendedModel)
       })
