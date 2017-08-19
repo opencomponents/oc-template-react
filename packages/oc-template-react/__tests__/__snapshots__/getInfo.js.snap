@@ -5,10 +5,12 @@ Object {
   "externals": Array [
     Object {
       "global": "React",
+      "name": "react",
       "url": "https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js",
     },
     Object {
       "global": "ReactDOM",
+      "name": "react-dom",
       "url": "https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js",
     },
   ],

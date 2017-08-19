@@ -1,0 +1,16 @@
+{
+  "name": "jade-component",
+  "version": "1.0.0",
+  "oc": {
+    "files": {
+      "template": {
+        "src": "app.js",
+        "type": "oc-template-react"
+      }
+    }
+  },
+  "devDependencies": {
+    "oc-template-react": "*",
+    "react": "^15.6.1"
+  }
+}

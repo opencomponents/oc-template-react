@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should expose the correct methods 1`] = `
+Object {
+  "getCompiledTemplate": [Function],
+  "getInfo": [Function],
+  "render": [Function],
+}
+`;

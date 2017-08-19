@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should correctly compile the view 1`] = `
+Object {
+  "hashKey": "1c94c701721e3ae61ae74acd1090c294516d8219",
+  "src": "template.js",
+  "type": "oc-template-react",
+}
+`;
