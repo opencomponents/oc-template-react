@@ -9,10 +9,11 @@ module.exports = function webpackConfigGenerator(options) {
   return {
     entry: options.viewPath,
     output: {
+      library: options.componentName,
       path: "/build",
       filename: "client.js"
     },
-    externals: options.externals || {},
+    externals: options.externals,
     module: {
       rules: [
         {

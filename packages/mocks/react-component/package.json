@@ -1,5 +1,5 @@
 {
-  "name": "jade-component",
+  "name": "react-component",
   "version": "1.0.0",
   "oc": {
     "files": {
@@ -10,7 +10,6 @@
     }
   },
   "devDependencies": {
-    "oc-template-react": "*",
-    "react": "^15.6.1"
+    "oc-template-react-compiler": "*"
   }
 }
