@@ -6,7 +6,7 @@ const hashBuilder = require("oc-hash-builder");
 const ocViewWrapper = require("oc-view-wrapper");
 const path = require("path");
 const strings = require("oc-templates-messages");
-const { compiler } = require("oc-webpack");
+const compiler = require("./compiler");
 const uuid = require("uuid/v4")();
 const webpackConfigurator = require("./utils/webPackConfigurator");
 
@@ -43,24 +43,46 @@ module.exports = (options, callback) => {
       return externals;
     }, {});
 
-    const componentName = `__${camelize(options.componentPackage.name)}__`;
+    const componentName = `oc__${camelize(options.componentPackage.name)}`;
     const config = webpackConfigurator("view", {
       viewPath,
       externals,
       componentName
     });
-    compiler(config, (err, bundle) => {
+    compiler(config, (err, memoryFs) => {
+      const bundle = memoryFs.readFileSync(
+        `/build/${config.output.filename}`,
+        "UTF8"
+      );
+
       if (err) {
         return cb(err);
       }
 
-      const bundleName = `${componentName}.app.js`;
+      const bundleName = `${componentName}.js`;
       const bundleDir = "_js/";
       const bundlePath = path.join(publishPath, bundleDir, bundleName);
       fs.outputFileSync(bundlePath, bundle);
+      let css = null;
+      let cssName;
+      let cssDir;
+      let cssPath;
+
+      if (memoryFs.data.build["main.css"]) {
+        css = memoryFs.readFileSync(`/build/main.css`, "UTF8");
+        cssName = `${componentName}.css`;
+        cssDir = "_css/";
+        cssPath = path.join(publishPath, cssDir, cssName);
+        fs.outputFileSync(cssPath, css);
+      }
+
+      const cssLink = css
+        ? `<link rel="stylesheet" href="\${model.staticPath}${cssDir}${cssName}">`
+        : "";
 
       const templateString = `function(model){
         return \`<div id="${uuid}">\${ model.html ? model.html : '' }</div>
+          ${cssLink}
           <script>
             (function(){
               oc.require(['${componentName}', 'default'], '\${model.staticPath}${bundleDir}${bundleName}', function(App){

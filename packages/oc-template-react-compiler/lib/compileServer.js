@@ -1,7 +1,7 @@
 "use strict";
 
 const async = require("async");
-const compiler = require("oc-webpack").compiler;
+const compiler = require("./compiler");
 const fs = require("fs-extra");
 const hashBuilder = require("oc-hash-builder");
 const path = require("path");
@@ -48,9 +48,11 @@ module.exports = ({ options, originalTemplateInfo }, callback) => {
   async.waterfall(
     [
       next => compiler(config, next),
-      (compiledServer, next) =>
-        fs.ensureDir(publishPath, err => next(err, compiledServer)),
-      (compiledServer, next) =>
+      (memoryFs, next) => {
+        const compiledServer = memoryFs.readFileSync(
+          `/build/${config.output.filename}`,
+          "UTF8"
+        );
         fs.writeFile(
           path.join(publishPath, publishFileName),
           compiledServer,
@@ -65,7 +67,8 @@ module.exports = ({ options, originalTemplateInfo }, callback) => {
                     src: publishFileName
                   }
             )
-        )
+        );
+      }
     ],
     callback
   );

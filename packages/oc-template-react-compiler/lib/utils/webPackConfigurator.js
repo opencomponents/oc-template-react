@@ -1,9 +1,8 @@
 /* eslint-disable camelcase, dot-notation */
 
 const webpack = require("webpack");
-// const BabiliPlugin = require('babili-webpack-plugin');
 const path = require("path");
-// const packageJson = require('../package.json');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = function webpackConfigGenerator(target, options) {
   if (target === "view") {
@@ -17,6 +16,22 @@ module.exports = function webpackConfigGenerator(target, options) {
       externals: options.externals,
       module: {
         rules: [
+          {
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract({
+              use: [
+                {
+                  loader: require.resolve("css-loader"),
+                  options: {
+                    modules: true,
+                    // localIdentName: '[hash:8]',
+                    localIdentName:
+                      "oc-[path][name]___[local]___[hash:base64:5]"
+                  }
+                }
+              ]
+            })
+          },
           {
             test: /\.jsx?$/,
             exclude: /node_modules/,
@@ -35,6 +50,10 @@ module.exports = function webpackConfigGenerator(target, options) {
         ]
       },
       plugins: [
+        new ExtractTextPlugin({
+          filename: "[name].css",
+          allChunks: true
+        })
         // new webpack.DefinePlugin({
         //   'process.env.NODE_ENV': JSON.stringify('production')
         // }),
@@ -56,6 +75,22 @@ module.exports = function webpackConfigGenerator(target, options) {
       // externals: externalDependenciesHandlers(options.dependencies),
       module: {
         rules: [
+          {
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract({
+              use: [
+                {
+                  loader: require.resolve("css-loader"),
+                  options: {
+                    modules: true,
+                    // localIdentName: '[hash:8]',
+                    localIdentName:
+                      "oc-[path][name]___[local]___[hash:base64:5]"
+                  }
+                }
+              ]
+            })
+          },
           {
             test: /\.js$/,
             exclude: /node_modules/,
@@ -86,6 +121,10 @@ module.exports = function webpackConfigGenerator(target, options) {
         ]
       },
       plugins: [
+        new ExtractTextPlugin({
+          filename: "[name].css",
+          allChunks: true
+        }),
         // new BabiliPlugin(),
         new webpack.DefinePlugin({
           "process.env.NODE_ENV": JSON.stringify("production")
