@@ -9,6 +9,21 @@ module.exports = function webpackConfigGenerator(options) {
   const buildPath = options.buildPath || "/build";
   const localIdentName = "oc-[path][name]___[local]___[hash:base64:5]";
 
+  const cssLoader = {
+    test: /\.css$/,
+    loader: ExtractTextPlugin.extract({
+      use: [
+        {
+          loader: require.resolve("css-loader"),
+          options: {
+            modules: true,
+            localIdentName
+          }
+        }
+      ]
+    })
+  };
+
   if (options.confTarget === "view") {
     return {
       entry: options.viewPath,
@@ -20,20 +35,7 @@ module.exports = function webpackConfigGenerator(options) {
       externals: options.externals,
       module: {
         rules: [
-          {
-            test: /\.css$/,
-            loader: ExtractTextPlugin.extract({
-              use: [
-                {
-                  loader: require.resolve("css-loader"),
-                  options: {
-                    modules: true,
-                    localIdentName
-                  }
-                }
-              ]
-            })
-          },
+          cssLoader,
           {
             test: /\.jsx?$/,
             exclude: /node_modules/,
@@ -76,21 +78,7 @@ module.exports = function webpackConfigGenerator(options) {
       },
       module: {
         rules: [
-          {
-            test: /\.css$/,
-            loader: ExtractTextPlugin.extract({
-              use: [
-                {
-                  loader: require.resolve("css-loader"),
-                  options: {
-                    modules: true,
-                    localIdentName:
-                      "oc-[path][name]___[local]___[hash:base64:5]"
-                  }
-                }
-              ]
-            })
-          },
+          cssLoader,
           {
             test: /\.js$/,
             exclude: /node_modules/,

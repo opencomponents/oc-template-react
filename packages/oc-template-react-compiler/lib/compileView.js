@@ -9,6 +9,7 @@ const strings = require("oc-templates-messages");
 const compiler = require("./compiler");
 const uuid = require("uuid/v4")();
 const webpackConfigurator = require("./utils/webPackConfigurator");
+var uglifycss = require("uglifycss");
 
 module.exports = (options, callback) => {
   const viewFileName = options.componentPackage.oc.files.template.src;
@@ -17,23 +18,17 @@ module.exports = (options, callback) => {
   const publishFileName = options.publishFileName || "template.js";
   const componentPackage = options.componentPackage;
   const templateInfo = options.componentPackage.oc.files.template;
+
   // TODO move in utils
   function camelize(str) {
-    return (
-      str
-        .toLowerCase()
-        // Replaces any - or _ characters with a space
-        .replace(/[-_]+/g, " ")
-        // Removes any non alphanumeric characters
-        .replace(/[^\w\s]/g, "")
-        // Uppercases the first character in each group immediately following a space
-        // (delimited by spaces)
-        .replace(/ (.)/g, function($1) {
-          return $1.toUpperCase();
-        })
-        // Removes spaces
-        .replace(/ /g, "")
-    );
+    return str
+      .toLowerCase()
+      .replace(/[-_]+/g, " ")
+      .replace(/[^\w\s]/g, "")
+      .replace(/ (.)/g, function($1) {
+        return $1.toUpperCase();
+      })
+      .replace(/ /g, "");
   }
 
   const compile = (options, cb) => {
@@ -61,7 +56,9 @@ module.exports = (options, callback) => {
         return cb(err);
       }
 
-      const bundleName = `${componentName}.js`;
+      const bundleHash = hashBuilder.fromString(bundle);
+      const bundleName = `${componentName}-${bundleHash}.js`;
+
       const bundleDir = "_js/";
       const bundlePath = path.join(publishPath, bundleDir, bundleName);
       fs.outputFileSync(bundlePath, bundle);
@@ -72,10 +69,12 @@ module.exports = (options, callback) => {
 
       if (memoryFs.data.build["main.css"]) {
         css = memoryFs.readFileSync(`/build/main.css`, "UTF8");
-        cssName = `${componentName}.css`;
+        // TODO: get webpack-hash on compilation
+        const cssHash = hashBuilder.fromString(css);
+        cssName = `${componentName}-${cssHash}.css`;
         cssDir = "_css/";
         cssPath = path.join(publishPath, cssDir, cssName);
-        fs.outputFileSync(cssPath, css);
+        fs.outputFileSync(cssPath, uglifycss.processString(css));
       }
 
       const cssLink = css
