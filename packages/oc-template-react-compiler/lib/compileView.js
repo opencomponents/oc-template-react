@@ -16,7 +16,7 @@ module.exports = (options, callback) => {
   const publishPath = options.publishPath;
   const publishFileName = options.publishFileName || "template.js";
   const componentPackage = options.componentPackage;
-
+  const templateInfo = options.componentPackage.oc.files.template;
   // TODO move in utils
   function camelize(str) {
     return (
@@ -80,21 +80,28 @@ module.exports = (options, callback) => {
         ? `<link rel="stylesheet" href="\${model.staticPath}${cssDir}${cssName}">`
         : "";
 
+      const ssrMethod = templateInfo.ssr || "renderToString";
+      const script =
+        ssrMethod === "renderToString"
+          ? `
+        <script>
+          (function(){
+            oc.require(['${componentName}', 'default'], '\${model.staticPath}${bundleDir}${bundleName}', function(App){
+              var targetNode = document.getElementById("${uuid}");
+              targetNode.setAttribute("id","");
+              ReactDOM.render(
+                React.createElement(App, \${JSON.stringify(model)}),
+                targetNode
+              );
+            });
+          }())
+        </script>`
+          : "";
+
       const templateString = `function(model){
         return \`<div id="${uuid}">\${ model.html ? model.html : '' }</div>
           ${cssLink}
-          <script>
-            (function(){
-              oc.require(['${componentName}', 'default'], '\${model.staticPath}${bundleDir}${bundleName}', function(App){
-                var targetNode = document.getElementById("${uuid}");
-                targetNode.setAttribute("id","");
-                ReactDOM.render(
-                  React.createElement(App, \${JSON.stringify(model)}),
-                  targetNode
-                );
-              });
-            }())
-          </script>
+          ${script}
         \`;
       }`;
 

@@ -17,6 +17,8 @@ module.exports = ({ options, originalTemplateInfo }, callback) => {
   const stats = options.verbose ? "verbose" : "errors-only";
   const dependencies = options.componentPackage.dependencies || {};
 
+  const ssrMethod = originalTemplateInfo.ssr || "renderToString";
+
   const higherOrderServerContent = `
     import React from 'react';
     import ReactDOMServer from 'react-dom/server';
@@ -26,7 +28,7 @@ module.exports = ({ options, originalTemplateInfo }, callback) => {
     export const data = (context, callback) => {
       dataProvider(context, (error, model) => {
         const extendedModel = Object.assign({}, model, {
-          html: ReactDOMServer.renderToString(React.createElement(App, model)),
+          html: ReactDOMServer.${ssrMethod}(React.createElement(App, model)),
           staticPath: context.staticPath
         })
         return callback(null, extendedModel)
