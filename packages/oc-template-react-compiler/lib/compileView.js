@@ -44,7 +44,8 @@ module.exports = (options, callback) => {
     }, {});
 
     const componentName = `oc__${camelize(options.componentPackage.name)}`;
-    const config = webpackConfigurator("view", {
+    const config = webpackConfigurator({
+      confTarget: "view",
       viewPath,
       externals,
       componentName

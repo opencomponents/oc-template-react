@@ -2,7 +2,6 @@
 
 exports[`Should correctly compile the view 1`] = `
 Object {
-  "hashKey": "a578c8b024c002d190959957a158f7e5126aa9d0",
   "src": "template.js",
   "type": "oc-template-react",
 }

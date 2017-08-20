@@ -17,6 +17,7 @@ const options = {
 // console.log(componentPackage.oc.files.template.src)
 test("Should correctly compile the view", done => {
   compileView(options, (err, compiledViewInfo) => {
+    delete compiledViewInfo.hashKey;
     expect(compiledViewInfo).toMatchSnapshot();
     // expect(
     //   fs.readFileSync(path.join(publishPath, publishFileName), 'UTF8')

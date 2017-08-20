@@ -3,14 +3,19 @@
 const webpack = require("webpack");
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MinifyPlugin = require("babel-minify-webpack-plugin");
 
-module.exports = function webpackConfigGenerator(target, options) {
-  if (target === "view") {
+// TODO: group reused settings together
+// If needed rely on weboack.merge project
+module.exports = function webpackConfigGenerator(options) {
+  // TODO: put target in options
+  if (options.confTarget === "view") {
     return {
       entry: options.viewPath,
       output: {
         library: options.componentName,
         path: "/build",
+        // TODO: pass filename as option
         filename: "client.js"
       },
       externals: options.externals,
@@ -24,7 +29,6 @@ module.exports = function webpackConfigGenerator(target, options) {
                   loader: require.resolve("css-loader"),
                   options: {
                     modules: true,
-                    // localIdentName: '[hash:8]',
                     localIdentName:
                       "oc-[path][name]___[local]___[hash:base64:5]"
                   }
@@ -42,6 +46,9 @@ module.exports = function webpackConfigGenerator(target, options) {
                   cacheDirectory: false,
                   presets: ["babel-preset-es2015", "babel-preset-react"].map(
                     require.resolve
+                  ),
+                  plugins: ["babel-plugin-transform-object-rest-spread"].map(
+                    require.resolve
                   )
                 }
               }
@@ -53,15 +60,12 @@ module.exports = function webpackConfigGenerator(target, options) {
         new ExtractTextPlugin({
           filename: "[name].css",
           allChunks: true
-        })
-        // new webpack.DefinePlugin({
-        //   'process.env.NODE_ENV': JSON.stringify('production')
-        // }),
-        // new BabiliPlugin() // ! needed for pure bundle minification
+        }),
+        new webpack.DefinePlugin({
+          "process.env.NODE_ENV": JSON.stringify("production")
+        }),
+        new MinifyPlugin()
       ]
-      // resolveLoader: {
-      //   modules: ['node_modules', path.resolve(__dirname, '../node_modules')]
-      // }
     };
   } else {
     return {
@@ -72,7 +76,6 @@ module.exports = function webpackConfigGenerator(target, options) {
         filename: options.publishFileName,
         libraryTarget: "commonjs2"
       },
-      // externals: externalDependenciesHandlers(options.dependencies),
       module: {
         rules: [
           {
@@ -83,7 +86,6 @@ module.exports = function webpackConfigGenerator(target, options) {
                   loader: require.resolve("css-loader"),
                   options: {
                     modules: true,
-                    // localIdentName: '[hash:8]',
                     localIdentName:
                       "oc-[path][name]___[local]___[hash:base64:5]"
                   }
@@ -113,7 +115,10 @@ module.exports = function webpackConfigGenerator(target, options) {
                       }
                     ],
                     require.resolve("babel-preset-react")
-                  ]
+                  ],
+                  plugins: ["babel-plugin-transform-object-rest-spread"].map(
+                    require.resolve
+                  )
                 }
               }
             ]
@@ -125,10 +130,10 @@ module.exports = function webpackConfigGenerator(target, options) {
           filename: "[name].css",
           allChunks: true
         }),
-        // new BabiliPlugin(),
         new webpack.DefinePlugin({
           "process.env.NODE_ENV": JSON.stringify("production")
-        })
+        }),
+        new MinifyPlugin()
       ],
       logger: options.logger || console,
       stats: options.stats,

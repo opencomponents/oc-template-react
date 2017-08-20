@@ -40,10 +40,10 @@ module.exports = ({ options, originalTemplateInfo }, callback) => {
   const higherOrderServerPath = path.join(__dirname, higherOrderServerName);
   fs.outputFileSync(higherOrderServerPath, higherOrderServerContent);
 
-  const config = webpackConfigurator("server", {
+  const config = webpackConfigurator({
+    confTarget: "server",
     serverPath: higherOrderServerPath,
     publishFileName,
-    // dependencies: {},
     stats
   });
 
