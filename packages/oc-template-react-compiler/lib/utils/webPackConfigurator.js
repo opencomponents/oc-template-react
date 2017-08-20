@@ -1,5 +1,3 @@
-/* eslint-disable camelcase, dot-notation */
-
 const webpack = require("webpack");
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -8,15 +6,16 @@ const MinifyPlugin = require("babel-minify-webpack-plugin");
 // TODO: group reused settings together
 // If needed rely on weboack.merge project
 module.exports = function webpackConfigGenerator(options) {
-  // TODO: put target in options
+  const buildPath = options.buildPath || "/build";
+  const localIdentName = "oc-[path][name]___[local]___[hash:base64:5]";
+
   if (options.confTarget === "view") {
     return {
       entry: options.viewPath,
       output: {
         library: options.componentName,
-        path: "/build",
-        // TODO: pass filename as option
-        filename: "client.js"
+        path: buildPath,
+        filename: options.publishFileName
       },
       externals: options.externals,
       module: {
@@ -29,8 +28,7 @@ module.exports = function webpackConfigGenerator(options) {
                   loader: require.resolve("css-loader"),
                   options: {
                     modules: true,
-                    localIdentName:
-                      "oc-[path][name]___[local]___[hash:base64:5]"
+                    localIdentName
                   }
                 }
               ]
@@ -43,7 +41,7 @@ module.exports = function webpackConfigGenerator(options) {
               {
                 loader: require.resolve("babel-loader"),
                 options: {
-                  cacheDirectory: false,
+                  cacheDirectory: true,
                   presets: ["babel-preset-es2015", "babel-preset-react"].map(
                     require.resolve
                   ),
@@ -72,7 +70,7 @@ module.exports = function webpackConfigGenerator(options) {
       entry: options.serverPath,
       target: "node",
       output: {
-        path: "/build",
+        path: buildPath,
         filename: options.publishFileName,
         libraryTarget: "commonjs2"
       },
@@ -103,7 +101,7 @@ module.exports = function webpackConfigGenerator(options) {
               {
                 loader: require.resolve("babel-loader"),
                 options: {
-                  cacheDirectory: false,
+                  cacheDirectory: true,
                   presets: [
                     [
                       require.resolve("babel-preset-env"),
@@ -132,8 +130,9 @@ module.exports = function webpackConfigGenerator(options) {
         }),
         new webpack.DefinePlugin({
           "process.env.NODE_ENV": JSON.stringify("production")
-        }),
-        new MinifyPlugin()
+        })
+        // TODO: enable plugins only when env = production
+        // new MinifyPlugin()
       ],
       logger: options.logger || console,
       stats: options.stats,

@@ -48,7 +48,8 @@ module.exports = (options, callback) => {
       confTarget: "view",
       viewPath,
       externals,
-      componentName
+      componentName,
+      publishFileName
     });
     compiler(config, (err, memoryFs) => {
       const bundle = memoryFs.readFileSync(
