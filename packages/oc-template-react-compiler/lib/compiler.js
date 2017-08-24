@@ -1,5 +1,6 @@
 "use strict";
 
+// alter the original compiler in oc-webpack to return the memoryFS for added flexibility
 const MemoryFS = require("memory-fs");
 const webpack = require("webpack");
 
@@ -25,6 +26,7 @@ module.exports = function compiler(config, callback) {
     // handleSoftErrors
     if (stats.hasErrors()) {
       softError = info.errors.toString();
+      console.log(softError);
       return callback(softError);
     }
     // handleWarnings
@@ -37,7 +39,6 @@ module.exports = function compiler(config, callback) {
     if (log) {
       logger.log(log);
     }
-
     callback(null, memoryFs);
   });
 };

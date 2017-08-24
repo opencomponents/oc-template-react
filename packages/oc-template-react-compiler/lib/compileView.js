@@ -8,8 +8,10 @@ const path = require("path");
 const strings = require("oc-templates-messages");
 const compiler = require("./compiler");
 const uuid = require("uuid/v4")();
-const webpackConfigurator = require("./utils/webPackConfigurator");
-var uglifycss = require("uglifycss");
+const { webpackConfigurator, camelize } = require("./utils");
+const minifyFile = require("oc-minify-file");
+
+const { minify: minifyHTML } = require("html-minifier");
 
 module.exports = (options, callback) => {
   const viewFileName = options.componentPackage.oc.files.template.src;
@@ -18,26 +20,13 @@ module.exports = (options, callback) => {
   const publishFileName = options.publishFileName || "template.js";
   const componentPackage = options.componentPackage;
   const templateInfo = options.componentPackage.oc.files.template;
-
-  // TODO move in utils
-  function camelize(str) {
-    return str
-      .toLowerCase()
-      .replace(/[-_]+/g, " ")
-      .replace(/[^\w\s]/g, "")
-      .replace(/ (.)/g, function($1) {
-        return $1.toUpperCase();
-      })
-      .replace(/ /g, "");
-  }
+  const { getInfo } = require("../index");
+  const externals = getInfo().externals.reduce((externals, dep) => {
+    externals[dep.name] = dep.global;
+    return externals;
+  }, {});
 
   const compile = (options, cb) => {
-    const { getInfo } = require("../index");
-    const externals = getInfo().externals.reduce((externals, dep) => {
-      externals[dep.name] = dep.global;
-      return externals;
-    }, {});
-
     const componentName = `oc__${camelize(options.componentPackage.name)}`;
     const config = webpackConfigurator({
       confTarget: "view",
@@ -69,12 +58,11 @@ module.exports = (options, callback) => {
 
       if (memoryFs.data.build["main.css"]) {
         css = memoryFs.readFileSync(`/build/main.css`, "UTF8");
-        // TODO: get webpack-hash on compilation
         const cssHash = hashBuilder.fromString(css);
         cssName = `${componentName}-${cssHash}.css`;
         cssDir = "_css/";
         cssPath = path.join(publishPath, cssDir, cssName);
-        fs.outputFileSync(cssPath, uglifycss.processString(css));
+        fs.outputFileSync(cssPath, minifyFile(".css", css));
       }
 
       const cssLink = css
@@ -84,30 +72,21 @@ module.exports = (options, callback) => {
       const ssrMethod = templateInfo.ssr || "renderToString";
       const script =
         ssrMethod === "renderToString"
-          ? `
-        <script>
-          (function(){
-            oc.require(['${componentName}', 'default'], '\${model.staticPath}${bundleDir}${bundleName}', function(App){
-              var targetNode = document.getElementById("${uuid}");
-              targetNode.setAttribute("id","");
-              ReactDOM.render(
-                React.createElement(App, \${JSON.stringify(model)}),
-                targetNode
-              );
-            });
-          }())
-        </script>`
+          ? `<script>(function(){oc.require(['${componentName}', 'default'], '\${model.staticPath}${bundleDir}${bundleName}', function(App){var targetNode = document.getElementById("${uuid}");targetNode.setAttribute("id","");ReactDOM.render(React.createElement(App, \${JSON.stringify((delete model.__html, model))}),targetNode);});}())</script>`
           : "";
 
       const templateString = `function(model){
-        return \`<div id="${uuid}">\${ model.html ? model.html : '' }</div>
-          ${cssLink}
+        return \`<div id="${uuid}">\${ model.__html ? model.__html : '' }</div>
+          <style>${css}</style>
           ${script}
         \`;
       }`;
 
       const hash = hashBuilder.fromString(bundle);
-      const view = ocViewWrapper(hash, templateString);
+      const view = ocViewWrapper(
+        hash,
+        minifyHTML(templateString, { collapseWhitespace: true })
+      );
       return cb(null, { view, hash });
     });
   };

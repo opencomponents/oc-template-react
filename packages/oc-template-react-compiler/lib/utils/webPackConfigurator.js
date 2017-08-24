@@ -1,13 +1,11 @@
-const webpack = require("webpack");
-const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const MinifyPlugin = require("babel-minify-webpack-plugin");
+const path = require("path");
+const webpack = require("webpack");
 
-// TODO: group reused settings together
-// If needed rely on weboack.merge project
 module.exports = function webpackConfigGenerator(options) {
   const buildPath = options.buildPath || "/build";
-  const localIdentName = "oc-[path][name]___[local]___[hash:base64:5]";
+  const localIdentName = "oc__[path][name]-[ext]__[local]__[hash:base64:5]";
 
   const cssLoader = {
     test: /\.css$/,
@@ -43,7 +41,7 @@ module.exports = function webpackConfigGenerator(options) {
               {
                 loader: require.resolve("babel-loader"),
                 options: {
-                  cacheDirectory: true,
+                  cacheDirectory: false,
                   presets: ["babel-preset-es2015", "babel-preset-react"].map(
                     require.resolve
                   ),
@@ -65,7 +63,13 @@ module.exports = function webpackConfigGenerator(options) {
           "process.env.NODE_ENV": JSON.stringify("production")
         }),
         new MinifyPlugin()
-      ]
+      ],
+      resolve: {
+        alias: {
+          react: path.join(__dirname, "../../node_modules/react"),
+          "react-dom": path.join(__dirname, "../../node_modules/react-dom")
+        }
+      }
     };
   } else {
     return {
@@ -89,7 +93,7 @@ module.exports = function webpackConfigGenerator(options) {
               {
                 loader: require.resolve("babel-loader"),
                 options: {
-                  cacheDirectory: true,
+                  cacheDirectory: false,
                   presets: [
                     [
                       require.resolve("babel-preset-env"),

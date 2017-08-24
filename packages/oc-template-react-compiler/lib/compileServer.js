@@ -5,8 +5,12 @@ const compiler = require("./compiler");
 const fs = require("fs-extra");
 const hashBuilder = require("oc-hash-builder");
 const path = require("path");
-// const webpackConfigurator = require('oc-webpack').configurator;
-const webpackConfigurator = require("./utils/webPackConfigurator");
+
+// TODO:
+// - Abstract further the original webpack configurator in oc-webpack to support dev/publish scenario
+// - oc-compile-server should be able to do 100% of what we are doing here, if not extend it to be used here
+// const webpackConfigurator = require('oc-webpack').configurator && oc-server-compile
+const { webpackConfigurator } = require("./utils");
 
 module.exports = ({ options, originalTemplateInfo }, callback) => {
   const serverFileName = options.componentPackage.oc.files.data;
@@ -17,22 +21,22 @@ module.exports = ({ options, originalTemplateInfo }, callback) => {
   const stats = options.verbose ? "verbose" : "errors-only";
   const dependencies = options.componentPackage.dependencies || {};
 
-  const ssrMethod = originalTemplateInfo.ssr || "renderToString";
-
   const higherOrderServerContent = `
-    import React from 'react';
-    import ReactDOMServer from 'react-dom/server';
     import { data as dataProvider } from '${serverPath}';
-    import App from '${viewPath}';
-
     export const data = (context, callback) => {
       dataProvider(context, (error, model) => {
-        const extendedModel = Object.assign({}, model, {
-          html: ReactDOMServer.${ssrMethod}(React.createElement(App, model)),
-          staticPath: context.staticPath
-        })
-        return callback(null, extendedModel)
-      })
+        return callback(null, Object.assign({}, model, {
+          staticPath: context.staticPath,
+          __reactApp: {
+            key: "03e94393f65f472808c5f358d4f372e377de8765",
+            src: context.staticPath + "_js/oc__myReactComponent-03e94393f65f472808c5f358d4f372e377de8765.js",
+            options: {
+              hydration: true,
+              client: "oc-client"
+            }
+          }
+        }));
+      });
     }
   `;
 
@@ -51,6 +55,7 @@ module.exports = ({ options, originalTemplateInfo }, callback) => {
     [
       next => compiler(config, next),
       (memoryFs, next) => {
+        fs.removeSync(higherOrderServerPath);
         const compiledServer = memoryFs.readFileSync(
           `/build/${config.output.filename}`,
           "UTF8"

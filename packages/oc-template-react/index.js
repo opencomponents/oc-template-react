@@ -2,9 +2,9 @@
 
 const {
   getCompiledTemplate,
-  getInfo,
-  render
+  getInfo
 } = require("oc-generic-template-renderer");
+const render = require("./lib/render");
 
 const packageJson = require("./package.json");
 const info = getInfo(packageJson);
