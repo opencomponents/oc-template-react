@@ -1,6 +1,6 @@
 {
   "name": "oc-template-react-compiler",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "OC-Template-REACT-Compiler",
   "main": "index.js",
   "repository": {
@@ -39,7 +39,7 @@
     "oc-hash-builder": "^1.0.1",
     "oc-minify-file": "^1.0.3",
     "oc-server-compiler": "^1.0.0",
-    "oc-template-react": "^1.0.0",
+    "oc-template-react": "^0.1.0",
     "oc-templates-messages": "^1.0.1",
     "oc-view-wrapper": "^1.0.2",
     "oc-webpack": "^1.0.6",
