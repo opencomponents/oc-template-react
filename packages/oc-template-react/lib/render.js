@@ -6,10 +6,6 @@ const vm = require("vm");
 
 module.exports = (options, callback) => {
   const { src, key, props } = options.model.reactComponent;
-  // delete options.model.__reactApp;
-  // delete options.model.__html;
-  // const cleanModel = Object.assign({}, options.model);
-  // const hydration = !(reactOptions.hydration === false);
   const getBundleFromS3 = cb => {
     request(
       {
@@ -26,10 +22,9 @@ module.exports = (options, callback) => {
           });
         }
 
-        // this will run inNewContextOnlyonce
         const context = { React };
         vm.runInNewContext(bundleString, context);
-        const App = context.oc.reactComponents[key]; //TODO get from options
+        const App = context.oc.reactComponents[key];
 
         cb(null, App);
       }
@@ -38,10 +33,6 @@ module.exports = (options, callback) => {
 
   tryGetCached("bundle", key, getBundleFromS3, (err, App) => {
     try {
-      // let reactRender = ReactDOMServer.renderToString;
-      // if (!hydration) {
-      //   reactRender = ReactDOMServer.renderToStaticMarkup;
-      // }
       const reactHtml = renderToString(React.createElement(App, props));
       const html = options.template(
         Object.assign({}, options.model, {
@@ -50,7 +41,6 @@ module.exports = (options, callback) => {
       );
       return callback(null, html);
     } catch (error) {
-      console.log(error);
       return callback(error);
     }
   });
