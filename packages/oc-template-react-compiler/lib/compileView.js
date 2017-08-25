@@ -9,11 +9,9 @@ const path = require("path");
 const strings = require("oc-templates-messages");
 const uuid = require("uuid/v4")();
 
-const compiler = require("./compiler");
-const {
-  webpackConfigurator,
-  reactComponentWrapper
-} = require("./to-be-published");
+const compiler = require("./to-abstract-base-template-utils/compiler");
+const webpackConfigurator = require("./to-abstract-base-template-utils/webpackConfigurator");
+const reactComponentWrapper = require("./to-be-published/oc-react-component-wrapper");
 
 module.exports = (options, callback) => {
   const viewFileName = options.componentPackage.oc.files.template.src;
