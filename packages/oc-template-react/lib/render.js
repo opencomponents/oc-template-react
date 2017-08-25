@@ -1,11 +1,15 @@
 const React = require("react");
-const { renderToString } = require("react-dom/server");
-const tryGetCached = require("./try-get-cached");
+const ReactDOMServer = require("react-dom/server");
 const request = require("minimal-request");
 const vm = require("vm");
 
+const tryGetCached = require("./to-be-published/try-get-cached");
+
 module.exports = (options, callback) => {
-  const { src, key, props } = options.model.reactComponent;
+  const src = options.model.reactComponent.src;
+  const key = options.model.reactComponent.key;
+  const props = options.model.reactComponent.props;
+
   const getBundleFromS3 = cb => {
     request(
       {
@@ -25,7 +29,6 @@ module.exports = (options, callback) => {
         const context = { React };
         vm.runInNewContext(bundleString, context);
         const App = context.oc.reactComponents[key];
-
         cb(null, App);
       }
     );
@@ -33,7 +36,9 @@ module.exports = (options, callback) => {
 
   tryGetCached("bundle", key, getBundleFromS3, (err, App) => {
     try {
-      const reactHtml = renderToString(React.createElement(App, props));
+      const reactHtml = ReactDOMServer.renderToString(
+        React.createElement(App, props)
+      );
       const html = options.template(
         Object.assign({}, options.model, {
           __html: reactHtml
