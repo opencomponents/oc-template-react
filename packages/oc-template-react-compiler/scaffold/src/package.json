@@ -1,0 +1,26 @@
+{
+  "name": "base-component-react",
+  "description": "",
+  "version": "1.0.0",
+  "oc": {
+    "files": {
+      "data": "server.js",
+      "template": {
+        "src": "app.js",
+        "type": "oc-template-react"
+      }
+    },
+    "parameters": {
+      "name": {
+        "default": "World",
+        "description": "Your name",
+        "example": "Jane Doe",
+        "mandatory": false,
+        "type": "string"
+      }
+    }
+  },
+  "devDependencies": {
+    "oc-template-react-compiler": "*"
+  }
+}
