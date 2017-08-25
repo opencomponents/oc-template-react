@@ -10,7 +10,10 @@ const strings = require("oc-templates-messages");
 const uuid = require("uuid/v4")();
 
 const compiler = require("./compiler");
-const { webpackConfigurator, reactComponentWrapper } = require("./utils");
+const {
+  webpackConfigurator,
+  reactComponentWrapper
+} = require("./to-be-published");
 
 module.exports = (options, callback) => {
   const viewFileName = options.componentPackage.oc.files.template.src;

@@ -9,7 +9,7 @@ const path = require("path");
 // TODO:
 // Abstract oc-webpack.configurator to support dev/publish scenario
 // It should enable what we are doing here (configurator and compiler)
-const { webpackConfigurator } = require("./utils");
+const { webpackConfigurator } = require("./to-be-published");
 
 module.exports = ({ options, compiledInfo }, callback) => {
   const serverFileName = options.componentPackage.oc.files.data;
