@@ -1,4 +1,4 @@
 module.exports = {
-  camelize: require("./camelize"),
-  webpackConfigurator: require("./webpackConfigurator")
+  webpackConfigurator: require("./webpackConfigurator"),
+  reactComponentWrapper: require("./oc-react-component-wrapper")
 };

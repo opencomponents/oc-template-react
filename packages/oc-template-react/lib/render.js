@@ -1,24 +1,15 @@
 const React = require("react");
-const ReactDOMServer = require("react-dom/server");
+const { renderToString } = require("react-dom/server");
 const tryGetCached = require("./try-get-cached");
 const request = require("minimal-request");
 const vm = require("vm");
 
-// module.exports = (options, callback) => {
-//   console.log(options)
-//   try {
-//     const html = options.template(options.model);
-//     return callback(null, html);
-//   } catch (error) {
-//     return callback(error);
-//   }
-// };
 module.exports = (options, callback) => {
-  const { src, key, options: appOptions } = options.model.__reactApp;
-  delete options.model.__reactApp;
-  delete options.model.__html;
-  const cleanModel = Object.assign({}, options.model);
-
+  const { src, key, props } = options.model.reactComponent;
+  // delete options.model.__reactApp;
+  // delete options.model.__html;
+  // const cleanModel = Object.assign({}, options.model);
+  // const hydration = !(reactOptions.hydration === false);
   const getBundleFromS3 = cb => {
     request(
       {
@@ -35,28 +26,28 @@ module.exports = (options, callback) => {
           });
         }
 
-        cb(null, bundleString);
+        // this will run inNewContextOnlyonce
+        const context = { React };
+        vm.runInNewContext(bundleString, context);
+        const App = context.oc.reactComponents[key]; //TODO get from options
+
+        cb(null, App);
       }
     );
   };
 
-  tryGetCached("bundle", key, getBundleFromS3, (err, bundleString) => {
+  tryGetCached("bundle", key, getBundleFromS3, (err, App) => {
     try {
-      const context = { React };
-      vm.runInNewContext(bundleString, context);
-      const App = context["oc__myReactComponent"]; //TODO
-      let reactRender = ReactDOMServer.renderToString;
-      if (appOptions.rehydration === true) {
-        reactRender = ReactDOMServer.renderToStaticMarkup;
-      }
-      const reactHtml = reactRender(
-        React.createElement(App.default, cleanModel)
+      // let reactRender = ReactDOMServer.renderToString;
+      // if (!hydration) {
+      //   reactRender = ReactDOMServer.renderToStaticMarkup;
+      // }
+      const reactHtml = renderToString(React.createElement(App, props));
+      const html = options.template(
+        Object.assign({}, options.model, {
+          __html: reactHtml
+        })
       );
-      const props = cleanModel;
-      const html = options.template({
-        __html: reactHtml,
-        props
-      });
       return callback(null, html);
     } catch (error) {
       console.log(error);

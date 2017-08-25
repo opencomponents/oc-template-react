@@ -1,6 +1,7 @@
 "use strict";
 
-// alter the original compiler in oc-webpack to return the memoryFS for added flexibility
+// TODO: abstract and reuse oc-webpack
+// Should return memoryFS instead of a specific file
 const MemoryFS = require("memory-fs");
 const webpack = require("webpack");
 

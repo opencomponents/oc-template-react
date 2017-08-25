@@ -1,5 +1,6 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const MinifyPlugin = require("babel-minify-webpack-plugin");
+const externalDependenciesHandlers = require("oc-external-dependencies-handler");
 const path = require("path");
 const webpack = require("webpack");
 
@@ -26,7 +27,6 @@ module.exports = function webpackConfigGenerator(options) {
     return {
       entry: options.viewPath,
       output: {
-        library: options.componentName,
         path: buildPath,
         filename: options.publishFileName
       },
@@ -59,6 +59,7 @@ module.exports = function webpackConfigGenerator(options) {
           filename: "[name].css",
           allChunks: true
         }),
+        // TODO: enable plugins only when env = production (aka publish, not dev)
         new webpack.DefinePlugin({
           "process.env.NODE_ENV": JSON.stringify("production")
         }),
@@ -80,6 +81,7 @@ module.exports = function webpackConfigGenerator(options) {
         filename: options.publishFileName,
         libraryTarget: "commonjs2"
       },
+      externals: externalDependenciesHandlers(options.dependencies),
       module: {
         rules: [
           cssLoader,
@@ -120,20 +122,14 @@ module.exports = function webpackConfigGenerator(options) {
           filename: "[name].css",
           allChunks: true
         }),
+        // TODO: enable plugins only when env = production (aka publish, not dev)
         new webpack.DefinePlugin({
           "process.env.NODE_ENV": JSON.stringify("production")
-        })
-        // TODO: enable plugins only when env = production
-        // new MinifyPlugin()
+        }),
+        new MinifyPlugin()
       ],
       logger: options.logger || console,
-      stats: options.stats,
-      resolve: {
-        alias: {
-          react: path.join(__dirname, "../../node_modules/react"),
-          "react-dom": path.join(__dirname, "../../node_modules/react-dom")
-        }
-      }
+      stats: options.stats
     };
   }
 };

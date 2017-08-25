@@ -29,30 +29,29 @@ module.exports = (options, callback) => {
     [
       // Compile view
       function(cb) {
-        compileView(options, (error, compiledViewInfo) => {
+        // compiledViewInfo, bundleInfo
+        compileView(options, (error, compiledInfo) => {
           if (error) {
             return cb(error);
           }
           // USE COMPILATION INFO TO MASSAGE COMPONENT'S PACKAGE
-          const originalTemplateInfo = componentPackage.oc.files.template;
-          componentPackage.oc.files.template = compiledViewInfo;
+          // const originalTemplateInfo = componentPackage.oc.files.template;
+          componentPackage.oc.files.template = compiledInfo.template;
           delete componentPackage.oc.files.client;
-          cb(error, { componentPackage, originalTemplateInfo });
+          cb(error, { componentPackage, compiledInfo });
         });
       },
       // Compile dataProvider
-      function({ componentPackage, originalTemplateInfo }, cb) {
+      function({ componentPackage, compiledInfo }, cb) {
         if (!componentPackage.oc.files.data) {
           return cb(null, componentPackage);
         }
-
         compileServer(
-          { options, originalTemplateInfo },
+          { options, compiledInfo },
           (error, compiledServerInfo) => {
             if (error) {
               return cb(error);
             }
-
             // USE COMPILATION INFO TO MASSAGE COMPONENT'S PACKAGE
             componentPackage.oc.files.dataProvider = compiledServerInfo;
             delete componentPackage.oc.files.data;
