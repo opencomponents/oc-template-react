@@ -24,13 +24,15 @@ module.exports = (options, callback) => {
     externals[dep.name] = dep.global;
     return externals;
   }, {});
+  const build = options.build;
 
   const compile = (options, cb) => {
     const config = webpackConfigurator({
       confTarget: "view",
       viewPath,
       externals,
-      publishFileName
+      publishFileName,
+      build
     });
     compiler(config, (err, memoryFs) => {
       const bundle = memoryFs.readFileSync(

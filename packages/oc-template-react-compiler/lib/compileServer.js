@@ -19,6 +19,7 @@ module.exports = ({ options, compiledInfo }, callback) => {
   const publishPath = options.publishPath;
   const stats = options.verbose ? "verbose" : "errors-only";
   const dependencies = options.componentPackage.dependencies || {};
+  const build = options.build;
 
   const higherOrderServerContent = `
     import { data as dataProvider } from '${serverPath}';
@@ -47,7 +48,8 @@ module.exports = ({ options, compiledInfo }, callback) => {
     serverPath: higherOrderServerPath,
     publishFileName,
     dependencies,
-    stats
+    stats,
+    build
   });
 
   async.waterfall(

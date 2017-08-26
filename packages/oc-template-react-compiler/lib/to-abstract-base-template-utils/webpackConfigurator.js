@@ -7,6 +7,7 @@ const webpack = require("webpack");
 module.exports = function webpackConfigGenerator(options) {
   const buildPath = options.buildPath || "/build";
   const localIdentName = "oc__[path][name]-[ext]__[local]__[hash:base64:5]";
+  const build = options.build || "production";
 
   const cssLoader = {
     test: /\.css$/,
@@ -22,6 +23,21 @@ module.exports = function webpackConfigGenerator(options) {
       ]
     })
   };
+
+  let plugins = [
+    new ExtractTextPlugin({
+      filename: "[name].css",
+      allChunks: true
+    }),
+    new webpack.DefinePlugin({
+      "process.env.NODE_ENV": JSON.stringify(build)
+    })
+  ];
+  if (build !== "development") {
+    plugins = plugins.concat(new MinifyPlugin());
+  }
+
+  const cacheDirectory = build === "development";
 
   if (options.confTarget === "view") {
     return {
@@ -41,7 +57,7 @@ module.exports = function webpackConfigGenerator(options) {
               {
                 loader: require.resolve("babel-loader"),
                 options: {
-                  cacheDirectory: false,
+                  cacheDirectory,
                   presets: ["babel-preset-es2015", "babel-preset-react"].map(
                     require.resolve
                   ),
@@ -54,17 +70,7 @@ module.exports = function webpackConfigGenerator(options) {
           }
         ]
       },
-      plugins: [
-        new ExtractTextPlugin({
-          filename: "[name].css",
-          allChunks: true
-        }),
-        // TODO: enable plugins only when env = production (aka publish, not dev)
-        new webpack.DefinePlugin({
-          "process.env.NODE_ENV": JSON.stringify("production")
-        }),
-        new MinifyPlugin()
-      ],
+      plugins,
       resolve: {
         alias: {
           react: path.join(__dirname, "../../node_modules/react"),
@@ -73,6 +79,13 @@ module.exports = function webpackConfigGenerator(options) {
       }
     };
   } else {
+    let loaders = [];
+    if (build !== "development") {
+      loader = loaders.concat({
+        loader: require.resolve("infinite-loop-loader")
+      });
+    }
+
     return {
       entry: options.serverPath,
       target: "node",
@@ -88,14 +101,11 @@ module.exports = function webpackConfigGenerator(options) {
           {
             test: /\.js$/,
             exclude: /node_modules/,
-            use: [
-              {
-                loader: require.resolve("infinite-loop-loader")
-              },
+            use: loaders.concat([
               {
                 loader: require.resolve("babel-loader"),
                 options: {
-                  cacheDirectory: false,
+                  cacheDirectory,
                   presets: [
                     [
                       require.resolve("babel-preset-env"),
@@ -113,21 +123,11 @@ module.exports = function webpackConfigGenerator(options) {
                   )
                 }
               }
-            ]
+            ])
           }
         ]
       },
-      plugins: [
-        new ExtractTextPlugin({
-          filename: "[name].css",
-          allChunks: true
-        }),
-        // TODO: enable plugins only when env = production (aka publish, not dev)
-        new webpack.DefinePlugin({
-          "process.env.NODE_ENV": JSON.stringify("production")
-        }),
-        new MinifyPlugin()
-      ],
+      plugins,
       logger: options.logger || console,
       stats: options.stats
     };
