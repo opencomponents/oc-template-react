@@ -3,38 +3,22 @@ const ReactDOMServer = require("react-dom/server");
 const request = require("minimal-request");
 const vm = require("vm");
 
+const createPredicate = require("./to-be-published/get-js-from-url");
 const tryGetCached = require("./to-be-published/try-get-cached");
 
 module.exports = (options, callback) => {
-  const src = options.model.reactComponent.src;
+  const url = options.model.reactComponent.src;
   const key = options.model.reactComponent.key;
   const props = options.model.reactComponent.props;
+  const extractor = (key, context) => context.oc.reactComponents[key];
+  const getJsFromUrl = createPredicate({
+    key,
+    url,
+    globals: { React },
+    extractor
+  });
 
-  const getBundleFromS3 = cb => {
-    request(
-      {
-        url: src,
-        timeout: 5000
-      },
-      (err, bundleString) => {
-        if (err) {
-          return cb({
-            status: err,
-            response: {
-              error: `request ${src} failed (${bundleString})`
-            }
-          });
-        }
-
-        const context = { React };
-        vm.runInNewContext(bundleString, context);
-        const App = context.oc.reactComponents[key];
-        cb(null, App);
-      }
-    );
-  };
-
-  tryGetCached("bundle", key, getBundleFromS3, (err, App) => {
+  tryGetCached("reactComponent", key, getJsFromUrl, (err, App) => {
     try {
       const reactHtml = ReactDOMServer.renderToString(
         React.createElement(App, props)
