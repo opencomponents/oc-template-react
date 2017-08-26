@@ -53,11 +53,14 @@ module.exports = (options, callback) => {
       let css = null;
       if (memoryFs.data.build["main.css"]) {
         css = memoryFs.readFileSync(`/build/main.css`, "UTF8");
+        if (build !== "development") {
+          css = minifyFile(".css", css);
+        }
       }
 
       const templateString = `function(model){
         return \`<div id="${uuid}">\${ model.__html ? model.__html : '' }</div>
-          <style>${minifyFile(".css", css)}</style>   
+          <style>${css}</style>   
           <script>(function(){
             oc.require(
               ['oc', 'reactComponents', '${bundleHash}'],

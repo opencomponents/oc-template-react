@@ -6,8 +6,11 @@ const webpack = require("webpack");
 
 module.exports = function webpackConfigGenerator(options) {
   const buildPath = options.buildPath || "/build";
-  const localIdentName = "oc__[path][name]-[ext]__[local]__[hash:base64:5]";
   const build = options.build || "production";
+  const localIdentName =
+    build !== "production"
+      ? "oc__[path][name]-[ext]__[local]__[hash:base64:5]"
+      : "[local]__[hash:base64:5]";
 
   const cssLoader = {
     test: /\.css$/,
