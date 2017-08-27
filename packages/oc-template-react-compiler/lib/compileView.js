@@ -62,17 +62,19 @@ module.exports = (options, callback) => {
 
       const templateString = `function(model){
         return \`<div id="${uuid}">\${ model.__html ? model.__html : '' }</div>
-          <style>${css}</style>   
-          <script>(function(){
-            oc.require(
-              ['oc', 'reactComponents', '${bundleHash}'],
-              '\${model.reactComponent.props.staticPath}${bundleName}',
-              function(App){
-                var targetNode = document.getElementById("${uuid}");
-                targetNode.setAttribute("id","");
-                ReactDOM.render(React.createElement(App, \${JSON.stringify(model.reactComponent.props)}),targetNode);
-              });
-            }())
+          <style>${css}</style>
+          <script>
+            (function(oc, ReactDOM){
+              oc.require(
+                ['oc', 'reactComponents', '${bundleHash}'],
+                '\${model.reactComponent.props.staticPath}${bundleName}.js',
+                function(ReactComponent){
+                  var targetNode = document.getElementById("${uuid}");
+                  targetNode.setAttribute("id","");
+                  ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
+                }
+              );
+            }(oc, ReactDOM))
           </script>
         \`;
       }`;
