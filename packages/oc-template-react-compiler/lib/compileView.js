@@ -45,8 +45,8 @@ module.exports = (options, callback) => {
       }
 
       const bundleHash = hashBuilder.fromString(bundle);
-      const bundleName = "react-component.js";
-      const bundlePath = path.join(publishPath, bundleName);
+      const bundleName = "react-component";
+      const bundlePath = path.join(publishPath, `${bundleName}.js`);
       const wrappedBundle = reactComponentWrapper(bundleHash, bundle);
       fs.outputFileSync(bundlePath, wrappedBundle);
 
@@ -56,6 +56,8 @@ module.exports = (options, callback) => {
         if (build !== "development") {
           css = minifyFile(".css", css);
         }
+        const cssPath = path.join(publishPath, `${bundleName}.css`);
+        fs.outputFileSync(cssPath, css);
       }
 
       const templateString = `function(model){

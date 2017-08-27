@@ -1,8 +1,9 @@
 {
-  "name": "react-component",
+  "name": "react-component-with-css",
   "version": "1.0.0",
   "oc": {
     "files": {
+      "static": ["assets"],
       "template": {
         "src": "app.js",
         "type": "oc-template-react"
