@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "husky": "^0.14.3",
+    "codecov": "^2.2.0",
     "jest": "^20.0.4",
     "lerna": "^2.0.0",
     "lint-staged": "^4.0.3",
@@ -8,6 +9,7 @@
   },
   "scripts": {
     "postinstall": "lerna bootstrap",
+    "coverage": "codecov",
     "clean": "lerna clean",
     "test": "jest",
     "publish": "lerna publish",
