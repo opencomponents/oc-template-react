@@ -13,7 +13,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "1254af527b55fc27e363e88ac802715421da9292",
+        "hashKey": "9dcb293f9ba7c8dd65241ca9ee6c38455909677b",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -41,7 +41,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package1/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"1254af527b55fc27e363e88ac802715421da9292\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"9dcb293f9ba7c8dd65241ca9ee6c38455909677b\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -50,21 +50,19 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package1/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['1254af527b55fc27e363e88ac802715421da9292']=function(model){
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['9dcb293f9ba7c8dd65241ca9ee6c38455909677b']=function(model){
         return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div>
           <style>null</style>
           <script>
-            (function(oc, ReactDOM){
-              oc.require(
-                ['oc', 'reactComponents', '76eb1d4ea359942fdc10efe557f654d8aab2b1f5'],
-                '\${model.reactComponent.props.staticPath}react-component.js',
-                function(ReactComponent){
-                  var targetNode = document.getElementById(\\"666\\");
-                  targetNode.setAttribute(\\"id\\",\\"\\");
-                  ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
-                }
-              );
-            }(oc, ReactDOM))
+            oc.require(
+              ['oc', 'reactComponents', '76eb1d4ea359942fdc10efe557f654d8aab2b1f5'],
+              '\${model.reactComponent.props.staticPath}react-component.js',
+              function(ReactComponent){
+                var targetNode = document.getElementById(\\"666\\");
+                targetNode.setAttribute(\\"id\\",\\"\\");
+                ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
+              }
+            );
           </script>
         \`;
       }",
@@ -85,7 +83,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "b10aa5e87d2505c2294be8d9a6ce8f90229ca932",
+        "hashKey": "0baad23e36c4c6a028a5962eecfeb19e350737cf",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -113,7 +111,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package1/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"b10aa5e87d2505c2294be8d9a6ce8f90229ca932\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"0baad23e36c4c6a028a5962eecfeb19e350737cf\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -126,21 +124,19 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package1/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['b10aa5e87d2505c2294be8d9a6ce8f90229ca932']=function(model){
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['0baad23e36c4c6a028a5962eecfeb19e350737cf']=function(model){
         return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div>
           <style>.awesome__2lltU{background:#db7093}</style>
           <script>
-            (function(oc, ReactDOM){
-              oc.require(
-                ['oc', 'reactComponents', 'b83369109c1c131f3b6b30e4bd3d79c838d47b5a'],
-                '\${model.reactComponent.props.staticPath}react-component.js',
-                function(ReactComponent){
-                  var targetNode = document.getElementById(\\"666\\");
-                  targetNode.setAttribute(\\"id\\",\\"\\");
-                  ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
-                }
-              );
-            }(oc, ReactDOM))
+            oc.require(
+              ['oc', 'reactComponents', 'b83369109c1c131f3b6b30e4bd3d79c838d47b5a'],
+              '\${model.reactComponent.props.staticPath}react-component.js',
+              function(ReactComponent){
+                var targetNode = document.getElementById(\\"666\\");
+                targetNode.setAttribute(\\"id\\",\\"\\");
+                ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
+              }
+            );
           </script>
         \`;
       }",
@@ -161,7 +157,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "6b479473478931beeaf6e04f3934b939d61bc796",
+        "hashKey": "5be7b1e2fb89026914d3a4163d3c7a264874711b",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -189,7 +185,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package1/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"6b479473478931beeaf6e04f3934b939d61bc796\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"5be7b1e2fb89026914d3a4163d3c7a264874711b\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -300,21 +296,19 @@ exports.default = app;
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package1/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['6b479473478931beeaf6e04f3934b939d61bc796']=function(model){
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['5be7b1e2fb89026914d3a4163d3c7a264874711b']=function(model){
         return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div>
           <style>null</style>
           <script>
-            (function(oc, ReactDOM){
-              oc.require(
-                ['oc', 'reactComponents', '5b0cfea3e40b752f5dd16143fc73b709fdd29d8e'],
-                '\${model.reactComponent.props.staticPath}react-component.js',
-                function(ReactComponent){
-                  var targetNode = document.getElementById(\\"666\\");
-                  targetNode.setAttribute(\\"id\\",\\"\\");
-                  ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
-                }
-              );
-            }(oc, ReactDOM))
+            oc.require(
+              ['oc', 'reactComponents', '5b0cfea3e40b752f5dd16143fc73b709fdd29d8e'],
+              '\${model.reactComponent.props.staticPath}react-component.js',
+              function(ReactComponent){
+                var targetNode = document.getElementById(\\"666\\");
+                targetNode.setAttribute(\\"id\\",\\"\\");
+                ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
+              }
+            );
           </script>
         \`;
       }",
@@ -335,7 +329,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "85488357234c005755b3ec338f8a4e6318766773",
+        "hashKey": "b9b80bd472f3da8c15877b2945d6ee0f529a243d",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -363,7 +357,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package1/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"85488357234c005755b3ec338f8a4e6318766773\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"b9b80bd472f3da8c15877b2945d6ee0f529a243d\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -491,23 +485,21 @@ exports.default = app;
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package1/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['85488357234c005755b3ec338f8a4e6318766773']=function(model){
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['b9b80bd472f3da8c15877b2945d6ee0f529a243d']=function(model){
         return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div>
           <style>.oc__mocks-react-component-with-css-styles-css__awesome__2lltU {
   background: palevioletred;
 }</style>
           <script>
-            (function(oc, ReactDOM){
-              oc.require(
-                ['oc', 'reactComponents', 'b8d6f9a328db3b005de86aa4139496e50f79869d'],
-                '\${model.reactComponent.props.staticPath}react-component.js',
-                function(ReactComponent){
-                  var targetNode = document.getElementById(\\"666\\");
-                  targetNode.setAttribute(\\"id\\",\\"\\");
-                  ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
-                }
-              );
-            }(oc, ReactDOM))
+            oc.require(
+              ['oc', 'reactComponents', 'b8d6f9a328db3b005de86aa4139496e50f79869d'],
+              '\${model.reactComponent.props.staticPath}react-component.js',
+              function(ReactComponent){
+                var targetNode = document.getElementById(\\"666\\");
+                targetNode.setAttribute(\\"id\\",\\"\\");
+                ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
+              }
+            );
           </script>
         \`;
       }",
@@ -526,7 +518,7 @@ Object {
     "files": Object {
       "static": Array [],
       "template": Object {
-        "hashKey": "1254af527b55fc27e363e88ac802715421da9292",
+        "hashKey": "9dcb293f9ba7c8dd65241ca9ee6c38455909677b",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -543,7 +535,7 @@ exports[`Should handle empty static folder 2`] = `
 Array [
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package2/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"1254af527b55fc27e363e88ac802715421da9292\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"9dcb293f9ba7c8dd65241ca9ee6c38455909677b\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -552,21 +544,19 @@ Array [
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package2/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['1254af527b55fc27e363e88ac802715421da9292']=function(model){
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['9dcb293f9ba7c8dd65241ca9ee6c38455909677b']=function(model){
         return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div>
           <style>null</style>
           <script>
-            (function(oc, ReactDOM){
-              oc.require(
-                ['oc', 'reactComponents', '76eb1d4ea359942fdc10efe557f654d8aab2b1f5'],
-                '\${model.reactComponent.props.staticPath}react-component.js',
-                function(ReactComponent){
-                  var targetNode = document.getElementById(\\"666\\");
-                  targetNode.setAttribute(\\"id\\",\\"\\");
-                  ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
-                }
-              );
-            }(oc, ReactDOM))
+            oc.require(
+              ['oc', 'reactComponents', '76eb1d4ea359942fdc10efe557f654d8aab2b1f5'],
+              '\${model.reactComponent.props.staticPath}react-component.js',
+              function(ReactComponent){
+                var targetNode = document.getElementById(\\"666\\");
+                targetNode.setAttribute(\\"id\\",\\"\\");
+                ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
+              }
+            );
           </script>
         \`;
       }",
@@ -585,7 +575,7 @@ Object {
     "files": Object {
       "static": Array [],
       "template": Object {
-        "hashKey": "b10aa5e87d2505c2294be8d9a6ce8f90229ca932",
+        "hashKey": "0baad23e36c4c6a028a5962eecfeb19e350737cf",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -602,7 +592,7 @@ exports[`Should handle empty static folder 4`] = `
 Array [
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package2/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"b10aa5e87d2505c2294be8d9a6ce8f90229ca932\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"0baad23e36c4c6a028a5962eecfeb19e350737cf\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -615,21 +605,19 @@ Array [
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package2/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['b10aa5e87d2505c2294be8d9a6ce8f90229ca932']=function(model){
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['0baad23e36c4c6a028a5962eecfeb19e350737cf']=function(model){
         return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div>
           <style>.awesome__2lltU{background:#db7093}</style>
           <script>
-            (function(oc, ReactDOM){
-              oc.require(
-                ['oc', 'reactComponents', 'b83369109c1c131f3b6b30e4bd3d79c838d47b5a'],
-                '\${model.reactComponent.props.staticPath}react-component.js',
-                function(ReactComponent){
-                  var targetNode = document.getElementById(\\"666\\");
-                  targetNode.setAttribute(\\"id\\",\\"\\");
-                  ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
-                }
-              );
-            }(oc, ReactDOM))
+            oc.require(
+              ['oc', 'reactComponents', 'b83369109c1c131f3b6b30e4bd3d79c838d47b5a'],
+              '\${model.reactComponent.props.staticPath}react-component.js',
+              function(ReactComponent){
+                var targetNode = document.getElementById(\\"666\\");
+                targetNode.setAttribute(\\"id\\",\\"\\");
+                ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
+              }
+            );
           </script>
         \`;
       }",
@@ -650,7 +638,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "1254af527b55fc27e363e88ac802715421da9292",
+        "hashKey": "9dcb293f9ba7c8dd65241ca9ee6c38455909677b",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -678,7 +666,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package4/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"1254af527b55fc27e363e88ac802715421da9292\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"9dcb293f9ba7c8dd65241ca9ee6c38455909677b\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -687,21 +675,19 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package4/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['1254af527b55fc27e363e88ac802715421da9292']=function(model){
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['9dcb293f9ba7c8dd65241ca9ee6c38455909677b']=function(model){
         return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div>
           <style>null</style>
           <script>
-            (function(oc, ReactDOM){
-              oc.require(
-                ['oc', 'reactComponents', '76eb1d4ea359942fdc10efe557f654d8aab2b1f5'],
-                '\${model.reactComponent.props.staticPath}react-component.js',
-                function(ReactComponent){
-                  var targetNode = document.getElementById(\\"666\\");
-                  targetNode.setAttribute(\\"id\\",\\"\\");
-                  ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
-                }
-              );
-            }(oc, ReactDOM))
+            oc.require(
+              ['oc', 'reactComponents', '76eb1d4ea359942fdc10efe557f654d8aab2b1f5'],
+              '\${model.reactComponent.props.staticPath}react-component.js',
+              function(ReactComponent){
+                var targetNode = document.getElementById(\\"666\\");
+                targetNode.setAttribute(\\"id\\",\\"\\");
+                ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
+              }
+            );
           </script>
         \`;
       }",
@@ -722,7 +708,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "b10aa5e87d2505c2294be8d9a6ce8f90229ca932",
+        "hashKey": "0baad23e36c4c6a028a5962eecfeb19e350737cf",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -750,7 +736,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package4/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"b10aa5e87d2505c2294be8d9a6ce8f90229ca932\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"0baad23e36c4c6a028a5962eecfeb19e350737cf\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -763,21 +749,19 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package4/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['b10aa5e87d2505c2294be8d9a6ce8f90229ca932']=function(model){
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['0baad23e36c4c6a028a5962eecfeb19e350737cf']=function(model){
         return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div>
           <style>.awesome__2lltU{background:#db7093}</style>
           <script>
-            (function(oc, ReactDOM){
-              oc.require(
-                ['oc', 'reactComponents', 'b83369109c1c131f3b6b30e4bd3d79c838d47b5a'],
-                '\${model.reactComponent.props.staticPath}react-component.js',
-                function(ReactComponent){
-                  var targetNode = document.getElementById(\\"666\\");
-                  targetNode.setAttribute(\\"id\\",\\"\\");
-                  ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
-                }
-              );
-            }(oc, ReactDOM))
+            oc.require(
+              ['oc', 'reactComponents', 'b83369109c1c131f3b6b30e4bd3d79c838d47b5a'],
+              '\${model.reactComponent.props.staticPath}react-component.js',
+              function(ReactComponent){
+                var targetNode = document.getElementById(\\"666\\");
+                targetNode.setAttribute(\\"id\\",\\"\\");
+                ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
+              }
+            );
           </script>
         \`;
       }",
@@ -798,7 +782,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "1254af527b55fc27e363e88ac802715421da9292",
+        "hashKey": "9dcb293f9ba7c8dd65241ca9ee6c38455909677b",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -826,7 +810,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package3/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"1254af527b55fc27e363e88ac802715421da9292\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"9dcb293f9ba7c8dd65241ca9ee6c38455909677b\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -835,21 +819,19 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package3/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['1254af527b55fc27e363e88ac802715421da9292']=function(model){
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['9dcb293f9ba7c8dd65241ca9ee6c38455909677b']=function(model){
         return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div>
           <style>null</style>
           <script>
-            (function(oc, ReactDOM){
-              oc.require(
-                ['oc', 'reactComponents', '76eb1d4ea359942fdc10efe557f654d8aab2b1f5'],
-                '\${model.reactComponent.props.staticPath}react-component.js',
-                function(ReactComponent){
-                  var targetNode = document.getElementById(\\"666\\");
-                  targetNode.setAttribute(\\"id\\",\\"\\");
-                  ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
-                }
-              );
-            }(oc, ReactDOM))
+            oc.require(
+              ['oc', 'reactComponents', '76eb1d4ea359942fdc10efe557f654d8aab2b1f5'],
+              '\${model.reactComponent.props.staticPath}react-component.js',
+              function(ReactComponent){
+                var targetNode = document.getElementById(\\"666\\");
+                targetNode.setAttribute(\\"id\\",\\"\\");
+                ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
+              }
+            );
           </script>
         \`;
       }",
@@ -870,7 +852,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "b10aa5e87d2505c2294be8d9a6ce8f90229ca932",
+        "hashKey": "0baad23e36c4c6a028a5962eecfeb19e350737cf",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -898,7 +880,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package3/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"b10aa5e87d2505c2294be8d9a6ce8f90229ca932\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"0baad23e36c4c6a028a5962eecfeb19e350737cf\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -911,21 +893,19 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package3/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['b10aa5e87d2505c2294be8d9a6ce8f90229ca932']=function(model){
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['0baad23e36c4c6a028a5962eecfeb19e350737cf']=function(model){
         return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div>
           <style>.awesome__2lltU{background:#db7093}</style>
           <script>
-            (function(oc, ReactDOM){
-              oc.require(
-                ['oc', 'reactComponents', 'b83369109c1c131f3b6b30e4bd3d79c838d47b5a'],
-                '\${model.reactComponent.props.staticPath}react-component.js',
-                function(ReactComponent){
-                  var targetNode = document.getElementById(\\"666\\");
-                  targetNode.setAttribute(\\"id\\",\\"\\");
-                  ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
-                }
-              );
-            }(oc, ReactDOM))
+            oc.require(
+              ['oc', 'reactComponents', 'b83369109c1c131f3b6b30e4bd3d79c838d47b5a'],
+              '\${model.reactComponent.props.staticPath}react-component.js',
+              function(ReactComponent){
+                var targetNode = document.getElementById(\\"666\\");
+                targetNode.setAttribute(\\"id\\",\\"\\");
+                ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
+              }
+            );
           </script>
         \`;
       }",
