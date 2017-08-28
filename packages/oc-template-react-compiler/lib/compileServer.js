@@ -5,9 +5,6 @@ const fs = require("fs-extra");
 const hashBuilder = require("oc-hash-builder");
 const path = require("path");
 
-// TODO:
-// Abstract oc-webpack.configurator to support dev/publish scenario
-// It should enable what we are doing here (configurator and compiler)
 const compiler = require("./to-abstract-base-template-utils/compiler");
 const webpackConfigurator = require("./to-abstract-base-template-utils/webpackConfigurator");
 const reactComponentWrapper = require("./to-be-published/oc-react-component-wrapper");
@@ -55,6 +52,7 @@ module.exports = ({ options, compiledInfo }, callback) => {
   async.waterfall(
     [
       next => compiler(config, next),
+      (memoryFs, next) => fs.ensureDir(publishPath, err => next(err, memoryFs)),
       (memoryFs, next) => {
         fs.removeSync(higherOrderServerPath);
         const compiledServer = memoryFs.readFileSync(

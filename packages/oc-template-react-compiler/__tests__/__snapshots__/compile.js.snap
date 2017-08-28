@@ -9,6 +9,11 @@ Object {
   "oc": Object {
     "date": "",
     "files": Object {
+      "dataProvider": Object {
+        "hashKey": "90cf22b78cd7ff174169995d849e7fbe0de2f66b",
+        "src": "server.js",
+        "type": "node.js",
+      },
       "static": Array [
         "assets",
       ],
@@ -41,12 +46,16 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package1/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"9dcb293f9ba7c8dd65241ca9ee6c38455909677b\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"9dcb293f9ba7c8dd65241ca9ee6c38455909677b\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"90cf22b78cd7ff174169995d849e7fbe0de2f66b\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package1/react-component.js",
     "source": "var oc=oc||{};oc.reactComponents=oc.reactComponents||{};oc.reactComponents['76eb1d4ea359942fdc10efe557f654d8aab2b1f5']=oc.reactComponents['76eb1d4ea359942fdc10efe557f654d8aab2b1f5']||(function(){var module = (function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.i=function(a){return a},b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=1)})([function(a){a.exports=React},function(a,b,c){'use strict';Object.defineProperty(b,'__esModule',{value:!0});var d=c(0),e=function(a){return a&&a.__esModule?a:{default:a}}(d);b.default=function(){return e.default.createElement('div',null,'Hello')}}]);; return module.default}())",
+  },
+  Object {
+    "path": "../../../mocks/react-component/_compile-tests-package1/server.js",
+    "source": "module.exports=function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.i=function(a){return a},b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=1)}([function(a,b){'use strict';b.a=(a,b)=>{const c=a.params.name;return b(null,{name:c})}},function(a,b,c){'use strict';Object.defineProperty(b,'__esModule',{value:!0});var d=c(0);b.data=(a,b)=>{c.i(d.a)(a,(c,d)=>{const e=Object.assign({},d,{staticPath:a.staticPath});return b(null,Object.assign({},{reactComponent:{key:'76eb1d4ea359942fdc10efe557f654d8aab2b1f5',src:a.staticPath+'react-component.js',props:e}}))})}}]);",
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package1/template.js",
@@ -79,6 +88,11 @@ Object {
   "oc": Object {
     "date": "",
     "files": Object {
+      "dataProvider": Object {
+        "hashKey": "1159d0202ef64b00babcac6eb9c9243eb0d6a749",
+        "src": "server.js",
+        "type": "node.js",
+      },
       "static": Array [
         "assets",
       ],
@@ -111,7 +125,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package1/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"0baad23e36c4c6a028a5962eecfeb19e350737cf\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"0baad23e36c4c6a028a5962eecfeb19e350737cf\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"1159d0202ef64b00babcac6eb9c9243eb0d6a749\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -121,6 +135,10 @@ say(text);
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package1/react-component.js",
     "source": "var oc=oc||{};oc.reactComponents=oc.reactComponents||{};oc.reactComponents['b83369109c1c131f3b6b30e4bd3d79c838d47b5a']=oc.reactComponents['b83369109c1c131f3b6b30e4bd3d79c838d47b5a']||(function(){var module = (function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.i=function(a){return a},b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=2)})([function(a){a.exports={awesome:'awesome__2lltU'}},function(a){a.exports=React},function(a,b,c){'use strict';function d(a){return a&&a.__esModule?a:{default:a}}Object.defineProperty(b,'__esModule',{value:!0});var e=c(1),f=d(e),g=c(0),h=d(g);b.default=function(){return f.default.createElement('div',{className:h.default.awesome},'Hello')}}]);; return module.default}())",
+  },
+  Object {
+    "path": "../../../mocks/react-component-with-css/_compile-tests-package1/server.js",
+    "source": "module.exports=function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.i=function(a){return a},b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=1)}([function(a,b){'use strict';b.a=(a,b)=>{const c=a.params.name;return b(null,{name:c})}},function(a,b,c){'use strict';Object.defineProperty(b,'__esModule',{value:!0});var d=c(0);b.data=(a,b)=>{c.i(d.a)(a,(c,d)=>{const e=Object.assign({},d,{staticPath:a.staticPath});return b(null,Object.assign({},{reactComponent:{key:'b83369109c1c131f3b6b30e4bd3d79c838d47b5a',src:a.staticPath+'react-component.js',props:e}}))})}}]);",
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package1/template.js",
@@ -153,6 +171,11 @@ Object {
   "oc": Object {
     "date": "",
     "files": Object {
+      "dataProvider": Object {
+        "hashKey": "6eb927b71c977ff4cddd22cccc42a58c1d78e477",
+        "src": "server.js",
+        "type": "node.js",
+      },
       "static": Array [
         "assets",
       ],
@@ -185,7 +208,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package1/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"5be7b1e2fb89026914d3a4163d3c7a264874711b\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"5be7b1e2fb89026914d3a4163d3c7a264874711b\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"6eb927b71c977ff4cddd22cccc42a58c1d78e477\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -295,6 +318,119 @@ exports.default = app;
 /******/ ]);; return module.default}())",
   },
   Object {
+    "path": "../../../mocks/react-component/_compile-tests-package1/server.js",
+    "source": "module.exports =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = \\"\\";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+\\"use strict\\";
+const data = (context, callback) => {
+  const name = context.params.name;
+
+  return callback(null, { name });
+};
+/* harmony export (immutable) */ __webpack_exports__[\\"a\\"] = data;
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+\\"use strict\\";
+Object.defineProperty(__webpack_exports__, \\"__esModule\\", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_nbalestra_OT_oc_templates_oc_template_react_mocks_react_component_server_js__ = __webpack_require__(0);
+
+
+const data = (context, callback) => {
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__Users_nbalestra_OT_oc_templates_oc_template_react_mocks_react_component_server_js__[\\"a\\" /* data */])(context, (error, model) => {
+    const props = Object.assign({}, model, {
+      staticPath: context.staticPath
+    });
+    return callback(null, Object.assign({}, {
+      reactComponent: {
+        key: \\"5b0cfea3e40b752f5dd16143fc73b709fdd29d8e\\",
+        src: context.staticPath + \\"react-component.js\\",
+        props
+      }
+    }));
+  });
+};
+/* harmony export (immutable) */ __webpack_exports__[\\"data\\"] = data;
+
+
+/***/ })
+/******/ ]);",
+  },
+  Object {
     "path": "../../../mocks/react-component/_compile-tests-package1/template.js",
     "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['5be7b1e2fb89026914d3a4163d3c7a264874711b']=function(model){
         return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div>
@@ -325,6 +461,11 @@ Object {
   "oc": Object {
     "date": "",
     "files": Object {
+      "dataProvider": Object {
+        "hashKey": "ee7d66321daa60ce8a248b5860f5191a540eae84",
+        "src": "server.js",
+        "type": "node.js",
+      },
       "static": Array [
         "assets",
       ],
@@ -357,7 +498,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package1/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"b9b80bd472f3da8c15877b2945d6ee0f529a243d\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"b9b80bd472f3da8c15877b2945d6ee0f529a243d\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"ee7d66321daa60ce8a248b5860f5191a540eae84\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -484,6 +625,119 @@ exports.default = app;
 /******/ ]);; return module.default}())",
   },
   Object {
+    "path": "../../../mocks/react-component-with-css/_compile-tests-package1/server.js",
+    "source": "module.exports =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = \\"\\";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+\\"use strict\\";
+const data = (context, callback) => {
+  const name = context.params.name;
+
+  return callback(null, { name });
+};
+/* harmony export (immutable) */ __webpack_exports__[\\"a\\"] = data;
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+\\"use strict\\";
+Object.defineProperty(__webpack_exports__, \\"__esModule\\", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_nbalestra_OT_oc_templates_oc_template_react_mocks_react_component_with_css_server_js__ = __webpack_require__(0);
+
+
+const data = (context, callback) => {
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__Users_nbalestra_OT_oc_templates_oc_template_react_mocks_react_component_with_css_server_js__[\\"a\\" /* data */])(context, (error, model) => {
+    const props = Object.assign({}, model, {
+      staticPath: context.staticPath
+    });
+    return callback(null, Object.assign({}, {
+      reactComponent: {
+        key: \\"b8d6f9a328db3b005de86aa4139496e50f79869d\\",
+        src: context.staticPath + \\"react-component.js\\",
+        props
+      }
+    }));
+  });
+};
+/* harmony export (immutable) */ __webpack_exports__[\\"data\\"] = data;
+
+
+/***/ })
+/******/ ]);",
+  },
+  Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package1/template.js",
     "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['b9b80bd472f3da8c15877b2945d6ee0f529a243d']=function(model){
         return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div>
@@ -516,6 +770,11 @@ Object {
   "oc": Object {
     "date": "",
     "files": Object {
+      "dataProvider": Object {
+        "hashKey": "90cf22b78cd7ff174169995d849e7fbe0de2f66b",
+        "src": "server.js",
+        "type": "node.js",
+      },
       "static": Array [],
       "template": Object {
         "hashKey": "9dcb293f9ba7c8dd65241ca9ee6c38455909677b",
@@ -535,12 +794,16 @@ exports[`Should handle empty static folder 2`] = `
 Array [
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package2/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"9dcb293f9ba7c8dd65241ca9ee6c38455909677b\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"9dcb293f9ba7c8dd65241ca9ee6c38455909677b\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"90cf22b78cd7ff174169995d849e7fbe0de2f66b\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package2/react-component.js",
     "source": "var oc=oc||{};oc.reactComponents=oc.reactComponents||{};oc.reactComponents['76eb1d4ea359942fdc10efe557f654d8aab2b1f5']=oc.reactComponents['76eb1d4ea359942fdc10efe557f654d8aab2b1f5']||(function(){var module = (function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.i=function(a){return a},b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=1)})([function(a){a.exports=React},function(a,b,c){'use strict';Object.defineProperty(b,'__esModule',{value:!0});var d=c(0),e=function(a){return a&&a.__esModule?a:{default:a}}(d);b.default=function(){return e.default.createElement('div',null,'Hello')}}]);; return module.default}())",
+  },
+  Object {
+    "path": "../../../mocks/react-component/_compile-tests-package2/server.js",
+    "source": "module.exports=function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.i=function(a){return a},b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=1)}([function(a,b){'use strict';b.a=(a,b)=>{const c=a.params.name;return b(null,{name:c})}},function(a,b,c){'use strict';Object.defineProperty(b,'__esModule',{value:!0});var d=c(0);b.data=(a,b)=>{c.i(d.a)(a,(c,d)=>{const e=Object.assign({},d,{staticPath:a.staticPath});return b(null,Object.assign({},{reactComponent:{key:'76eb1d4ea359942fdc10efe557f654d8aab2b1f5',src:a.staticPath+'react-component.js',props:e}}))})}}]);",
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package2/template.js",
@@ -573,6 +836,11 @@ Object {
   "oc": Object {
     "date": "",
     "files": Object {
+      "dataProvider": Object {
+        "hashKey": "1159d0202ef64b00babcac6eb9c9243eb0d6a749",
+        "src": "server.js",
+        "type": "node.js",
+      },
       "static": Array [],
       "template": Object {
         "hashKey": "0baad23e36c4c6a028a5962eecfeb19e350737cf",
@@ -592,7 +860,7 @@ exports[`Should handle empty static folder 4`] = `
 Array [
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package2/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"0baad23e36c4c6a028a5962eecfeb19e350737cf\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"0baad23e36c4c6a028a5962eecfeb19e350737cf\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"1159d0202ef64b00babcac6eb9c9243eb0d6a749\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -602,6 +870,10 @@ Array [
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package2/react-component.js",
     "source": "var oc=oc||{};oc.reactComponents=oc.reactComponents||{};oc.reactComponents['b83369109c1c131f3b6b30e4bd3d79c838d47b5a']=oc.reactComponents['b83369109c1c131f3b6b30e4bd3d79c838d47b5a']||(function(){var module = (function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.i=function(a){return a},b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=2)})([function(a){a.exports={awesome:'awesome__2lltU'}},function(a){a.exports=React},function(a,b,c){'use strict';function d(a){return a&&a.__esModule?a:{default:a}}Object.defineProperty(b,'__esModule',{value:!0});var e=c(1),f=d(e),g=c(0),h=d(g);b.default=function(){return f.default.createElement('div',{className:h.default.awesome},'Hello')}}]);; return module.default}())",
+  },
+  Object {
+    "path": "../../../mocks/react-component-with-css/_compile-tests-package2/server.js",
+    "source": "module.exports=function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.i=function(a){return a},b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=1)}([function(a,b){'use strict';b.a=(a,b)=>{const c=a.params.name;return b(null,{name:c})}},function(a,b,c){'use strict';Object.defineProperty(b,'__esModule',{value:!0});var d=c(0);b.data=(a,b)=>{c.i(d.a)(a,(c,d)=>{const e=Object.assign({},d,{staticPath:a.staticPath});return b(null,Object.assign({},{reactComponent:{key:'b83369109c1c131f3b6b30e4bd3d79c838d47b5a',src:a.staticPath+'react-component.js',props:e}}))})}}]);",
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package2/template.js",
@@ -778,6 +1050,11 @@ Object {
   "oc": Object {
     "date": "",
     "files": Object {
+      "dataProvider": Object {
+        "hashKey": "90cf22b78cd7ff174169995d849e7fbe0de2f66b",
+        "src": "server.js",
+        "type": "node.js",
+      },
       "static": Array [
         "assets",
       ],
@@ -810,12 +1087,16 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package3/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"9dcb293f9ba7c8dd65241ca9ee6c38455909677b\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"9dcb293f9ba7c8dd65241ca9ee6c38455909677b\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"90cf22b78cd7ff174169995d849e7fbe0de2f66b\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package3/react-component.js",
     "source": "var oc=oc||{};oc.reactComponents=oc.reactComponents||{};oc.reactComponents['76eb1d4ea359942fdc10efe557f654d8aab2b1f5']=oc.reactComponents['76eb1d4ea359942fdc10efe557f654d8aab2b1f5']||(function(){var module = (function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.i=function(a){return a},b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=1)})([function(a){a.exports=React},function(a,b,c){'use strict';Object.defineProperty(b,'__esModule',{value:!0});var d=c(0),e=function(a){return a&&a.__esModule?a:{default:a}}(d);b.default=function(){return e.default.createElement('div',null,'Hello')}}]);; return module.default}())",
+  },
+  Object {
+    "path": "../../../mocks/react-component/_compile-tests-package3/server.js",
+    "source": "module.exports=function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.i=function(a){return a},b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=1)}([function(a,b){'use strict';b.a=(a,b)=>{const c=a.params.name;return b(null,{name:c})}},function(a,b,c){'use strict';Object.defineProperty(b,'__esModule',{value:!0});var d=c(0);b.data=(a,b)=>{c.i(d.a)(a,(c,d)=>{const e=Object.assign({},d,{staticPath:a.staticPath});return b(null,Object.assign({},{reactComponent:{key:'76eb1d4ea359942fdc10efe557f654d8aab2b1f5',src:a.staticPath+'react-component.js',props:e}}))})}}]);",
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package3/template.js",
@@ -848,6 +1129,11 @@ Object {
   "oc": Object {
     "date": "",
     "files": Object {
+      "dataProvider": Object {
+        "hashKey": "1159d0202ef64b00babcac6eb9c9243eb0d6a749",
+        "src": "server.js",
+        "type": "node.js",
+      },
       "static": Array [
         "assets",
       ],
@@ -880,7 +1166,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package3/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"0baad23e36c4c6a028a5962eecfeb19e350737cf\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"0baad23e36c4c6a028a5962eecfeb19e350737cf\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"1159d0202ef64b00babcac6eb9c9243eb0d6a749\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -890,6 +1176,10 @@ say(text);
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package3/react-component.js",
     "source": "var oc=oc||{};oc.reactComponents=oc.reactComponents||{};oc.reactComponents['b83369109c1c131f3b6b30e4bd3d79c838d47b5a']=oc.reactComponents['b83369109c1c131f3b6b30e4bd3d79c838d47b5a']||(function(){var module = (function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.i=function(a){return a},b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=2)})([function(a){a.exports={awesome:'awesome__2lltU'}},function(a){a.exports=React},function(a,b,c){'use strict';function d(a){return a&&a.__esModule?a:{default:a}}Object.defineProperty(b,'__esModule',{value:!0});var e=c(1),f=d(e),g=c(0),h=d(g);b.default=function(){return f.default.createElement('div',{className:h.default.awesome},'Hello')}}]);; return module.default}())",
+  },
+  Object {
+    "path": "../../../mocks/react-component-with-css/_compile-tests-package3/server.js",
+    "source": "module.exports=function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.i=function(a){return a},b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=1)}([function(a,b){'use strict';b.a=(a,b)=>{const c=a.params.name;return b(null,{name:c})}},function(a,b,c){'use strict';Object.defineProperty(b,'__esModule',{value:!0});var d=c(0);b.data=(a,b)=>{c.i(d.a)(a,(c,d)=>{const e=Object.assign({},d,{staticPath:a.staticPath});return b(null,Object.assign({},{reactComponent:{key:'b83369109c1c131f3b6b30e4bd3d79c838d47b5a',src:a.staticPath+'react-component.js',props:e}}))})}}]);",
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package3/template.js",

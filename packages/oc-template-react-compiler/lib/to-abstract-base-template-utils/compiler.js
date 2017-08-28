@@ -1,7 +1,5 @@
 "use strict";
 
-// TODO: abstract and reuse oc-webpack
-// Should return memoryFS instead of a specific file
 const MemoryFS = require("memory-fs");
 const webpack = require("webpack");
 

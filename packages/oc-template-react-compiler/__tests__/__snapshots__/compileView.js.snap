@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should correctly compile the view 1`] = `
+Object {
+  "bundle": Object {
+    "hashKey": "76eb1d4ea359942fdc10efe557f654d8aab2b1f5",
+  },
+  "template": Object {
+    "hashKey": "9dcb293f9ba7c8dd65241ca9ee6c38455909677b",
+    "src": "template.js",
+    "type": "oc-template-react",
+  },
+}
+`;
+
+exports[`Should correctly compile the view 2`] = `
+"var oc=oc||{};oc.components=oc.components||{};oc.components['9dcb293f9ba7c8dd65241ca9ee6c38455909677b']=function(model){
+        return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div>
+          <style>null</style>
+          <script>
+            oc.require(
+              ['oc', 'reactComponents', '76eb1d4ea359942fdc10efe557f654d8aab2b1f5'],
+              '\${model.reactComponent.props.staticPath}react-component.js',
+              function(ReactComponent){
+                var targetNode = document.getElementById(\\"666\\");
+                targetNode.setAttribute(\\"id\\",\\"\\");
+                ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
+              }
+            );
+          </script>
+        \`;
+      }"
+`;
