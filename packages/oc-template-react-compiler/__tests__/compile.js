@@ -24,18 +24,6 @@ const componentScenarios = (componentName, i) => ({
       "_compile-tests-package1"
     )
   },
-  "Should handle dev build": {
-    build: "development",
-    componentPackage: componentPackage(componentName),
-    ocPackage: {
-      version: "1.0.0"
-    },
-    componentPath: componentPath(componentName),
-    publishPath: path.join(
-      componentPath(componentName),
-      "_compile-tests-package1"
-    )
-  },
   "Should handle empty static folder": {
     componentPackage: (function() {
       const manifest = componentPackage(componentName);
@@ -100,7 +88,7 @@ const execute = (options, cb) => {
         .map(filePath => {
           const source = fs.readFileSync(filePath, "UTF8");
           return {
-            source: !filePath.match(/.png$/)
+            source: !filePath.match(/\.png$/)
               ? source.replace(/"date":\d+/, "")
               : "img-binary",
             path: path.relative(__dirname, filePath)
