@@ -1,6 +1,6 @@
+const fetch = require("isomorphic-fetch");
 const React = require("react");
 const ReactDOMServer = require("react-dom/server");
-const request = require("minimal-request");
 const vm = require("vm");
 
 const createPredicate = require("./to-be-published/get-js-from-url");
@@ -15,14 +15,24 @@ module.exports = (options, callback) => {
     const getJsFromUrl = createPredicate({
       key,
       url,
-      globals: { React },
+      globals: {
+        React,
+        console,
+        clearTimeout,
+        setTimeout,
+        Promise,
+        fetch,
+        window: {}
+      },
       extractor
     });
-    tryGetCached("reactComponent", key, getJsFromUrl, (err, ReactComponent) => {
+
+    tryGetCached("reactComponent", key, getJsFromUrl, (err, CachedApp) => {
       try {
         const reactHtml = ReactDOMServer.renderToString(
-          React.createElement(ReactComponent, props)
+          React.createElement(CachedApp, props)
         );
+
         const html = options.template(
           Object.assign({}, options.model, {
             __html: reactHtml

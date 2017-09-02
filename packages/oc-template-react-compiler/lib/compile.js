@@ -20,6 +20,7 @@ const path = require("path");
 // publishPath
 // verbose,
 // watch,
+// production
 module.exports = (options, callback) => {
   options.componentPackage = _.cloneDeep(options.componentPackage);
   const componentPackage = options.componentPackage;

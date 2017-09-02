@@ -24,7 +24,7 @@ module.exports = (options, callback) => {
     externals[dep.name] = dep.global;
     return externals;
   }, {});
-  const build = options.build;
+  const production = options.production;
 
   const compile = (options, cb) => {
     const config = webpackConfigurator({
@@ -32,7 +32,7 @@ module.exports = (options, callback) => {
       viewPath,
       externals,
       publishFileName,
-      build
+      production
     });
     compiler(config, (err, memoryFs) => {
       const bundle = memoryFs.readFileSync(
@@ -53,10 +53,10 @@ module.exports = (options, callback) => {
       let css = null;
       if (memoryFs.data.build["main.css"]) {
         css = memoryFs.readFileSync(`/build/main.css`, "UTF8");
-        if (build !== "development") {
+        if (!production) {
           css = minifyFile(".css", css);
         }
-        const cssPath = path.join(publishPath, `${bundleName}.css`);
+        const cssPath = path.join(publishPath, `styles.css`);
         fs.outputFileSync(cssPath, css);
       }
 
@@ -77,8 +77,9 @@ module.exports = (options, callback) => {
         \`;
       }`;
 
-      const hash = hashBuilder.fromString(templateString);
-      const view = ocViewWrapper(hash, templateString);
+      const templateStringCompressed = templateString.replace(/\s+/g, " ");
+      const hash = hashBuilder.fromString(templateStringCompressed);
+      const view = ocViewWrapper(hash, templateStringCompressed);
       return cb(null, {
         template: { view, hash },
         bundle: { hash: bundleHash }

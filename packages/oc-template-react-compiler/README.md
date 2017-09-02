@@ -1,3 +1,3 @@
-# oc-template-handlebars-compiler - Compiler module
+# oc-template-react-compiler - Compiler module
 
 OC template to compile components of type `oc-template-react`

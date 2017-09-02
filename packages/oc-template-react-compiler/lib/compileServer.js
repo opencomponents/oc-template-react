@@ -16,7 +16,7 @@ module.exports = ({ options, compiledInfo }, callback) => {
   const publishPath = options.publishPath;
   const stats = options.verbose ? "verbose" : "errors-only";
   const dependencies = options.componentPackage.dependencies || {};
-  const build = options.build;
+  const production = options.production;
 
   const higherOrderServerContent = `
     import { data as dataProvider } from '${serverPath}';
@@ -24,6 +24,7 @@ module.exports = ({ options, compiledInfo }, callback) => {
       dataProvider(context, (error, model) => {
         const props = Object.assign({}, model, {
           staticPath: context.staticPath,
+          baseUrl: context.baseUrl
         });
         return callback(null, Object.assign({}, {
           reactComponent: {
@@ -46,7 +47,7 @@ module.exports = ({ options, compiledInfo }, callback) => {
     publishFileName,
     dependencies,
     stats,
-    build
+    production
   });
 
   async.waterfall(

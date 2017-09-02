@@ -9,16 +9,18 @@ module.exports = function webpackConfigGenerator(options) {
   const build = options.build || "production";
   const localIdentName =
     build !== "production"
-      ? "oc__[path][name]-[ext]__[local]__[hash:base64:5]"
-      : "[local]__[hash:base64:5]";
+      ? "oc__[path][name]-[ext]__[local]__[hash:base64:8]"
+      : "[local]__[hash:base64:8]";
 
   const cssLoader = {
     test: /\.css$/,
     loader: ExtractTextPlugin.extract({
+      fallback: require.resolve("style-loader"),
       use: [
         {
           loader: require.resolve("css-loader"),
           options: {
+            importLoaders: 2,
             modules: true,
             localIdentName
           }
@@ -64,9 +66,13 @@ module.exports = function webpackConfigGenerator(options) {
                   presets: ["babel-preset-es2015", "babel-preset-react"].map(
                     require.resolve
                   ),
-                  plugins: ["babel-plugin-transform-object-rest-spread"].map(
-                    require.resolve
-                  )
+                  plugins: [
+                    [
+                      require.resolve(
+                        "babel-plugin-transform-object-rest-spread"
+                      )
+                    ]
+                  ]
                 }
               }
             ]
@@ -121,9 +127,13 @@ module.exports = function webpackConfigGenerator(options) {
                     ],
                     require.resolve("babel-preset-react")
                   ],
-                  plugins: ["babel-plugin-transform-object-rest-spread"].map(
-                    require.resolve
-                  )
+                  plugins: [
+                    [
+                      require.resolve(
+                        "babel-plugin-transform-object-rest-spread"
+                      )
+                    ]
+                  ]
                 }
               }
             ])
