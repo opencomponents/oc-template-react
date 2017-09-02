@@ -25,7 +25,7 @@ module.exports = function compiler(config, callback) {
     // handleSoftErrors
     if (stats.hasErrors()) {
       softError = info.errors.toString();
-      console.log(softError);
+      // console.log(softError);
       return callback(softError);
     }
     // handleWarnings

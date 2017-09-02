@@ -24,6 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
+    "minimal-request": "^2.2.0",
     "nice-cache": "0.0.5",
     "oc-generic-template-renderer": "^2.0.1",
     "react": "^15.6.1",

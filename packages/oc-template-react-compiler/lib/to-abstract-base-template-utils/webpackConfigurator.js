@@ -15,7 +15,6 @@ module.exports = function webpackConfigGenerator(options) {
   const cssLoader = {
     test: /\.css$/,
     loader: ExtractTextPlugin.extract({
-      fallback: require.resolve("style-loader"),
       use: [
         {
           loader: require.resolve("css-loader"),
