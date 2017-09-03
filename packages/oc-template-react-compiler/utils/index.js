@@ -3,8 +3,23 @@ import Loadable from "./Loadable";
 import sha1 from "./sha1";
 
 const Loading = () => <div>Loading...</div>;
-const wrapHTMLComponent = html => props =>
-  <div {...props} dangerouslySetInnerHTML={{ __html: html }} />;
+const wrapHTMLComponent = html =>
+  class Something extends React.Component {
+    componentDidMount() {
+      const newContent = document.createElement("div");
+      newContent.innerHTML = html;
+      newContent.querySelectorAll("script").forEach(oldScript => {
+        // this is to hydrate the ssr scripts, we need to orchestrate this better without eval
+        // this is just to show main idea - skyscanner has a lot going on in this direction already
+        eval.call(window, oldScript.textContent);
+      });
+    }
+    // we could also remove all the scripts from the html we set here.
+    render() {
+      return <div {...this.props} dangerouslySetInnerHTML={{ __html: html }} />;
+    }
+  };
+
 const inserCSSComponent = (Component, staticPath) => props =>
   <div>
     <link rel="stylesheet" href={`${staticPath}styles.css`} />
