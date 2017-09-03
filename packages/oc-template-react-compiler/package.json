@@ -1,6 +1,6 @@
 {
   "name": "oc-template-react-compiler",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "OC-Template-REACT-Compiler",
   "main": "index.js",
   "repository": {
