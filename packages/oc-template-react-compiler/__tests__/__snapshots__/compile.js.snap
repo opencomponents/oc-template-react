@@ -46,7 +46,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package1/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"f9772db3612c9fdc7081fa499e2e29441ceb37d7\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"34d8d92431ac976ff52acf9f15294be916e3a919\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"f9772db3612c9fdc7081fa499e2e29441ceb37d7\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.2.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"34d8d92431ac976ff52acf9f15294be916e3a919\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -110,7 +110,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package1/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"4f7e4d4e2c2a943369a6e699066aa111c11096c3\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"48cb8c2564b68ac4cba0d73934e8c8a375d9c644\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"4f7e4d4e2c2a943369a6e699066aa111c11096c3\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.2.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"48cb8c2564b68ac4cba0d73934e8c8a375d9c644\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -165,7 +165,7 @@ exports[`Should handle empty static folder 2`] = `
 Array [
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package2/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"f9772db3612c9fdc7081fa499e2e29441ceb37d7\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"34d8d92431ac976ff52acf9f15294be916e3a919\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"f9772db3612c9fdc7081fa499e2e29441ceb37d7\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.2.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"34d8d92431ac976ff52acf9f15294be916e3a919\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -216,7 +216,7 @@ exports[`Should handle empty static folder 4`] = `
 Array [
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package2/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"4f7e4d4e2c2a943369a6e699066aa111c11096c3\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"48cb8c2564b68ac4cba0d73934e8c8a375d9c644\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"4f7e4d4e2c2a943369a6e699066aa111c11096c3\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.2.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"48cb8c2564b68ac4cba0d73934e8c8a375d9c644\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -279,7 +279,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package4/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"f9772db3612c9fdc7081fa499e2e29441ceb37d7\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"f9772db3612c9fdc7081fa499e2e29441ceb37d7\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.2.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -334,7 +334,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package4/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"4f7e4d4e2c2a943369a6e699066aa111c11096c3\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"4f7e4d4e2c2a943369a6e699066aa111c11096c3\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.2.0\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -398,7 +398,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package3/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"f9772db3612c9fdc7081fa499e2e29441ceb37d7\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"34d8d92431ac976ff52acf9f15294be916e3a919\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"f9772db3612c9fdc7081fa499e2e29441ceb37d7\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.2.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"34d8d92431ac976ff52acf9f15294be916e3a919\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -462,7 +462,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package3/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"4f7e4d4e2c2a943369a6e699066aa111c11096c3\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.1.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"48cb8c2564b68ac4cba0d73934e8c8a375d9c644\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"4f7e4d4e2c2a943369a6e699066aa111c11096c3\\",\\"src\\":\\"template.js\\",\\"version\\":\\"0.2.0\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"48cb8c2564b68ac4cba0d73934e8c8a375d9c644\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
