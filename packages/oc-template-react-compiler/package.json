@@ -50,6 +50,7 @@
   "files": [
     "index.js",
     "lib",
+    "utils",
     "scaffold",
     "README.md",
     "LICENSE"
