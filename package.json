@@ -12,7 +12,7 @@
     "coverage": "codecov",
     "clean": "lerna clean",
     "test": "jest",
-    "publish": "lerna publish",
+    "publish": "lerna publish --exact",
     "precommit": "lint-staged"
   },
   "lint-staged": {
