@@ -1,7 +1,7 @@
 oc-template-react
 =================
 
-# THIS TEMPLATE IS IN BETA, DON'T USE IN PRODUCTOIN
+# THIS TEMPLATE IS IN BETA, DON'T USE IN PRODUCTION
 
 ***
 
