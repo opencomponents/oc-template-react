@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When the module is called and the returned function is invoked should correctly return the evaluated js 1`] = `
+"class Hello extends React.Component {
+    render() {
+      return React.createElement(\\"div\\", null, \\"Hello World\\");
+    }
+  }"
+`;

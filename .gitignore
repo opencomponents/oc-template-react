@@ -18,6 +18,9 @@ results
 *.local
 .DS_Store
 
+package-lock.json
 npm-debug.log
 node_modules
-src/client.js
+coverage
+_package
+higherOrderServer.js

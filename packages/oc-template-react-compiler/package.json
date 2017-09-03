@@ -1,0 +1,57 @@
+{
+  "name": "oc-template-react-compiler",
+  "version": "0.1.0",
+  "description": "OC-Template-REACT-Compiler",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opencomponents/oc-template-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opencomponents/oc-template-react/issues"
+  },
+  "homepage": "https://github.com/opencomponents/oc-template-react#readme",
+  "keywords": [
+    "oc",
+    "opencomponents",
+    "react",
+    "oc-template"
+  ],
+  "author": {
+    "name": "Nick Balestra",
+    "email": "nick@balestra.ch"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.4.1",
+    "babel-loader": "^7.1.2",
+    "babel-minify-webpack-plugin": "^0.2.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.5",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "fs-extra": "^4.0.0",
+    "infinite-loop-loader": "^1.0.3",
+    "lodash": "^4.17.4",
+    "node-dir": "0.1.16",
+    "oc-external-dependencies-handler": "^1.0.3",
+    "oc-get-unix-utc-timestamp": "1.0.1",
+    "oc-hash-builder": "^1.0.1",
+    "oc-minify-file": "^1.0.3",
+    "oc-template-react": "^0.1.0",
+    "oc-templates-messages": "^1.0.1",
+    "oc-view-wrapper": "^1.0.2",
+    "react": "^15.6.1",
+    "uuid": "^3.1.0",
+    "webpack": "^3.5.5"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "scaffold",
+    "README.md",
+    "LICENSE"
+  ]
+}
