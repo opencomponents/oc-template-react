@@ -1,7 +1,7 @@
 oc-template-react
 =================
 
-# THIS TEMPLATE IS IN BETA, DON'T USE IN PRODUCTION
+# ⚠️  THIS TEMPLATE IS EXPERIMENTAL, DON'T USE IN PRODUCTION
 
 ***
 
@@ -29,7 +29,8 @@ $ oc init your-component-name oc-template-react
 ```
 
 
-## react-utils:
+## react-utils ( ⚠️  FLUX APIs ):
+
 
 The template come with some utilility to be used when developing OpenComponent with it.
 
