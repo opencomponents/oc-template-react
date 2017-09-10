@@ -22,6 +22,9 @@ module.exports = ({ options, compiledInfo }, callback) => {
     import { data as dataProvider } from '${serverPath}';
     export const data = (context, callback) => {
       dataProvider(context, (error, model) => {
+        if (error) {
+          return callback(error);
+        }
         const props = Object.assign({}, model, {
           staticPath: context.staticPath,
           baseUrl: context.baseUrl
