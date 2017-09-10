@@ -26,11 +26,11 @@ module.exports = ({ options, compiledInfo }, callback) => {
           staticPath: context.staticPath,
           baseUrl: context.baseUrl
         });
-        const path = context.staticPath.match(/^\\/\\//) ? context.staticPath.replace(/^\\/\\//, 'https://') : context.staticPath;
+        const srcPath = context.env.name === "local" ? context.staticPath : "https:" + context.staticPath ;
         return callback(null, Object.assign({}, {
           reactComponent: {
             key: "${compiledInfo.bundle.hashKey}",
-            src: path + "react-component.js",
+            src: srcPath + "react-component.js",
             props
           }
         }));
