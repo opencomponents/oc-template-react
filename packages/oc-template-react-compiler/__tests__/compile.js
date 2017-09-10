@@ -18,6 +18,7 @@ const componentScenarios = (componentName, i) => ({
     ocPackage: {
       version: "1.0.0"
     },
+    production: true,
     componentPath: componentPath(componentName),
     publishPath: path.join(
       componentPath(componentName),
@@ -34,6 +35,7 @@ const componentScenarios = (componentName, i) => ({
       version: "1.0.0"
     },
     componentPath: componentPath(componentName),
+    production: true,
     publishPath: path.join(
       componentPath(componentName),
       "_compile-tests-package2"
@@ -48,6 +50,7 @@ const componentScenarios = (componentName, i) => ({
     ocPackage: {
       version: "1.0.0"
     },
+    production: true,
     componentPath: componentPath(componentName),
     publishPath: path.join(
       componentPath(componentName),
@@ -63,6 +66,7 @@ const componentScenarios = (componentName, i) => ({
     ocPackage: {
       version: "1.0.0"
     },
+    production: true,
     componentPath: componentPath(componentName),
     publishPath: path.join(
       componentPath(componentName),

@@ -13,7 +13,8 @@ const options = {
   componentPackage: fs.readJsonSync(`${componentPath}/package.json`),
   componentPath,
   publishPath,
-  publishFileName
+  publishFileName,
+  production: true
 };
 
 test("Should correctly compile the view", done => {
