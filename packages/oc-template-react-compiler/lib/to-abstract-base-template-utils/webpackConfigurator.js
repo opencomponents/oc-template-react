@@ -6,11 +6,10 @@ const webpack = require("webpack");
 
 module.exports = function webpackConfigGenerator(options) {
   const buildPath = options.buildPath || "/build";
-  const build = options.build || "production";
-  const localIdentName =
-    build !== "production"
-      ? "oc__[path][name]-[ext]__[local]__[hash:base64:8]"
-      : "[local]__[hash:base64:8]";
+  const production = options.production;
+  const localIdentName = !production
+    ? "oc__[path][name]-[ext]__[local]__[hash:base64:8]"
+    : "[local]__[hash:base64:8]";
 
   const cssLoader = {
     test: /\.css$/,
@@ -34,14 +33,16 @@ module.exports = function webpackConfigGenerator(options) {
       allChunks: true
     }),
     new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify(build)
+      "process.env.NODE_ENV": JSON.stringify(
+        production ? "production" : "development"
+      )
     })
   ];
-  if (build !== "development") {
+  if (production) {
     plugins = plugins.concat(new MinifyPlugin());
   }
 
-  const cacheDirectory = build === "development";
+  const cacheDirectory = !production;
 
   if (options.confTarget === "view") {
     return {
@@ -88,7 +89,7 @@ module.exports = function webpackConfigGenerator(options) {
     };
   } else {
     let loaders = [];
-    if (build !== "development") {
+    if (production) {
       loader = loaders.concat({
         loader: require.resolve("infinite-loop-loader")
       });

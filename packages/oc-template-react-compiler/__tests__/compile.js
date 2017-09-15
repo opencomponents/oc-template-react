@@ -6,6 +6,17 @@ const nodeDir = require("node-dir");
 const path = require("path");
 const compile = require("../lib/compile.js");
 jest.mock("uuid/v4", () => () => "666");
+jest.mock("oc-template-react", () => ({
+  getInfo() {
+    return {
+      version: "6.6.6",
+      externals: [
+        { name: "react", global: "React", url: "cdn.com/react" },
+        { name: "react-dom", global: "ReactDOM", url: "cdn.com/react-dom" }
+      ]
+    };
+  }
+}));
 
 const componentPath = name => path.join(__dirname, `../../../mocks/${name}`);
 const componentPackage = name =>
@@ -18,6 +29,7 @@ const componentScenarios = (componentName, i) => ({
     ocPackage: {
       version: "1.0.0"
     },
+    production: true,
     componentPath: componentPath(componentName),
     publishPath: path.join(
       componentPath(componentName),
@@ -34,6 +46,7 @@ const componentScenarios = (componentName, i) => ({
       version: "1.0.0"
     },
     componentPath: componentPath(componentName),
+    production: true,
     publishPath: path.join(
       componentPath(componentName),
       "_compile-tests-package2"
@@ -48,6 +61,7 @@ const componentScenarios = (componentName, i) => ({
     ocPackage: {
       version: "1.0.0"
     },
+    production: true,
     componentPath: componentPath(componentName),
     publishPath: path.join(
       componentPath(componentName),
@@ -63,6 +77,7 @@ const componentScenarios = (componentName, i) => ({
     ocPackage: {
       version: "1.0.0"
     },
+    production: true,
     componentPath: componentPath(componentName),
     publishPath: path.join(
       componentPath(componentName),

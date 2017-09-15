@@ -53,7 +53,7 @@ module.exports = (options, callback) => {
       let css = null;
       if (memoryFs.data.build["main.css"]) {
         css = memoryFs.readFileSync(`/build/main.css`, "UTF8");
-        if (!production) {
+        if (production) {
           css = minifyFile(".css", css);
         }
         const cssPath = path.join(publishPath, `styles.css`);
@@ -77,7 +77,9 @@ module.exports = (options, callback) => {
         \`;
       }`;
 
-      const templateStringCompressed = templateString.replace(/\s+/g, " ");
+      const templateStringCompressed = production
+        ? templateString.replace(/\s+/g, " ")
+        : templateString;
       const hash = hashBuilder.fromString(templateStringCompressed);
       const view = ocViewWrapper(hash, templateStringCompressed);
       return cb(null, {

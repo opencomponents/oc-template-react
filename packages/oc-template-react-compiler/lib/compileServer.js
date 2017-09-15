@@ -22,14 +22,18 @@ module.exports = ({ options, compiledInfo }, callback) => {
     import { data as dataProvider } from '${serverPath}';
     export const data = (context, callback) => {
       dataProvider(context, (error, model) => {
+        if (error) {
+          return callback(error);
+        }
         const props = Object.assign({}, model, {
           staticPath: context.staticPath,
           baseUrl: context.baseUrl
         });
+        const srcPath = context.env.name === "local" ? context.staticPath : "https:" + context.staticPath ;
         return callback(null, Object.assign({}, {
           reactComponent: {
             key: "${compiledInfo.bundle.hashKey}",
-            src: context.staticPath + "react-component.js",
+            src: srcPath + "react-component.js",
             props
           }
         }));
