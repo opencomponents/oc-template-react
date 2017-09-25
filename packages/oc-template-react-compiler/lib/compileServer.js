@@ -29,7 +29,7 @@ module.exports = ({ options, compiledInfo }, callback) => {
           staticPath: context.staticPath,
           baseUrl: context.baseUrl
         });
-        const srcPath = context.env.name === "local" ? context.staticPath : "https:" + context.staticPath ;
+        const srcPath = (context.env && context.env.name === "local") ? context.staticPath : "https:" + context.staticPath ;
         return callback(null, Object.assign({}, {
           reactComponent: {
             key: "${compiledInfo.bundle.hashKey}",
