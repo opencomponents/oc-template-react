@@ -19,7 +19,9 @@ const options = {
 
 test("Should correctly compile the server", done => {
   compileServer(
-    { options, compiledInfo: { bundle: { hashKey: "666" } } },
+    Object.assign({}, options, {
+      compiledViewInfo: { bundle: { hashKey: "666" } }
+    }),
     (err, compiledServerInfo) => {
       expect(err).toBeNull();
       expect(compiledServerInfo).toMatchSnapshot();
