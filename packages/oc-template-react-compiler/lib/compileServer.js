@@ -9,7 +9,7 @@ const compiler = require("./to-abstract-base-template-utils/compiler");
 const webpackConfigurator = require("./to-abstract-base-template-utils/webpackConfigurator");
 const reactComponentWrapper = require("./to-be-published/oc-react-component-wrapper");
 
-module.exports = ({ options, compiledInfo }, callback) => {
+module.exports = (options, callback) => {
   const serverFileName = options.componentPackage.oc.files.data;
   const serverPath = path.join(options.componentPath, serverFileName);
   const publishFileName = options.publishFileName || "server.js";
@@ -32,7 +32,7 @@ module.exports = ({ options, compiledInfo }, callback) => {
         const srcPath = (context.env && context.env.name === "local") ? context.staticPath : "https:" + context.staticPath ;
         return callback(null, Object.assign({}, {
           reactComponent: {
-            key: "${compiledInfo.bundle.hashKey}",
+            key: "${options.compiledViewInfo.bundle.hashKey}",
             src: srcPath + "react-component.js",
             props
           }
