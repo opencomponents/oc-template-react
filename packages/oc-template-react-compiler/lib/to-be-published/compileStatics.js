@@ -9,10 +9,13 @@ const path = require("path");
 const strings = require("oc-templates-messages");
 
 module.exports = (options, callback) => {
-  const staticDirectories = options.componentPackage.oc.files.static || [];
+  let staticDirectories = options.componentPackage.oc.files.static || [];
 
   if (staticDirectories.length === 0) {
     return callback(null, "ok");
+  }
+  if (typeof staticDirectories === "string") {
+    staticDirectories = [staticDirectories];
   }
 
   async.eachSeries(
