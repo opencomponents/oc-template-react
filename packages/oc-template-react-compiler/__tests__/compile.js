@@ -52,22 +52,6 @@ const componentScenarios = (componentName, i) => ({
       "_compile-tests-package2"
     )
   },
-  "Should normalise stringified static folder": {
-    componentPackage: (function() {
-      const manifest = componentPackage(componentName);
-      manifest.oc.files.static = "assets";
-      return manifest;
-    })(),
-    ocPackage: {
-      version: "1.0.0"
-    },
-    production: true,
-    componentPath: componentPath(componentName),
-    publishPath: path.join(
-      componentPath(componentName),
-      "_compile-tests-package3"
-    )
-  },
   "Should handle server.js-less components": {
     componentPackage: (function() {
       const manifest = componentPackage(componentName);
