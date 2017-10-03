@@ -6,9 +6,9 @@ const fs = require("fs-extra");
 const hashBuilder = require("oc-hash-builder");
 const MemoryFS = require("memory-fs");
 const path = require("path");
+const reactComponentWrapper = require("oc-react-component-wrapper");
 
 const webpackConfigurator = require("./to-abstract-base-template-utils/webpackConfigurator");
-const reactComponentWrapper = require("./to-be-published/oc-react-component-wrapper");
 
 module.exports = (options, callback) => {
   const serverFileName = options.componentPackage.oc.files.data;

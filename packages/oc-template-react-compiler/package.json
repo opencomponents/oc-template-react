@@ -42,6 +42,7 @@
     "oc-get-unix-utc-timestamp": "1.0.1",
     "oc-hash-builder": "1.0.1",
     "oc-minify-file": "1.0.5",
+    "oc-react-component-wrapper": "1.0.0",
     "oc-statics-compiler": "2.0.0",
     "oc-template-react": "0.2.1",
     "oc-templates-messages": "1.0.1",
