@@ -1,10 +1,10 @@
 "use strict";
 
 const createCompile = require("oc-generic-template-compiler").createCompile;
+const compileStatics = require("oc-statics-compiler");
 const getInfo = require("oc-template-react").getInfo;
 
 const compileServer = require("./compileServer");
-const compileStatics = require("./to-be-published/compileStatics");
 const compileView = require("./compileView");
 
 // OPTIONS
