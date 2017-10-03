@@ -35,6 +35,7 @@
     "fs-extra": "^4.0.0",
     "infinite-loop-loader": "^1.0.3",
     "lodash": "^4.17.4",
+    "memory-fs": "^0.4.1",
     "node-dir": "0.1.16",
     "oc-external-dependencies-handler": "1.0.4",
     "oc-generic-template-compiler": "2.0.0",
@@ -45,6 +46,7 @@
     "oc-template-react": "0.2.1",
     "oc-templates-messages": "1.0.1",
     "oc-view-wrapper": "1.0.2",
+    "oc-webpack": "2.1.0",
     "react": "^15.6.1",
     "uuid": "^3.1.0",
     "webpack": "^3.5.5"
