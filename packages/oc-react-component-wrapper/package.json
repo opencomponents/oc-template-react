@@ -1,0 +1,31 @@
+{
+    "name": "oc-react-component-wrapper",
+    "version": "1.0.0",
+    "description": "oc-react-component-wrapper",
+    "main": "index.js",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/opencomponents/oc-template-react.git"
+    },
+    "bugs": {
+      "url": "https://github.com/opencomponents/oc-template-react/issues"
+    },
+    "homepage": "https://github.com/opencomponents/oc-template-react#readme",
+    "keywords": [
+      "oc",
+      "opencomponents",
+      "react",
+      "oc-template"
+    ],
+    "author": {
+      "name": "Nick Balestra",
+      "email": "nick@balestra.ch"
+    },
+    "license": "MIT",
+    "files": [
+      "index.js",
+      "README.md",
+      "LICENSE"
+    ]
+  }
+  
