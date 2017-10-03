@@ -1,8 +1,10 @@
+"use strict";
+
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const MinifyPlugin = require("babel-minify-webpack-plugin");
 const externalDependenciesHandlers = require("oc-external-dependencies-handler");
 const path = require("path");
-const webpack = require("webpack");
+const webpack = require("oc-webpack").webpack;
 
 module.exports = function webpackConfigGenerator(options) {
   const buildPath = options.buildPath || "/build";
@@ -90,7 +92,7 @@ module.exports = function webpackConfigGenerator(options) {
   } else {
     let loaders = [];
     if (production) {
-      loader = loaders.concat({
+      loaders = loaders.concat({
         loader: require.resolve("infinite-loop-loader")
       });
     }

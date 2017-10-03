@@ -1,11 +1,12 @@
 "use strict";
 
 const async = require("async");
+const compiler = require("oc-webpack").compiler;
 const fs = require("fs-extra");
 const hashBuilder = require("oc-hash-builder");
+const MemoryFS = require("memory-fs");
 const path = require("path");
 
-const compiler = require("./to-abstract-base-template-utils/compiler");
 const webpackConfigurator = require("./to-abstract-base-template-utils/webpackConfigurator");
 const reactComponentWrapper = require("./to-be-published/oc-react-component-wrapper");
 
@@ -57,9 +58,10 @@ module.exports = (options, callback) => {
   async.waterfall(
     [
       next => compiler(config, next),
-      (memoryFs, next) => fs.ensureDir(publishPath, err => next(err, memoryFs)),
-      (memoryFs, next) => {
+      (data, next) => fs.ensureDir(publishPath, err => next(err, data)),
+      (data, next) => {
         fs.removeSync(higherOrderServerPath);
+        const memoryFs = new MemoryFS(data);
         const compiledServer = memoryFs.readFileSync(
           `/build/${config.output.filename}`,
           "UTF8"

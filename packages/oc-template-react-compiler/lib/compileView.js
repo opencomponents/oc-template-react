@@ -1,15 +1,16 @@
 "use strict";
 
 const async = require("async");
+const compiler = require("oc-webpack").compiler;
 const fs = require("fs-extra");
 const hashBuilder = require("oc-hash-builder");
+const MemoryFS = require("memory-fs");
 const minifyFile = require("oc-minify-file");
 const ocViewWrapper = require("oc-view-wrapper");
 const path = require("path");
 const strings = require("oc-templates-messages");
 const uuid = require("uuid/v4")();
 
-const compiler = require("./to-abstract-base-template-utils/compiler");
 const webpackConfigurator = require("./to-abstract-base-template-utils/webpackConfigurator");
 const reactComponentWrapper = require("./to-be-published/oc-react-component-wrapper");
 
@@ -34,7 +35,8 @@ module.exports = (options, callback) => {
       publishFileName,
       production
     });
-    compiler(config, (err, memoryFs) => {
+    compiler(config, (err, data) => {
+      const memoryFs = new MemoryFS(data);
       const bundle = memoryFs.readFileSync(
         `/build/${config.output.filename}`,
         "UTF8"
@@ -51,7 +53,7 @@ module.exports = (options, callback) => {
       fs.outputFileSync(bundlePath, wrappedBundle);
 
       let css = null;
-      if (memoryFs.data.build["main.css"]) {
+      if (data.build["main.css"]) {
         css = memoryFs.readFileSync(`/build/main.css`, "UTF8");
         if (production) {
           css = minifyFile(".css", css);
