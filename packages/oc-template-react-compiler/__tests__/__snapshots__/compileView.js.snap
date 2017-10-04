@@ -3,14 +3,14 @@
 exports[`Should correctly compile the view 1`] = `
 Object {
   "bundle": Object {
-    "hashKey": "117f29b697bc046773fba23e1334e361498fb70c",
+    "hashKey": "9226c0643c9b97f8cbe8fcfd3cf8d343b8d88eba",
   },
   "template": Object {
-    "hashKey": "f9772db3612c9fdc7081fa499e2e29441ceb37d7",
+    "hashKey": "9f1051c27ae0b40250b37238d8b9a7b2001b3042",
     "src": "template.js",
     "type": "oc-template-react",
   },
 }
 `;
 
-exports[`Should correctly compile the view 2`] = `"var oc=oc||{};oc.components=oc.components||{};oc.components['f9772db3612c9fdc7081fa499e2e29441ceb37d7']=function(model){ return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div> <style>null</style> <script> oc.require( ['oc', 'reactComponents', '117f29b697bc046773fba23e1334e361498fb70c'], '\${model.reactComponent.props.staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"666\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); </script> \`; }"`;
+exports[`Should correctly compile the view 2`] = `"var oc=oc||{};oc.components=oc.components||{};oc.components['9f1051c27ae0b40250b37238d8b9a7b2001b3042']=function(model){ return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div> <style>null</style> <script> oc.require( ['oc', 'reactComponents', '9226c0643c9b97f8cbe8fcfd3cf8d343b8d88eba'], '\${model.reactComponent.props.staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"666\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); </script> \`; }"`;
