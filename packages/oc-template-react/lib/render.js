@@ -1,4 +1,3 @@
-const fetch = require("isomorphic-fetch");
 const React = require("react");
 const ReactDOMServer = require("react-dom/server");
 const vm = require("vm");
@@ -16,13 +15,7 @@ module.exports = (options, callback) => {
       key,
       url,
       globals: {
-        React,
-        console,
-        clearTimeout,
-        setTimeout,
-        Promise,
-        fetch,
-        window: {}
+        React
       },
       extractor
     });
