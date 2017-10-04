@@ -65,9 +65,13 @@ module.exports = function webpackConfigGenerator(options) {
                 loader: require.resolve("babel-loader"),
                 options: {
                   cacheDirectory,
-                  presets: ["babel-preset-es2015", "babel-preset-react"].map(
-                    require.resolve
-                  ),
+                  presets: [
+                    [
+                      require.resolve("babel-preset-env"),
+                      { modules: false, loose: true }
+                    ],
+                    [require.resolve("babel-preset-react")]
+                  ],
                   plugins: [
                     [
                       require.resolve(
