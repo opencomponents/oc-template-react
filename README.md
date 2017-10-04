@@ -27,37 +27,3 @@ Initialize a component with the oc-template-react and follow the CLI instruction
 ```
 $ oc init your-component-name oc-template-react
 ```
-
-
-## react-utils ( ⚠️  FLUX APIs ):
-
-
-The template come with some utilility to be used when developing OpenComponent with it.
-
-### getComponent()
-
-This utility allows you to you to require any other OpenComponent to be resused within your react app, so that end-to-end ownership is maintained.
-
-#### usage:
-
-```js
-import React from 'react';
-import utils from 'oc-template-react-compiler/utils';
-const { getComponent } = utils({ baseUrl: 'http://localhost:3030/' });
-
-
-const Header = getComponent({ name: 'header', version: '1.x' });
-const Footer = getComponent({ name: 'footer', version: '1.x' });
-
-const App = props => {
-  return (
-    <div>
-      <Header {...props.header} />
-      <h2>This is the Home</h2>
-      <Footer {...props.footer} />
-    </div>
-  );
-};
-
-export default App;
-``` 

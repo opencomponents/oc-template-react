@@ -20,11 +20,12 @@ const wrapHTMLComponent = html =>
     }
   };
 
-const inserCSSComponent = (Component, staticPath) => props =>
+const inserCSSComponent = (Component, staticPath) => props => (
   <div>
     <link rel="stylesheet" href={`${staticPath}styles.css`} />
     <Component {...props} />
-  </div>;
+  </div>
+);
 
 module.exports = ({ baseUrl, ...globalOptions }) => {
   return {
