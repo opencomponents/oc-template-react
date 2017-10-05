@@ -26,8 +26,8 @@
     "minimal-request": "^2.2.0",
     "nice-cache": "0.0.5",
     "oc-generic-template-renderer": "2.0.1",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react": "16.0.0",
+    "react-dom": "16.0.0"
   },
   "files": [
     "lib",
@@ -38,11 +38,11 @@
   "externals": {
     "react": {
       "global": "React",
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js"
+      "url": "https://unpkg.com/react@16.0.0/umd/react.production.min.js"
     },
     "react-dom": {
       "global": "ReactDOM",
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js"
+      "url": "https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"
     }
   }
 }
