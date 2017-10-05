@@ -6,12 +6,12 @@ Object {
     Object {
       "global": "React",
       "name": "react",
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js",
+      "url": "https://unpkg.com/react@16.0.0/umd/react.production.min.js",
     },
     Object {
       "global": "ReactDOM",
       "name": "react-dom",
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js",
+      "url": "https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js",
     },
   ],
   "type": "oc-template-react",
