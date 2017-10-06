@@ -66,15 +66,19 @@ module.exports = (options, callback) => {
         return \`<div id="${uuid}">\${ model.__html ? model.__html : '' }</div>
           <style>${css}</style>
           <script>
-            oc.require(
-              ['oc', 'reactComponents', '${bundleHash}'],
-              '\${model.reactComponent.props.staticPath}${bundleName}.js',
-              function(ReactComponent){
-                var targetNode = document.getElementById("${uuid}");
-                targetNode.setAttribute("id","");
-                ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
-              }
-            );
+            window.oc = window.oc || {};
+            oc.cmd = oc.cmd || [];
+            oc.cmd.push(function(oc){
+              oc.require(
+                ['oc', 'reactComponents', '${bundleHash}'],
+                '\${model.reactComponent.props.staticPath}${bundleName}.js',
+                function(ReactComponent){
+                  var targetNode = document.getElementById("${uuid}");
+                  targetNode.setAttribute("id","");
+                  ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
+                }
+              );
+            });
           </script>
         \`;
       }`;
