@@ -6,11 +6,11 @@ Object {
     "hashKey": "9226c0643c9b97f8cbe8fcfd3cf8d343b8d88eba",
   },
   "template": Object {
-    "hashKey": "9f1051c27ae0b40250b37238d8b9a7b2001b3042",
+    "hashKey": "02b48f7595d8cc0adb1e93bda945a7b6c7b7088f",
     "src": "template.js",
     "type": "oc-template-react",
   },
 }
 `;
 
-exports[`Should correctly compile the view 2`] = `"var oc=oc||{};oc.components=oc.components||{};oc.components['9f1051c27ae0b40250b37238d8b9a7b2001b3042']=function(model){ return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div> <style>null</style> <script> oc.require( ['oc', 'reactComponents', '9226c0643c9b97f8cbe8fcfd3cf8d343b8d88eba'], '\${model.reactComponent.props.staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"666\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); </script> \`; }"`;
+exports[`Should correctly compile the view 2`] = `"var oc=oc||{};oc.components=oc.components||{};oc.components['02b48f7595d8cc0adb1e93bda945a7b6c7b7088f']=function(model){ return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div> <style>null</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.require( ['oc', 'reactComponents', '9226c0643c9b97f8cbe8fcfd3cf8d343b8d88eba'], '\${model.reactComponent.props.staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"666\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); </script> \`; }"`;
