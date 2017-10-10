@@ -21,17 +21,17 @@ module.exports = (options, callback) => {
   const publishFileName = options.publishFileName || "template.js";
   const componentPackage = options.componentPackage;
   const { getInfo } = require("../index");
-  const externals = getInfo().externals.reduce((externals, dep) => {
-    externals[dep.name] = dep.global;
-    return externals;
-  }, {});
+  const externals = getInfo().externals;
   const production = options.production;
 
   const compile = (options, cb) => {
     const config = webpackConfigurator({
       confTarget: "view",
       viewPath,
-      externals,
+      externals: externals.reduce((externals, dep) => {
+        externals[dep.name] = dep.global;
+        return externals;
+      }, {}),
       publishFileName,
       production
     });
@@ -69,15 +69,17 @@ module.exports = (options, callback) => {
             window.oc = window.oc || {};
             oc.cmd = oc.cmd || [];
             oc.cmd.push(function(oc){
-              oc.require(
-                ['oc', 'reactComponents', '${bundleHash}'],
-                '\${model.reactComponent.props.staticPath}${bundleName}.js',
-                function(ReactComponent){
-                  var targetNode = document.getElementById("${uuid}");
-                  targetNode.setAttribute("id","");
-                  ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
-                }
-              );
+              oc.requireSeries(${JSON.stringify(externals)}, function(){
+                oc.require(
+                  ['oc', 'reactComponents', '${bundleHash}'],
+                  '\${model.reactComponent.props.staticPath}${bundleName}.js',
+                  function(ReactComponent){
+                    var targetNode = document.getElementById("${uuid}");
+                    targetNode.setAttribute("id","");
+                    ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
+                  }
+                );
+              });
             });
           </script>
         \`;
