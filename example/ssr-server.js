@@ -27,7 +27,7 @@ module.exports = (port, cb) => {
       ];
       const options = {
         container: false,
-        timeout: 10
+        timeout: 1000
       };
 
       client.renderComponents(components, options, function(
