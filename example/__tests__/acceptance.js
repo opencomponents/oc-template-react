@@ -55,16 +55,6 @@ test("Registry should correctly serve rendered and unrendered components", done 
   Promise.all([rendered, unrendered]).then(done);
 });
 
-test("client-side rendering", done => {
-  JSDOM.fromURL(
-    registryUrl + `react-app/~preview?name=SuperMario`,
-    {}
-  ).then(dom => {
-    expect(dom.serialize()).toMatchSnapshot();
-    done();
-  });
-});
-
 test("server-side-side rendering", done => {
   JSDOM.fromURL(serverUrl + `?name=SuperMario`, {}).then(dom => {
     expect(dom.serialize()).toMatchSnapshot();

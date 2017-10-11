@@ -4,6 +4,13 @@ const querystring = require("querystring");
 const oc = require("oc");
 
 module.exports = (port, cb) => {
+  port = port || 4000;
+  cb =
+    cb ||
+    function() {
+      console.log("started");
+    };
+
   const client = new oc.Client({
     registries: {
       clientRendering: "http://localhost:3000/",
