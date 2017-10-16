@@ -43,39 +43,33 @@ afterAll(done => {
 });
 
 test("Registry should correctly serve rendered and unrendered components", done => {
-  const renderedTest = r(registryUrl)
+  const rendered = r(registryUrl + `react-app/?name=SuperMario`)
     .then(function(body) {
       expect(body).toMatchSnapshot();
     })
     .catch(err => expect(err).toBeNull());
 
-  // const rendered = r(registryUrl + `react-app/?name=SuperMario`)
-  //   .then(function(body) {
-  //     expect(body).toMatchSnapshot();
-  //   })
-  //   .catch(err => expect(err).toBeNull());
+  const unrendered = r({
+    uri: registryUrl + `react-app/?name=SuperMario`,
+    headers: {
+      Accept: "application/vnd.oc.unrendered+json"
+    }
+  })
+    .then(function(body) {
+      expect(body).toMatchSnapshot();
+    })
+    .catch(err => expect(err).toBeNull());
 
-  // const unrendered = r({
-  //   uri: registryUrl + `react-app/?name=SuperMario`,
-  //   headers: {
-  //     Accept: "application/vnd.oc.unrendered+json"
-  //   }
-  // })
-  //   .then(function(body) {
-  //     expect(body).toMatchSnapshot();
-  //   })
-  //   .catch(err => expect(err).toBeNull());
-
-  Promise.all([renderedTest]).then(done);
+  Promise.all([rendered, unrendered]).then(done);
 });
 
-// test("server-side-side rendering", done => {
-//   JSDOM.fromURL(serverUrl + `?name=SuperMario`, {})
-//     .then(dom => {
-//       expect(dom.serialize()).toMatchSnapshot();
-//       done();
-//     })
-//     .catch(err => {
-//       expect(err).toBeNull();
-//     });
-// });
+test("server-side-side rendering", done => {
+  JSDOM.fromURL(serverUrl + `?name=SuperMario`, {})
+    .then(dom => {
+      expect(dom.serialize()).toMatchSnapshot();
+      done();
+    })
+    .catch(err => {
+      expect(err).toBeNull();
+    });
+});
