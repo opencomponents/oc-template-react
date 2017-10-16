@@ -19,7 +19,7 @@ beforeAll(done => {
     local: true,
     discovery: true,
     verbosity: 1,
-    path: path.resolve(path.join(__dirname, "../")),
+    path: path.resolve("example"),
     port: registryPort,
     baseUrl: registryUrl,
     env: { name: "local" },
