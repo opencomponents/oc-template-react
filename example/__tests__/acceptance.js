@@ -1,3 +1,5 @@
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+
 const server = require("../ssr-server");
 const oc = require("oc");
 const path = require("path");
@@ -24,7 +26,11 @@ beforeAll(done => {
     templates: [require("oc-template-react")]
   });
   registry.start(err => {
-    ssrServer = server(serverPort, done);
+    console.log(err);
+    ssrServer = server(serverPort, err => {
+      console.log(err);
+      done();
+    });
   });
 });
 
