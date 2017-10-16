@@ -61,7 +61,9 @@ test("Registry should correctly serve rendered and unrendered components", done 
     })
     .catch(err => expect(err).toBeNull());
 
-  Promise.all([rendered, unrendered]).then(done);
+  Promise.all([rendered, unrendered])
+    .then(done)
+    .catch(err => done(err));
 });
 
 test("server-side-side rendering", done => {
