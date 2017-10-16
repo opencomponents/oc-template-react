@@ -15,6 +15,8 @@ let registry;
 let ssrServer;
 
 beforeAll(done => {
+  console.log("#########################");
+  console.log(path.join(__dirname, "../"));
   registry = new oc.Registry({
     local: true,
     discovery: true,
