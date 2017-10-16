@@ -43,20 +43,22 @@ afterAll(done => {
 });
 
 test("Registry should correctly serve rendered and unrendered components", done => {
-  const rendered = r(registryUrl + `react-app/?name=SuperMario`).then(function(
-    body
-  ) {
-    expect(body).toMatchSnapshot();
-  });
+  const rendered = r(registryUrl + `react-app/?name=SuperMario`)
+    .then(function(body) {
+      expect(body).toMatchSnapshot();
+    })
+    .catch(err => expect(err).toBeNull());
 
   const unrendered = r({
     uri: registryUrl + `react-app/?name=SuperMario`,
     headers: {
       Accept: "application/vnd.oc.unrendered+json"
     }
-  }).then(function(body) {
-    expect(body).toMatchSnapshot();
-  });
+  })
+    .then(function(body) {
+      expect(body).toMatchSnapshot();
+    })
+    .catch(err => expect(err).toBeNull());
 
   Promise.all([rendered, unrendered]).then(done);
 });
