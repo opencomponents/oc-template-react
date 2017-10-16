@@ -62,8 +62,12 @@ test("Registry should correctly serve rendered and unrendered components", done 
 });
 
 test("server-side-side rendering", done => {
-  JSDOM.fromURL(serverUrl + `?name=SuperMario`, {}).then(dom => {
-    expect(dom.serialize()).toMatchSnapshot();
-    done();
-  });
+  JSDOM.fromURL(serverUrl + `?name=SuperMario`, {})
+    .then(dom => {
+      expect(dom.serialize()).toMatchSnapshot();
+      done();
+    })
+    .catch(err => {
+      expect(err).toBeNull();
+    });
 });

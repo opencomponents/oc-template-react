@@ -35,6 +35,9 @@ module.exports = (port, cb) => {
         err,
         renderedComponents
       ) {
+        if (err) {
+          throw err;
+        }
         res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
         const html = `<!DOCTYPE html>
         <html>
