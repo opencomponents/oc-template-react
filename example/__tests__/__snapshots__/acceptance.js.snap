@@ -1,3 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Registry should correctly serve rendered and unrendered components 1`] = `"{\\"href\\":\\"http://localhost:3000/\\",\\"ocVersion\\":\\"0.41.12\\",\\"type\\":\\"oc-registry-local\\",\\"components\\":[\\"http://localhost:3000/react-app\\",\\"http://localhost:3000/oc-client\\"]}"`;
+exports[`Registry should correctly serve rendered and unrendered components 1`] = `"{\\"type\\":\\"oc-component-local\\",\\"version\\":\\"1.0.0\\",\\"requestVersion\\":\\"\\",\\"name\\":\\"react-app\\",\\"renderMode\\":\\"unrendered\\",\\"href\\":\\"http://localhost:3000/react-app?name=SuperMario\\",\\"data\\":{\\"reactComponent\\":{\\"key\\":\\"c55972357f496531fe91b1dd7677ea0ec7c4f0b9\\",\\"src\\":\\"http://localhost:3000/react-app/1.0.0/static/react-component.js\\",\\"props\\":{\\"name\\":\\"SuperMario\\",\\"staticPath\\":\\"http://localhost:3000/react-app/1.0.0/static/\\",\\"baseUrl\\":\\"http://localhost:3000/\\"}}},\\"template\\":{\\"src\\":\\"http://localhost:3000/react-app/1.0.0/static/template.js\\",\\"type\\":\\"oc-template-react\\",\\"key\\":\\"b2e2b4ca65f3cc6009bea778f9577db44f0ceab8\\"}}"`;
+
+exports[`Registry should correctly serve rendered and unrendered components 2`] = `"{\\"type\\":\\"oc-component-local\\",\\"version\\":\\"1.0.0\\",\\"requestVersion\\":\\"\\",\\"name\\":\\"react-app\\",\\"renderMode\\":\\"rendered\\",\\"href\\":\\"http://localhost:3000/react-app?name=SuperMario\\",\\"html\\":\\"<oc-component href=\\\\\\"http://localhost:3000/react-app?name=SuperMario\\\\\\" data-hash=\\\\\\"b2e2b4ca65f3cc6009bea778f9577db44f0ceab8\\\\\\" data-name=\\\\\\"react-app\\\\\\" data-rendered=\\\\\\"true\\\\\\" data-version=\\\\\\"1.0.0\\\\\\"><div id=\\\\\\"43bf1af5-65c3-46aa-a532-e539c5b1b2b2\\\\\\"><div class=\\\\\\"oc__react-app-styles-css__special__2q8ftRit\\\\\\" data-reactroot=\\\\\\"\\\\\\"><h1>Hello <!-- -->SuperMario<!-- --> <!-- -->0</h1></div></div>\\\\n          <style>.oc__react-app-styles-css__special__2q8ftRit {\\\\n  background: palevioletred;\\\\n  color: white;\\\\n}</style>\\\\n          <script>\\\\n            window.oc = window.oc || {};\\\\n            oc.cmd = oc.cmd || [];\\\\n            oc.cmd.push(function(oc){\\\\n              oc.requireSeries([{\\\\\\"global\\\\\\":\\\\\\"React\\\\\\",\\\\\\"url\\\\\\":\\\\\\"https://unpkg.com/react@16.0.0/umd/react.production.min.js\\\\\\",\\\\\\"name\\\\\\":\\\\\\"react\\\\\\"},{\\\\\\"global\\\\\\":\\\\\\"ReactDOM\\\\\\",\\\\\\"url\\\\\\":\\\\\\"https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js\\\\\\",\\\\\\"name\\\\\\":\\\\\\"react-dom\\\\\\"}], function(){\\\\n                oc.require(\\\\n                  ['oc', 'reactComponents', 'c55972357f496531fe91b1dd7677ea0ec7c4f0b9'],\\\\n                  'http://localhost:3000/react-app/1.0.0/static/react-component.js',\\\\n                  function(ReactComponent){\\\\n                    var targetNode = document.getElementById(\\\\\\"43bf1af5-65c3-46aa-a532-e539c5b1b2b2\\\\\\");\\\\n                    targetNode.setAttribute(\\\\\\"id\\\\\\",\\\\\\"\\\\\\");\\\\n                    ReactDOM.render(React.createElement(ReactComponent, {\\\\\\"name\\\\\\":\\\\\\"SuperMario\\\\\\",\\\\\\"staticPath\\\\\\":\\\\\\"http://localhost:3000/react-app/1.0.0/static/\\\\\\",\\\\\\"baseUrl\\\\\\":\\\\\\"http://localhost:3000/\\\\\\"}),targetNode);\\\\n                  }\\\\n                );\\\\n              });\\\\n            });\\\\n          </script>\\\\n        <script>window.oc=window.oc||{};oc.renderedComponents=oc.renderedComponents||{};oc.renderedComponents[\\\\\\"react-app\\\\\\"]=\\\\\\"1.0.0\\\\\\";</script></oc-component>\\"}"`;
+
+exports[`server-side-side rendering 1`] = `
+"<!DOCTYPE html><html><head>
+            <title>A page</title>
+          </head>
+          <body>
+          <oc-component href=\\"http://localhost:3000/react-app?name=SuperMario\\" data-hash=\\"b2e2b4ca65f3cc6009bea778f9577db44f0ceab8\\" data-name=\\"react-app\\" data-rendered=\\"true\\" data-version=\\"1.0.0\\"><div id=\\"43bf1af5-65c3-46aa-a532-e539c5b1b2b2\\"><div class=\\"oc__react-app-styles-css__special__2q8ftRit\\" data-reactroot=\\"\\"><h1>Hello <!-- -->SuperMario<!-- --> <!-- -->0</h1></div></div>
+          <style>.oc__react-app-styles-css__special__2q8ftRit {
+  background: palevioletred;
+  color: white;
+}</style>
+          <script>
+            window.oc = window.oc || {};
+            oc.cmd = oc.cmd || [];
+            oc.cmd.push(function(oc){
+              oc.requireSeries([{\\"global\\":\\"React\\",\\"url\\":\\"https://unpkg.com/react@16.0.0/umd/react.production.min.js\\",\\"name\\":\\"react\\"},{\\"global\\":\\"ReactDOM\\",\\"url\\":\\"https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js\\",\\"name\\":\\"react-dom\\"}], function(){
+                oc.require(
+                  ['oc', 'reactComponents', 'c55972357f496531fe91b1dd7677ea0ec7c4f0b9'],
+                  'http://localhost:3000/react-app/1.0.0/static/react-component.js',
+                  function(ReactComponent){
+                    var targetNode = document.getElementById(\\"43bf1af5-65c3-46aa-a532-e539c5b1b2b2\\");
+                    targetNode.setAttribute(\\"id\\",\\"\\");
+                    ReactDOM.render(React.createElement(ReactComponent, {\\"name\\":\\"SuperMario\\",\\"staticPath\\":\\"http://localhost:3000/react-app/1.0.0/static/\\",\\"baseUrl\\":\\"http://localhost:3000/\\"}),targetNode);
+                  }
+                );
+              });
+            });
+          </script>
+        <script>window.oc=window.oc||{};oc.renderedComponents=oc.renderedComponents||{};oc.renderedComponents[\\"react-app\\"]=\\"1.0.0\\";</script></oc-component>
+          <script>window.oc = window.oc || {};
+oc.conf = oc.conf || {};
+oc.conf.templates = oc.conf.templates || [];
+oc.conf.templates = oc.conf.templates.concat([{\\"type\\":\\"oc-template-jade\\",\\"version\\":\\"6.0.9\\",\\"externals\\":[{\\"global\\":\\"jade\\",\\"url\\":\\"https://unpkg.com/jade-legacy@1.11.1/runtime.js\\",\\"name\\":\\"jade\\"}]},{\\"type\\":\\"oc-template-handlebars\\",\\"version\\":\\"6.0.7\\",\\"externals\\":[{\\"global\\":\\"Handlebars\\",\\"url\\":\\"https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.runtime.min.js\\",\\"name\\":\\"handlebars\\"}]},{\\"type\\":\\"oc-template-react\\",\\"version\\":\\"1.0.1\\",\\"externals\\":[{\\"global\\":\\"React\\",\\"url\\":\\"https://unpkg.com/react@16.0.0/umd/react.production.min.js\\",\\"name\\":\\"react\\"},{\\"global\\":\\"ReactDOM\\",\\"url\\":\\"https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js\\",\\"name\\":\\"react-dom\\"}]}]);</script><script src=\\"http://localhost:3000/oc-client/0.41.12/static/src/oc-client.min.js\\" type=\\"text/javascript\\"></script><script>window.oc=window.oc||{};oc.renderedComponents=oc.renderedComponents||{};oc.renderedComponents[\\"oc-client\\"]=\\"0.41.12\\";</script>
+          
+        
+      </body></html>"
+`;

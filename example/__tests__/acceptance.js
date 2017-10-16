@@ -15,11 +15,12 @@ let registry;
 let ssrServer;
 
 beforeAll(done => {
+  console.log(path.resolve("./example"));
   registry = new oc.Registry({
     local: true,
     discovery: true,
     verbosity: 1,
-    path: path.resolve("example"),
+    path: path.resolve("./example"),
     port: registryPort,
     baseUrl: registryUrl,
     env: { name: "local" },
