@@ -1,4 +1,4 @@
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
 
 const server = require("../ssr-server");
 const oc = require("oc");
@@ -24,7 +24,7 @@ beforeAll(done => {
     port: registryPort,
     baseUrl: registryUrl,
     env: { name: "local" },
-    templates: [require("oc-template-react")]
+    templates: [require("../../packages/oc-template-react")]
   });
   registry.start(err => {
     console.log(err);

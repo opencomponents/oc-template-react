@@ -4,8 +4,6 @@
   "devDependencies": {
     "jsdom": "^11.3.0",
     "oc": "^0.41.11",
-    "oc-template-react": "1.0.1",
-    "oc-template-react-compiler": "1.0.3",
     "request": "^2.83.0",
     "request-promise-native": "^1.0.5"
   },
