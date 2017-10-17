@@ -15,7 +15,6 @@ let registry;
 let ssrServer;
 
 beforeAll(done => {
-  console.log(path.resolve("./example"));
   registry = new oc.Registry({
     local: true,
     discovery: true,
@@ -27,9 +26,13 @@ beforeAll(done => {
     templates: [require("../../packages/oc-template-react")]
   });
   registry.start(err => {
-    console.log(err);
+    if (err) {
+      return done(err);
+    }
     ssrServer = server(serverPort, err => {
-      console.log(err);
+      if (err) {
+        return done(err);
+      }
       done();
     });
   });
