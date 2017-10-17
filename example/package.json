@@ -1,0 +1,10 @@
+{
+  "name": "example",
+  "private": true,
+  "devDependencies": {
+    "jsdom": "^11.3.0",
+    "oc": "^0.41.11",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5"
+  }
+}
