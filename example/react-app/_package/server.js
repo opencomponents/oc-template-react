@@ -104,7 +104,7 @@ module.exports = /******/ (function(modules) {
               {},
               {
                 reactComponent: {
-                  key: "c55972357f496531fe91b1dd7677ea0ec7c4f0b9",
+                  key: "4622357d373e786649bf2b755e46b8fc7d5f03b6",
                   src: srcPath + "react-component.js",
                   props
                 }

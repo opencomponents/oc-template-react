@@ -16,7 +16,7 @@ class App extends React.Component {
     }, 100);
   }
 
-  componentDidUnmount() {
+  componentWillUnmount() {
     clearTimeout(this.timerId);
   }
 

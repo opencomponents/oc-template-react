@@ -2,6 +2,7 @@ jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
 
 const server = require("../ssr-server");
 const oc = require("oc");
+const packageComponent = require("oc/src/cli/domain/package-components.js");
 const path = require("path");
 const r = require("request-promise-native");
 const JSDOM = require("jsdom").JSDOM;
@@ -10,6 +11,7 @@ const registryPort = 3000;
 const registryUrl = `http://localhost:${registryPort}/`;
 const serverPort = 4000;
 const serverUrl = `http://localhost:${serverPort}/`;
+const componentPath = path.join(__dirname, "../react-app");
 
 let registry;
 let ssrServer;
@@ -25,6 +27,7 @@ beforeAll(done => {
     env: { name: "local" },
     templates: [require("../../packages/oc-template-react")]
   });
+
   registry.start(err => {
     if (err) {
       return done(err);
