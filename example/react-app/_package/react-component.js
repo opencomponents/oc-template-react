@@ -1,7 +1,7 @@
 var oc = oc || {};
 oc.reactComponents = oc.reactComponents || {};
-oc.reactComponents["c55972357f496531fe91b1dd7677ea0ec7c4f0b9"] =
-  oc.reactComponents["c55972357f496531fe91b1dd7677ea0ec7c4f0b9"] ||
+oc.reactComponents["4622357d373e786649bf2b755e46b8fc7d5f03b6"] =
+  oc.reactComponents["4622357d373e786649bf2b755e46b8fc7d5f03b6"] ||
   (function() {
     var module = /******/ (function(modules) {
       // webpackBootstrap
@@ -168,7 +168,7 @@ oc.reactComponents["c55972357f496531fe91b1dd7677ea0ec7c4f0b9"] =
               }, 100);
             };
 
-            App.prototype.componentDidUnmount = function componentDidUnmount() {
+            App.prototype.componentWillUnmount = function componentWillUnmount() {
               clearTimeout(this.timerId);
             };
 
@@ -207,7 +207,7 @@ oc.reactComponents["c55972357f496531fe91b1dd7677ea0ec7c4f0b9"] =
         /***/ function(module, exports) {
           // removed by extract-text-webpack-plugin
           module.exports = {
-            special: "oc__react-app-styles-css__special__2q8ftRit"
+            special: "oc__example-react-app-styles-css__special__3K6pmcHx"
           };
 
           /***/
