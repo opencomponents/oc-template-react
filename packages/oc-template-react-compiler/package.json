@@ -35,7 +35,7 @@
     "infinite-loop-loader": "^1.0.3",
     "lodash": "^4.17.4",
     "memory-fs": "^0.4.1",
-    "node-dir": "0.1.16",
+    "node-dir": "0.1.17",
     "oc-external-dependencies-handler": "1.0.4",
     "oc-generic-template-compiler": "2.0.0",
     "oc-get-unix-utc-timestamp": "1.0.1",
