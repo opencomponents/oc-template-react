@@ -20,7 +20,7 @@ Module for handling React templates in OC
 | [`oc-react-component-wrapper`](/packages/oc-react-component-wrapper) | [![npm version](https://badge.fury.io/js/oc-react-component-wrapper.svg)](http://badge.fury.io/js/oc-react-component-wrapper) |
 
 
-## Usage:
+## Usage: 
 
 Initialize a component with the oc-template-react and follow the CLI instructions
 
