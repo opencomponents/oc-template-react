@@ -36,15 +36,15 @@ module.exports = (options, callback) => {
       production
     });
     compiler(config, (err, data) => {
+      if (err) {
+        return cb(err);
+      }
+
       const memoryFs = new MemoryFS(data);
       const bundle = memoryFs.readFileSync(
         `/build/${config.output.filename}`,
         "UTF8"
       );
-
-      if (err) {
-        return cb(err);
-      }
 
       const bundleHash = hashBuilder.fromString(bundle);
       const bundleName = "react-component";
