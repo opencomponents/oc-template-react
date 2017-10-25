@@ -5,7 +5,6 @@ const fs = require("fs-extra");
 const nodeDir = require("node-dir");
 const path = require("path");
 const compile = require("../lib/compile.js");
-jest.mock("uuid/v4", () => () => "666");
 jest.mock("oc-template-react", () => ({
   getInfo() {
     return {

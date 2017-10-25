@@ -3,7 +3,6 @@ jasmine.DEFAULT_TIMEOUT_INTERVAL = 50000;
 const path = require("path");
 const fs = require("fs-extra");
 const compileView = require("../lib/compileView.js");
-jest.mock("uuid/v4", () => () => "666");
 
 const componentPath = path.join(__dirname, "../../../mocks/react-component");
 const publishPath = path.join(componentPath, "_packageCompileViewTest");
