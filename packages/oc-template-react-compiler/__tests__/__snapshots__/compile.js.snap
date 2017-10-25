@@ -18,7 +18,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "5cf6edf601ef442d7e734433fd9bee16046f9e49",
+        "hashKey": "da1812e1344621e996d9cd2ea20bb77b1a55e0d0",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -46,7 +46,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package1/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"5cf6edf601ef442d7e734433fd9bee16046f9e49\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"1e4d814637256b7e61cec59d6b849eb6421dd2a2\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"da1812e1344621e996d9cd2ea20bb77b1a55e0d0\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"1e4d814637256b7e61cec59d6b849eb6421dd2a2\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -59,7 +59,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package1/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['5cf6edf601ef442d7e734433fd9bee16046f9e49']=function(model){ return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div> <style>null</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', '9226c0643c9b97f8cbe8fcfd3cf8d343b8d88eba'], '\${model.reactComponent.props.staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"666\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['da1812e1344621e996d9cd2ea20bb77b1a55e0d0']=function(model){ return \`<div id=\\"oc-reactRoot-react-component\\" class=\\"oc-reactRoot-react-component\\" >\${ model.__html ? model.__html : '' }</div> <style>null</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', '9226c0643c9b97f8cbe8fcfd3cf8d343b8d88eba'], '\${model.reactComponent.props.staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
   },
 ]
 `;
@@ -82,7 +82,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "dec9fcae76d51301b2e62c50469768a294e2c628",
+        "hashKey": "d9de21ab9237443f028f9a0d27f32fdf95c94e77",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -110,7 +110,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package1/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"dec9fcae76d51301b2e62c50469768a294e2c628\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"3d2b8470db6d88bd2ac69f98a85057bf0a8e176b\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"d9de21ab9237443f028f9a0d27f32fdf95c94e77\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"3d2b8470db6d88bd2ac69f98a85057bf0a8e176b\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -127,7 +127,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package1/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['dec9fcae76d51301b2e62c50469768a294e2c628']=function(model){ return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div> <style>.awesome__2lltUggH{background:#db7093}</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', '9f66a61b9d2a5b5213a8e30a7995d2424fa7369d'], '\${model.reactComponent.props.staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"666\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['d9de21ab9237443f028f9a0d27f32fdf95c94e77']=function(model){ return \`<div id=\\"oc-reactRoot-react-component-with-css\\" class=\\"oc-reactRoot-react-component-with-css\\" >\${ model.__html ? model.__html : '' }</div> <style>.awesome__2lltUggH{background:#db7093}</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', '9f66a61b9d2a5b5213a8e30a7995d2424fa7369d'], '\${model.reactComponent.props.staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component-with-css\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
   },
 ]
 `;
@@ -148,7 +148,7 @@ Object {
       },
       "static": Array [],
       "template": Object {
-        "hashKey": "5cf6edf601ef442d7e734433fd9bee16046f9e49",
+        "hashKey": "da1812e1344621e996d9cd2ea20bb77b1a55e0d0",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -165,7 +165,7 @@ exports[`Should handle empty static folder 2`] = `
 Array [
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package2/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"5cf6edf601ef442d7e734433fd9bee16046f9e49\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"1e4d814637256b7e61cec59d6b849eb6421dd2a2\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"da1812e1344621e996d9cd2ea20bb77b1a55e0d0\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"1e4d814637256b7e61cec59d6b849eb6421dd2a2\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -178,7 +178,7 @@ Array [
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package2/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['5cf6edf601ef442d7e734433fd9bee16046f9e49']=function(model){ return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div> <style>null</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', '9226c0643c9b97f8cbe8fcfd3cf8d343b8d88eba'], '\${model.reactComponent.props.staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"666\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['da1812e1344621e996d9cd2ea20bb77b1a55e0d0']=function(model){ return \`<div id=\\"oc-reactRoot-react-component\\" class=\\"oc-reactRoot-react-component\\" >\${ model.__html ? model.__html : '' }</div> <style>null</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', '9226c0643c9b97f8cbe8fcfd3cf8d343b8d88eba'], '\${model.reactComponent.props.staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
   },
 ]
 `;
@@ -199,7 +199,7 @@ Object {
       },
       "static": Array [],
       "template": Object {
-        "hashKey": "dec9fcae76d51301b2e62c50469768a294e2c628",
+        "hashKey": "d9de21ab9237443f028f9a0d27f32fdf95c94e77",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -216,7 +216,7 @@ exports[`Should handle empty static folder 4`] = `
 Array [
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package2/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"dec9fcae76d51301b2e62c50469768a294e2c628\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"3d2b8470db6d88bd2ac69f98a85057bf0a8e176b\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"d9de21ab9237443f028f9a0d27f32fdf95c94e77\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"3d2b8470db6d88bd2ac69f98a85057bf0a8e176b\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -233,7 +233,7 @@ Array [
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package2/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['dec9fcae76d51301b2e62c50469768a294e2c628']=function(model){ return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div> <style>.awesome__2lltUggH{background:#db7093}</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', '9f66a61b9d2a5b5213a8e30a7995d2424fa7369d'], '\${model.reactComponent.props.staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"666\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['d9de21ab9237443f028f9a0d27f32fdf95c94e77']=function(model){ return \`<div id=\\"oc-reactRoot-react-component-with-css\\" class=\\"oc-reactRoot-react-component-with-css\\" >\${ model.__html ? model.__html : '' }</div> <style>.awesome__2lltUggH{background:#db7093}</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', '9f66a61b9d2a5b5213a8e30a7995d2424fa7369d'], '\${model.reactComponent.props.staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component-with-css\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
   },
 ]
 `;
@@ -251,7 +251,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "5cf6edf601ef442d7e734433fd9bee16046f9e49",
+        "hashKey": "da1812e1344621e996d9cd2ea20bb77b1a55e0d0",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -279,7 +279,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package4/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"5cf6edf601ef442d7e734433fd9bee16046f9e49\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"da1812e1344621e996d9cd2ea20bb77b1a55e0d0\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -288,7 +288,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package4/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['5cf6edf601ef442d7e734433fd9bee16046f9e49']=function(model){ return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div> <style>null</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', '9226c0643c9b97f8cbe8fcfd3cf8d343b8d88eba'], '\${model.reactComponent.props.staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"666\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['da1812e1344621e996d9cd2ea20bb77b1a55e0d0']=function(model){ return \`<div id=\\"oc-reactRoot-react-component\\" class=\\"oc-reactRoot-react-component\\" >\${ model.__html ? model.__html : '' }</div> <style>null</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', '9226c0643c9b97f8cbe8fcfd3cf8d343b8d88eba'], '\${model.reactComponent.props.staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
   },
 ]
 `;
@@ -306,7 +306,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "dec9fcae76d51301b2e62c50469768a294e2c628",
+        "hashKey": "d9de21ab9237443f028f9a0d27f32fdf95c94e77",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -334,7 +334,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package4/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"dec9fcae76d51301b2e62c50469768a294e2c628\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"d9de21ab9237443f028f9a0d27f32fdf95c94e77\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -347,7 +347,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package4/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['dec9fcae76d51301b2e62c50469768a294e2c628']=function(model){ return \`<div id=\\"666\\">\${ model.__html ? model.__html : '' }</div> <style>.awesome__2lltUggH{background:#db7093}</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', '9f66a61b9d2a5b5213a8e30a7995d2424fa7369d'], '\${model.reactComponent.props.staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"666\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['d9de21ab9237443f028f9a0d27f32fdf95c94e77']=function(model){ return \`<div id=\\"oc-reactRoot-react-component-with-css\\" class=\\"oc-reactRoot-react-component-with-css\\" >\${ model.__html ? model.__html : '' }</div> <style>.awesome__2lltUggH{background:#db7093}</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', '9f66a61b9d2a5b5213a8e30a7995d2424fa7369d'], '\${model.reactComponent.props.staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component-with-css\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
   },
 ]
 `;
