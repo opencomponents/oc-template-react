@@ -10,9 +10,9 @@ const ocViewWrapper = require("oc-view-wrapper");
 const path = require("path");
 const reactComponentWrapper = require("oc-react-component-wrapper");
 const strings = require("oc-templates-messages");
-const uuid = require("uuid/v4")();
 
 const webpackConfigurator = require("./to-abstract-base-template-utils/webpackConfigurator");
+const fontFamilyUnicodeParser = require("./to-abstract-base-template-utils/font-family-unicode-parser");
 
 module.exports = (options, callback) => {
   const viewFileName = options.componentPackage.oc.files.template.src;
@@ -36,15 +36,15 @@ module.exports = (options, callback) => {
       production
     });
     compiler(config, (err, data) => {
+      if (err) {
+        return cb(err);
+      }
+
       const memoryFs = new MemoryFS(data);
       const bundle = memoryFs.readFileSync(
         `/build/${config.output.filename}`,
         "UTF8"
       );
-
-      if (err) {
-        return cb(err);
-      }
 
       const bundleHash = hashBuilder.fromString(bundle);
       const bundleName = "react-component";
@@ -54,7 +54,11 @@ module.exports = (options, callback) => {
 
       let css = null;
       if (data.build["main.css"]) {
-        css = memoryFs.readFileSync(`/build/main.css`, "UTF8");
+        // This is an awesome hack by KimTaro that will blow your mind.
+        // Remove it once this get merged: https://github.com/webpack-contrib/css-loader/pull/523
+        css = fontFamilyUnicodeParser(
+          memoryFs.readFileSync(`/build/main.css`, "UTF8")
+        );
         if (production) {
           css = minifyFile(".css", css);
         }
@@ -62,8 +66,9 @@ module.exports = (options, callback) => {
         fs.outputFileSync(cssPath, css);
       }
 
+      const reactRoot = `oc-reactRoot-${componentPackage.name}`;
       const templateString = `function(model){
-        return \`<div id="${uuid}">\${ model.__html ? model.__html : '' }</div>
+        return \`<div id="${reactRoot}" class="${reactRoot}" >\${ model.__html ? model.__html : '' }</div>
           <style>${css}</style>
           <script>
             window.oc = window.oc || {};
@@ -74,7 +79,7 @@ module.exports = (options, callback) => {
                   ['oc', 'reactComponents', '${bundleHash}'],
                   '\${model.reactComponent.props.staticPath}${bundleName}.js',
                   function(ReactComponent){
-                    var targetNode = document.getElementById("${uuid}");
+                    var targetNode = document.getElementById("${reactRoot}");
                     targetNode.setAttribute("id","");
                     ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
                   }
