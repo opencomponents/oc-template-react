@@ -1,46 +1,61 @@
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
 
-const server = require("../ssr-server");
-const oc = require("oc");
+const server = require("../server");
+const { cli, Registry } = require("oc");
 const path = require("path");
 const r = require("request-promise-native");
 const JSDOM = require("jsdom").JSDOM;
+const fs = require("fs-extra");
 
 const registryPort = 3000;
 const registryUrl = `http://localhost:${registryPort}/`;
 const serverPort = 4000;
 const serverUrl = `http://localhost:${serverPort}/`;
-
+const ocComponentPath = path.join(__dirname, "../react-app");
 let registry;
-let ssrServer;
+let testServer;
 
 beforeAll(done => {
-  registry = new oc.Registry({
-    local: true,
-    discovery: true,
-    verbosity: 1,
-    path: path.resolve("./example"),
-    port: registryPort,
-    baseUrl: registryUrl,
-    env: { name: "local" },
-    templates: [require("../../packages/oc-template-react")]
-  });
-  registry.start(err => {
-    if (err) {
-      return done(err);
-    }
-    ssrServer = server(serverPort, err => {
+  fs.removeSync(path.join(ocComponentPath, "../react-app/_package"));
+  cli.package(
+    {
+      componentPath: ocComponentPath
+    },
+    (err, compiledInfo) => {
       if (err) {
         return done(err);
       }
-      done();
-    });
-  });
+
+      registry = new Registry({
+        local: true,
+        discovery: true,
+        verbosity: 1,
+        path: path.resolve("./example"),
+        port: registryPort,
+        baseUrl: registryUrl,
+        env: { name: "local" },
+        templates: [require("../../packages/oc-template-react")]
+      });
+
+      registry.start(err => {
+        if (err) {
+          return done(err);
+        }
+        testServer = server(serverPort, err => {
+          if (err) {
+            return done(err);
+          }
+          done();
+        });
+      });
+    }
+  );
 });
 
 afterAll(done => {
-  ssrServer.close(() => {
+  testServer.close(() => {
     registry.close(() => {
+      fs.removeSync(path.join(ocComponentPath, "_package"));
       done();
     });
   });
