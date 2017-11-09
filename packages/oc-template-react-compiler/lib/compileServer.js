@@ -12,7 +12,10 @@ const webpackConfigurator = require("./to-abstract-base-template-utils/webpackCo
 
 module.exports = (options, callback) => {
   const serverFileName = options.componentPackage.oc.files.data;
-  const serverPath = path.join(options.componentPath, serverFileName);
+  let serverPath = path.join(options.componentPath, serverFileName);
+  if (process.platform === "win32") {
+    serverPath = serverPath.split("\\").join("\\\\");
+  }
   const publishFileName = options.publishFileName || "server.js";
   const publishPath = options.publishPath;
   const stats = options.verbose ? "verbose" : "errors-only";
