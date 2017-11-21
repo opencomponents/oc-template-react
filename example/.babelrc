@@ -1,0 +1,13 @@
+{
+  "presets": [
+    "broken-preset",
+    [
+      "even-more-broken-stuff",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  ]
+}
