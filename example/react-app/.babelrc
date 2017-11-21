@@ -1,8 +1,8 @@
 {
   "presets": [
-    "broken-preset",
+    "unwanted-preset",
     [
-      "even-more-broken-stuff",
+      "even-more-unwanted-stuff",
       {
         "targets": {
           "node": "current"
