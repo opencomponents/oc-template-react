@@ -40,7 +40,7 @@
     "oc-generic-template-compiler": "2.0.1",
     "oc-get-unix-utc-timestamp": "1.0.1",
     "oc-hash-builder": "1.0.1",
-    "oc-minify-file": "1.0.9",
+    "oc-minify-file": "1.0.10",
     "oc-react-component-wrapper": "1.0.1",
     "oc-statics-compiler": "2.0.4",
     "oc-template-react": "1.0.2",
