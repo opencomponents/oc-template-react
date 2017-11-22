@@ -1,0 +1,13 @@
+{
+  "presets": [
+    "unwanted-preset",
+    [
+      "even-more-unwanted-stuff",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  ]
+}

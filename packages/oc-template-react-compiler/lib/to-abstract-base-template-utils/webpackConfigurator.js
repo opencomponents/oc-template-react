@@ -65,6 +65,7 @@ module.exports = function webpackConfigGenerator(options) {
                 loader: require.resolve("babel-loader"),
                 options: {
                   cacheDirectory,
+                  babelrc: false,
                   presets: [
                     [
                       require.resolve("babel-preset-env"),
@@ -121,6 +122,7 @@ module.exports = function webpackConfigGenerator(options) {
                 loader: require.resolve("babel-loader"),
                 options: {
                   cacheDirectory,
+                  babelrc: false,
                   presets: [
                     [
                       require.resolve("babel-preset-env"),
