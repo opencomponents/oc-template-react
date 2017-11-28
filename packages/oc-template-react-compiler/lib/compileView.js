@@ -24,10 +24,45 @@ module.exports = (options, callback) => {
   const externals = getInfo().externals;
   const production = options.production;
 
+  const higherOrderViewContent = `
+    import PropTypes from 'prop-types';
+    import React from 'React';
+    import View from '${viewPath}';
+    
+    export default class OCProvider extends React.Component {
+      getChildContext() {
+        const getData = (parameters, cb) => {
+          return this.props._ocGetData({
+            name: this.props._componentName,
+            version: this.props._componentVersion,
+            baseUrl: this.props._baseUrl,
+            parameters
+          }, cb);
+        }
+        return { getData };
+      }
+    
+      render() {
+        const { _staticPath, _baseUrl, _componentName, _componentVersion, children, ...rest } = this.props;        
+        return (
+          <View props={ ...rest } />
+        );
+      }
+    }
+    
+    OCProvider.childContextTypes = {
+      getData: PropTypes.func
+    };
+  `;
+
+  const higherOrderViewName = "higherOrderView.js";
+  const higherOrderViewPath = path.join(__dirname, higherOrderViewName);
+  fs.outputFileSync(higherOrderViewPath, higherOrderViewContent);
+
   const compile = (options, cb) => {
     const config = webpackConfigurator({
       confTarget: "view",
-      viewPath,
+      viewPath: higherOrderViewPath,
       externals: externals.reduce((externals, dep) => {
         externals[dep.name] = dep.global;
         return externals;
@@ -77,7 +112,7 @@ module.exports = (options, callback) => {
               oc.requireSeries(${JSON.stringify(externals)}, function(){
                 oc.require(
                   ['oc', 'reactComponents', '${bundleHash}'],
-                  '\${model.reactComponent.props.staticPath}${bundleName}.js',
+                  '\${model.reactComponent.props._staticPath}${bundleName}.js',
                   function(ReactComponent){
                     var targetNode = document.getElementById("${reactRoot}");
                     targetNode.setAttribute("id","");
@@ -105,7 +140,7 @@ module.exports = (options, callback) => {
   async.waterfall(
     [
       next =>
-        compile({ viewPath, componentPackage }, (err, viewContent) =>
+        compile({ viewPath: higherOrderViewPath, componentPackage }, (err, viewContent) =>
           next(err ? "not found" : null, viewContent)
         ),
       (compiled, next) => fs.ensureDir(publishPath, err => next(err, compiled)),
