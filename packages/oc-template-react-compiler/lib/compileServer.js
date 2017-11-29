@@ -30,8 +30,8 @@ module.exports = (options, callback) => {
           return callback(error);
         }
         const props = Object.assign({}, model, {
-          staticPath: context.staticPath,
-          baseUrl: context.baseUrl
+          _staticPath: context.staticPath,
+          _baseUrl: context.baseUrl
         });
         const srcPath = (context.env && context.env.name === "local") ? context.staticPath : "https:" + context.staticPath ;
         return callback(null, Object.assign({}, {

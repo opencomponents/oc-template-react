@@ -68,7 +68,9 @@ module.exports = (options, callback) => {
 
       const reactRoot = `oc-reactRoot-${componentPackage.name}`;
       const templateString = `function(model){
-        return \`<div id="${reactRoot}" class="${reactRoot}" >\${ model.__html ? model.__html : '' }</div>
+        return \`<div id="${reactRoot}" class="${
+        reactRoot
+      }" >\${ model.__html ? model.__html : '' }</div>
           <style>${css}</style>
           <script>
             window.oc = window.oc || {};
@@ -77,7 +79,7 @@ module.exports = (options, callback) => {
               oc.requireSeries(${JSON.stringify(externals)}, function(){
                 oc.require(
                   ['oc', 'reactComponents', '${bundleHash}'],
-                  '\${model.reactComponent.props.staticPath}${bundleName}.js',
+                  '\${model.reactComponent.props._staticPath}${bundleName}.js',
                   function(ReactComponent){
                     var targetNode = document.getElementById("${reactRoot}");
                     targetNode.setAttribute("id","");
