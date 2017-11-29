@@ -1,5 +1,6 @@
 {
   "name": "react-app",
+  "private": true,
   "version": "1.0.0",
   "oc": {
     "files": {
@@ -20,6 +21,6 @@
     }
   },
   "devDependencies": {
-    "oc-template-react-compiler": "../packages/oc-template-react-compiler"
+    "oc-template-react-compiler": "1.0.8"
   }
 }

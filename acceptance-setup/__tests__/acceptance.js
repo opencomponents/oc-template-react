@@ -11,12 +11,15 @@ const registryPort = 3000;
 const registryUrl = `http://localhost:${registryPort}/`;
 const serverPort = 4000;
 const serverUrl = `http://localhost:${serverPort}/`;
-const ocComponentPath = path.join(__dirname, "../react-app");
+const ocComponentPath = path.join(
+  __dirname,
+  "../../acceptance-components/react-app"
+);
 let registry;
 let testServer;
 
 beforeAll(done => {
-  fs.removeSync(path.join(ocComponentPath, "../react-app/_package"));
+  fs.removeSync(path.join(ocComponentPath, "_package"));
   cli.package(
     {
       componentPath: ocComponentPath
@@ -30,7 +33,7 @@ beforeAll(done => {
         local: true,
         discovery: true,
         verbosity: 1,
-        path: path.resolve("./example"),
+        path: path.join(__dirname, "../../acceptance-components"),
         port: registryPort,
         baseUrl: registryUrl,
         env: { name: "local" },
@@ -81,7 +84,7 @@ test("Registry should correctly serve rendered and unrendered components", done 
 
   Promise.all([rendered, unrendered])
     .then(done)
-    .catch(err => done(err));
+    .catch(done);
 });
 
 test("server-side-side rendering", done => {
