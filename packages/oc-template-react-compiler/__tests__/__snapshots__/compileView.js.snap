@@ -3,10 +3,10 @@
 exports[`valid component 1`] = `
 Object {
   "bundle": Object {
-    "hashKey": "1919ba5aaedeabfea38bbcd8a366608cc9d22602",
+    "hashKey": "445312f64fea67fd3f958058a5aa551acae1ebae",
   },
   "template": Object {
-    "hashKey": "6b5c8fcb15f89a65537877a895a8c3f1ccee267c",
+    "hashKey": "4567f7812d0d6874ba2a743a269310b30085abef",
     "src": "template.js",
     "type": "oc-template-react",
   },

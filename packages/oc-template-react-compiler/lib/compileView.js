@@ -32,7 +32,7 @@ module.exports = (options, callback) => {
     export default class OCProvider extends React.Component {
       getChildContext() {
         const getData = (parameters, cb) => {
-          return oc.getData({
+          return windows.oc.getData({
             name: this.props._componentName,
             version: this.props._componentVersion,
             baseUrl: this.props._baseUrl,
