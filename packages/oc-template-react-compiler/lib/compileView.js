@@ -24,10 +24,45 @@ module.exports = (options, callback) => {
   const externals = getInfo().externals;
   const production = options.production;
 
+  const higherOrderViewContent = `
+    import PropTypes from 'prop-types';
+    import React from 'react';
+    import View from '${viewPath}';
+    
+    export default class OCProvider extends React.Component {
+      getChildContext() {
+        const getData = (parameters, cb) => {
+          return oc.getData({
+            name: this.props._componentName,
+            version: this.props._componentVersion,
+            baseUrl: this.props._baseUrl,
+            parameters
+          }, cb);
+        }
+        return { getData };
+      }
+    
+      render() {
+        const { _staticPath, _baseUrl, _componentName, _componentVersion, ...rest } = this.props;        
+        return (
+          <View {...rest}/>
+        );
+      }
+    }
+    
+    OCProvider.childContextTypes = {
+      getData: PropTypes.func
+    };
+  `;
+
+  const higherOrderViewName = "higherOrderView.js";
+  const higherOrderViewPath = path.join(__dirname, higherOrderViewName);
+  fs.outputFileSync(higherOrderViewPath, higherOrderViewContent);
+
   const compile = (options, cb) => {
     const config = webpackConfigurator({
       confTarget: "view",
-      viewPath,
+      viewPath: higherOrderViewPath,
       externals: externals.reduce((externals, dep) => {
         externals[dep.name] = dep.global;
         return externals;
@@ -106,8 +141,11 @@ module.exports = (options, callback) => {
 
   async.waterfall(
     [
-      next => compile({ viewPath, componentPackage }, next),
-      (compiled, next) => fs.ensureDir(publishPath, err => next(err, compiled)),
+      next => compile({ viewPath: higherOrderViewPath, componentPackage }, next),
+      (compiled, next) => {
+        fs.removeSync(higherOrderViewPath);
+        return fs.ensureDir(publishPath, err => next(err, compiled));
+      },
       (compiled, next) =>
         fs.writeFile(
           path.join(publishPath, publishFileName),
