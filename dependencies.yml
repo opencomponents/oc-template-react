@@ -27,3 +27,10 @@ collectors:
   # pull requests for updates to any version
   - type: js-npm
     versions: "Y.Y.Y"
+
+- type: js-npm
+  path: acceptance-setup
+  actors:
+  # pull requests for updates to any version
+  - type: js-npm
+    versions: "Y.Y.Y"

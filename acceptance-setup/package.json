@@ -1,15 +1,12 @@
 {
-  "name": "example",
+  "name": "acceptance-setup",
   "private": true,
   "version": "0.0.3",
   "devDependencies": {
     "fs-extra": "^4.0.0",
     "jsdom": "^11.3.0",
-    "oc": "0.42.1",
+    "oc": "0.42.5",
     "request": "^2.83.0",
     "request-promise-native": "^1.0.5"
-  },
-  "dependencies": {
-    "oc-template-react-compiler": "1.0.8"
   }
 }

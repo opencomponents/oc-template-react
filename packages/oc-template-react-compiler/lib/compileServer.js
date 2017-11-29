@@ -20,6 +20,8 @@ module.exports = (options, callback) => {
   const publishPath = options.publishPath;
   const stats = options.verbose ? "verbose" : "errors-only";
   const dependencies = options.componentPackage.dependencies || {};
+  const componentName = options.componentPackage.name;
+  const componentVersion = options.componentPackage.version;
   const production = options.production;
 
   const higherOrderServerContent = `
@@ -31,7 +33,9 @@ module.exports = (options, callback) => {
         }
         const props = Object.assign({}, model, {
           _staticPath: context.staticPath,
-          _baseUrl: context.baseUrl
+          _baseUrl: context.baseUrl,
+          _componentName: "${componentName}",
+          _componentVersion: "${componentVersion}"
         });
         const srcPath = (context.env && context.env.name === "local") ? context.staticPath : "https:" + context.staticPath ;
         return callback(null, Object.assign({}, {
