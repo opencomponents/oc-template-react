@@ -27,7 +27,7 @@
     "nice-cache": "0.0.5",
     "oc-generic-template-renderer": "2.0.1",
     "react": "16.1.1",
-    "react-dom": "16.1.1"
+    "react-dom": "16.2.0"
   },
   "files": [
     "lib",
