@@ -1,3 +1,4 @@
+const PropTypes = require('prop-types');
 const React = require("react");
 const ReactDOMServer = require("react-dom/server");
 const vm = require("vm");
@@ -15,6 +16,7 @@ module.exports = (options, callback) => {
       key,
       url,
       globals: {
+        PropTypes,
         React
       },
       extractor
