@@ -48,7 +48,7 @@ An Higher order component that will make a `getData` function available via prop
 
 ##### Usage:
 
-```
+```javascript
 import { withDataProvider } from 'oc-template-react-compiler/utils';
 
 const yourApp = props => {
@@ -66,7 +66,7 @@ An Higher order component that will make a `getSetting` function available via p
 
 ##### Usage:
 
-```
+```javascript
 import { withSettingProvider } from 'oc-template-react-compiler/utils';
 
 const yourApp = props => {
