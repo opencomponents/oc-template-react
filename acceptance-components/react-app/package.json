@@ -20,6 +20,9 @@
       }
     }
   },
+  "dependencies": {
+    "oc-template-react-compiler": "1.0.8"
+  },
   "devDependencies": {
     "oc-template-react-compiler": "1.0.8"
   }

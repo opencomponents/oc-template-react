@@ -1,14 +1,6 @@
 const render = require("../lib/render.js");
 
-jest.mock("../lib/to-be-published/get-js-from-url", () => () => cb => {
-  const React = require("react");
-  class Hello extends React.Component {
-    render() {
-      return React.createElement("div", null, `Hello ${this.props.toWhat}`);
-    }
-  }
-  return cb(null, Hello);
-});
+jest.mock("../lib/to-be-published/get-js-from-url");
 
 describe("render method", () => {
   describe("when invoked with a valid template", () => {

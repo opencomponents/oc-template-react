@@ -11,6 +11,7 @@
     "postinstall": "lerna bootstrap",
     "coverage": "codecov",
     "clean": "lerna clean",
+    "dev": "jest --watch",
     "updated": "lerna updated",
     "test": "jest",
     "publish": "lerna publish --exact",

@@ -7,6 +7,8 @@ const r = require("request-promise-native");
 const JSDOM = require("jsdom").JSDOM;
 const fs = require("fs-extra");
 
+jest.unmock("minimal-request");
+
 const registryPort = 3000;
 const registryUrl = `http://localhost:${registryPort}/`;
 const serverPort = 4000;
@@ -32,7 +34,7 @@ beforeAll(done => {
       registry = new Registry({
         local: true,
         discovery: true,
-        verbosity: 1,
+        verbosity: 0,
         path: path.join(__dirname, "../../acceptance-components"),
         port: registryPort,
         baseUrl: registryUrl,
