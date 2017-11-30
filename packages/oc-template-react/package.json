@@ -26,6 +26,7 @@
     "minimal-request": "^2.2.0",
     "nice-cache": "0.0.5",
     "oc-generic-template-renderer": "2.0.1",
+    "prop-types": "15.6.0",
     "react": "16.1.1",
     "react-dom": "16.1.1"
   },
@@ -36,6 +37,10 @@
     "LICENSE"
   ],
   "externals": {
+    "prop-types": {
+      "global": "PropTypes",
+      "url": "https://unpkg.com/prop-types@15.6.0/prop-types.min.js"
+    },
     "react": {
       "global": "React",
       "url": "https://unpkg.com/react@16.1.1/umd/react.production.min.js"
