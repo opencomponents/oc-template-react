@@ -1,17 +1,6 @@
 const getJSFromUrl = require("../lib/to-be-published/get-js-from-url");
 const React = require("react");
 
-jest.mock("minimal-request", () =>
-  jest.fn(({ url, timeout }, cb) => {
-    var jsText = `var oc = {reactComponents: {}}; oc.reactComponents['666'] = class Hello extends React.Component {
-    render() {
-      return React.createElement("div", null, "Hello World");
-    }
-  }`;
-    return cb(null, jsText);
-  })
-);
-
 describe("When the module is called", () => {
   const predicate = getJSFromUrl({
     globals: { React },
