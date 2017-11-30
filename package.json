@@ -18,7 +18,7 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.js !mocks": [
+    "*.js": [
       "prettier-eslint --write",
       "jest --findRelatedTests",
       "git add"
