@@ -11,13 +11,14 @@
     "postinstall": "lerna bootstrap",
     "coverage": "codecov",
     "clean": "lerna clean",
+    "dev": "jest --watch",
     "updated": "lerna updated",
     "test": "jest",
     "publish": "lerna publish --exact",
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.js": [
+    "*.js !mocks": [
       "prettier-eslint --write",
       "jest --findRelatedTests",
       "git add"

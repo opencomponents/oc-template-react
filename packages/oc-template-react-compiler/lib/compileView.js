@@ -106,10 +106,7 @@ module.exports = (options, callback) => {
 
   async.waterfall(
     [
-      next =>
-        compile({ viewPath, componentPackage }, (err, viewContent) =>
-          next(err ? "not found" : null, viewContent)
-        ),
+      next => compile({ viewPath, componentPackage }, next),
       (compiled, next) => fs.ensureDir(publishPath, err => next(err, compiled)),
       (compiled, next) =>
         fs.writeFile(
@@ -119,9 +116,7 @@ module.exports = (options, callback) => {
         )
     ],
     (err, compiled) => {
-      if (err === "not found") {
-        return callback(strings.errors.viewNotFound(viewFileName));
-      } else if (err) {
+      if (err) {
         return callback(strings.errors.compilationFailed(viewFileName, err));
       }
       callback(null, {
@@ -130,9 +125,7 @@ module.exports = (options, callback) => {
           hashKey: compiled.template.hash,
           src: publishFileName
         },
-        bundle: {
-          hashKey: compiled.bundle.hash
-        }
+        bundle: { hashKey: compiled.bundle.hash }
       });
     }
   );
