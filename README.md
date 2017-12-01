@@ -79,7 +79,7 @@ yourEnhancedApp = withSettingProvider(yourApp);
 `getSetting` accept one argument: `settingName => settingValue`. It will return the value for the requested setting.
 
 Settings available at the moment:
-- `getSetting(name)` : return the name of the OC component
-- `getSetting(version)` : return the version of the OC component
-- `getSetting(baseUrl)` : return the [baseUrl of the oc-registry](https://github.com/opentable/oc/wiki/The-server.js#context-properties)
-- `getSetting(staticPath)` : return the path to the [static assets](https://github.com/opentable/oc/wiki/The-server.js#add-static-resource-to-the-component) of the OC component
+- `getSetting('name')` : return the name of the OC component
+- `getSetting('version')` : return the version of the OC component
+- `getSetting('baseUrl')` : return the [baseUrl of the oc-registry](https://github.com/opentable/oc/wiki/The-server.js#context-properties)
+- `getSetting('staticPath')` : return the path to the [static assets](https://github.com/opentable/oc/wiki/The-server.js#add-static-resource-to-the-component) of the OC component
