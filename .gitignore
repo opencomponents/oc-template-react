@@ -18,7 +18,7 @@ results
 *.local
 .DS_Store
 
-_package
+_package*
 package-lock.json
 npm-debug.log
 node_modules

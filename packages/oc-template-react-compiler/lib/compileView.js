@@ -13,6 +13,8 @@ const strings = require("oc-templates-messages");
 
 const webpackConfigurator = require("./to-abstract-base-template-utils/webpackConfigurator");
 const fontFamilyUnicodeParser = require("./to-abstract-base-template-utils/font-family-unicode-parser");
+const reactOCProviderTemplate = require("./reactOCProviderTemplate");
+const viewTemplate = require("./viewTemplate");
 
 module.exports = (options, callback) => {
   const viewFileName = options.componentPackage.oc.files.template.src;
@@ -24,10 +26,18 @@ module.exports = (options, callback) => {
   const externals = getInfo().externals;
   const production = options.production;
 
+  const reactOCProviderContent = reactOCProviderTemplate({ viewPath });
+  const reactOCProviderName = "reactOCProvider.js";
+  const reactOCProviderPath = path.join(
+    publishPath,
+    "temp",
+    reactOCProviderName
+  );
+
   const compile = (options, cb) => {
     const config = webpackConfigurator({
       confTarget: "view",
-      viewPath,
+      viewPath: options.viewPath,
       externals: externals.reduce((externals, dep) => {
         externals[dep.name] = dep.global;
         return externals;
@@ -67,30 +77,13 @@ module.exports = (options, callback) => {
       }
 
       const reactRoot = `oc-reactRoot-${componentPackage.name}`;
-      const templateString = `function(model){
-        return \`<div id="${reactRoot}" class="${
-        reactRoot
-      }" >\${ model.__html ? model.__html : '' }</div>
-          <style>${css}</style>
-          <script>
-            window.oc = window.oc || {};
-            oc.cmd = oc.cmd || [];
-            oc.cmd.push(function(oc){
-              oc.requireSeries(${JSON.stringify(externals)}, function(){
-                oc.require(
-                  ['oc', 'reactComponents', '${bundleHash}'],
-                  '\${model.reactComponent.props._staticPath}${bundleName}.js',
-                  function(ReactComponent){
-                    var targetNode = document.getElementById("${reactRoot}");
-                    targetNode.setAttribute("id","");
-                    ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
-                  }
-                );
-              });
-            });
-          </script>
-        \`;
-      }`;
+      const templateString = viewTemplate({
+        reactRoot,
+        css,
+        externals,
+        bundleHash,
+        bundleName
+      });
 
       const templateStringCompressed = production
         ? templateString.replace(/\s+/g, " ")
@@ -106,7 +99,10 @@ module.exports = (options, callback) => {
 
   async.waterfall(
     [
-      next => compile({ viewPath, componentPackage }, next),
+      next => fs.outputFile(reactOCProviderPath, reactOCProviderContent, next),
+      next => compile({ viewPath: reactOCProviderPath }, next),
+      (compiled, next) =>
+        fs.remove(reactOCProviderPath, err => next(err, compiled)),
       (compiled, next) => fs.ensureDir(publishPath, err => next(err, compiled)),
       (compiled, next) =>
         fs.writeFile(
