@@ -13,6 +13,8 @@ const strings = require("oc-templates-messages");
 
 const webpackConfigurator = require("./to-abstract-base-template-utils/webpackConfigurator");
 const fontFamilyUnicodeParser = require("./to-abstract-base-template-utils/font-family-unicode-parser");
+const reactOCProviderTemplate = require("./reactOCProviderTemplate");
+const viewTemplate = require("./viewTemplate");
 
 module.exports = (options, callback) => {
   const viewFileName = options.componentPackage.oc.files.template.src;
@@ -24,60 +26,18 @@ module.exports = (options, callback) => {
   const externals = getInfo().externals;
   const production = options.production;
 
-  const higherOrderViewContent = `
-    import PropTypes from 'prop-types';
-    import React from 'react';
-    import View from '${viewPath}';
-    
-    class OCProvider extends React.Component {
-      getChildContext() {
-        const getData = (parameters, cb) => {
-          return window.oc.getData({
-            name: this.props._componentName,
-            version: this.props._componentVersion,
-            baseUrl: this.props._baseUrl,
-            parameters
-          }, cb);
-        };
-        const getSetting = setting => {
-          const settingHash = {
-            name: this.props._componentName,
-            version: this.props._componentVersion,
-            baseUrl: this.props._baseUrl,
-            staticPath: this.props._staticPath
-          };
-          return settingHash[setting];
-        };
-        return { getData, getSetting };
-      }
-    
-      render() {
-        const { _staticPath, _baseUrl, _componentName, _componentVersion, ...rest } = this.props;        
-        return (
-          <View {...rest} />
-        );
-      }
-    }
-    
-    OCProvider.childContextTypes = {
-      getData: PropTypes.func,
-      getSetting: PropTypes.func
-    };
-    export default OCProvider
-  `;
-
-  const higherOrderViewName = "higherOrderView.js";
-  const higherOrderViewPath = path.join(
+  const reactOCProviderContent = reactOCProviderTemplate({ viewPath });
+  const reactOCProviderName = "reactOCProvider.js";
+  const reactOCProviderPath = path.join(
     publishPath,
     "temp",
-    higherOrderViewName
+    reactOCProviderName
   );
-  fs.outputFileSync(higherOrderViewPath, higherOrderViewContent);
 
   const compile = (options, cb) => {
     const config = webpackConfigurator({
       confTarget: "view",
-      viewPath: higherOrderViewPath,
+      viewPath: options.viewPath,
       externals: externals.reduce((externals, dep) => {
         externals[dep.name] = dep.global;
         return externals;
@@ -117,30 +77,13 @@ module.exports = (options, callback) => {
       }
 
       const reactRoot = `oc-reactRoot-${componentPackage.name}`;
-      const templateString = `function(model){
-        return \`<div id="${reactRoot}" class="${
-        reactRoot
-      }" >\${ model.__html ? model.__html : '' }</div>
-          <style>${css}</style>
-          <script>
-            window.oc = window.oc || {};
-            oc.cmd = oc.cmd || [];
-            oc.cmd.push(function(oc){
-              oc.requireSeries(${JSON.stringify(externals)}, function(){
-                oc.require(
-                  ['oc', 'reactComponents', '${bundleHash}'],
-                  '\${model.reactComponent.props._staticPath}${bundleName}.js',
-                  function(ReactComponent){
-                    var targetNode = document.getElementById("${reactRoot}");
-                    targetNode.setAttribute("id","");
-                    ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode);
-                  }
-                );
-              });
-            });
-          </script>
-        \`;
-      }`;
+      const templateString = viewTemplate({
+        reactRoot,
+        css,
+        externals,
+        bundleHash,
+        bundleName
+      });
 
       const templateStringCompressed = production
         ? templateString.replace(/\s+/g, " ")
@@ -156,16 +99,17 @@ module.exports = (options, callback) => {
 
   async.waterfall(
     [
-      next => compile({ viewPath, componentPackage }, next),
+      next => fs.outputFile(reactOCProviderPath, reactOCProviderContent, next),
+      next => compile({ viewPath: reactOCProviderPath }, next),
+      (compiled, next) =>
+        fs.remove(reactOCProviderPath, err => next(err, compiled)),
       (compiled, next) => fs.ensureDir(publishPath, err => next(err, compiled)),
-      (compiled, next) => {
-        fs.removeSync(higherOrderViewPath);
+      (compiled, next) =>
         fs.writeFile(
           path.join(publishPath, publishFileName),
           compiled.template.view,
           err => next(err, compiled)
-        );
-      }
+        )
     ],
     (err, compiled) => {
       if (err) {

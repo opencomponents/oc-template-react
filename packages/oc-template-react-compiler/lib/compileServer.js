@@ -9,6 +9,7 @@ const path = require("path");
 const reactComponentWrapper = require("oc-react-component-wrapper");
 
 const webpackConfigurator = require("./to-abstract-base-template-utils/webpackConfigurator");
+const higherOrderServerTemplate = require("./higherOrderServerTemplate");
 
 module.exports = (options, callback) => {
   const serverFileName = options.componentPackage.oc.files.data;
@@ -24,38 +25,18 @@ module.exports = (options, callback) => {
   const componentVersion = options.componentPackage.version;
   const production = options.production;
 
-  const higherOrderServerContent = `
-    import { data as dataProvider } from '${serverPath}';
-    export const data = (context, callback) => {
-      dataProvider(context, (error, model) => {
-        if (error) {
-          return callback(error);
-        }
-        const props = Object.assign({}, model, {
-          _staticPath: context.staticPath,
-          _baseUrl: context.baseUrl,
-          _componentName: "${componentName}",
-          _componentVersion: "${componentVersion}"
-        });
-        const srcPath = (context.env && context.env.name === "local") ? context.staticPath : "https:" + context.staticPath ;
-        return callback(null, Object.assign({}, {
-          reactComponent: {
-            key: "${options.compiledViewInfo.bundle.hashKey}",
-            src: srcPath + "react-component.js",
-            props
-          }
-        }));
-      });
-    }
-  `;
-
+  const higherOrderServerContent = higherOrderServerTemplate({
+    serverPath,
+    componentName,
+    componentVersion,
+    bundleHashKey: options.compiledViewInfo.bundle.hashKey
+  });
   const higherOrderServerName = "higherOrderServer.js";
   const higherOrderServerPath = path.join(
     publishPath,
     "temp",
     higherOrderServerName
   );
-  fs.outputFileSync(higherOrderServerPath, higherOrderServerContent);
 
   const config = webpackConfigurator({
     confTarget: "server",
@@ -68,7 +49,10 @@ module.exports = (options, callback) => {
 
   async.waterfall(
     [
+      next =>
+        fs.outputFile(higherOrderServerPath, higherOrderServerContent, next),
       next => compiler(config, next),
+      (data, next) => fs.remove(higherOrderServerPath, err => next(err, data)),
       (data, next) => fs.ensureDir(publishPath, err => next(err, data)),
       (data, next) => {
         const memoryFs = new MemoryFS(data);
@@ -76,7 +60,6 @@ module.exports = (options, callback) => {
           `/build/${config.output.filename}`,
           "UTF8"
         );
-        fs.removeSync(higherOrderServerPath);
         fs.writeFile(
           path.join(publishPath, publishFileName),
           compiledServer,
