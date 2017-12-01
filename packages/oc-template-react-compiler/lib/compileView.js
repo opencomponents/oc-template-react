@@ -42,7 +42,7 @@ module.exports = (options, callback) => {
         const getSetting = setting => {
           const settingHash = {
             name: this.props._componentName,
-            version: this.props._componentName,
+            version: this.props._componentVersion,
             baseUrl: this.props._baseUrl,
             staticPath: this.props._staticPath
           };
