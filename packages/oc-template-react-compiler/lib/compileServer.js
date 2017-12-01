@@ -50,7 +50,11 @@ module.exports = (options, callback) => {
   `;
 
   const higherOrderServerName = "higherOrderServer.js";
-  const higherOrderServerPath = path.join(__dirname, higherOrderServerName);
+  const higherOrderServerPath = path.join(
+    publishPath,
+    "temp",
+    higherOrderServerName
+  );
   fs.outputFileSync(higherOrderServerPath, higherOrderServerContent);
 
   const config = webpackConfigurator({
@@ -67,12 +71,12 @@ module.exports = (options, callback) => {
       next => compiler(config, next),
       (data, next) => fs.ensureDir(publishPath, err => next(err, data)),
       (data, next) => {
-        fs.removeSync(higherOrderServerPath);
         const memoryFs = new MemoryFS(data);
         const compiledServer = memoryFs.readFileSync(
           `/build/${config.output.filename}`,
           "UTF8"
         );
+        fs.removeSync(higherOrderServerPath);
         fs.writeFile(
           path.join(publishPath, publishFileName),
           compiledServer,
