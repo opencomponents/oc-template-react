@@ -20,6 +20,8 @@ const ocComponentPath = path.join(
 let registry;
 let testServer;
 
+const semverRegex = /\bv?(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[\da-z-]+(?:\.[\da-z-]+)*)?(?:\+[\da-z-]+(?:\.[\da-z-]+)*)?\b/gi;
+
 beforeAll(done => {
   fs.removeSync(path.join(ocComponentPath, "_package"));
   cli.package(
@@ -69,7 +71,8 @@ afterAll(done => {
 test("Registry should correctly serve rendered and unrendered components", done => {
   const rendered = r(registryUrl + `react-app/?name=SuperMario`)
     .then(function(body) {
-      expect(body).toMatchSnapshot();
+      const bodyVersionless = body.replace(semverRegex, "6.6.6");
+      expect(bodyVersionless).toMatchSnapshot();
     })
     .catch(err => expect(err).toBeNull());
 
@@ -80,7 +83,8 @@ test("Registry should correctly serve rendered and unrendered components", done 
     }
   })
     .then(function(body) {
-      expect(body).toMatchSnapshot();
+      const bodyVersionless = body.replace(semverRegex, "6.6.6");
+      expect(bodyVersionless).toMatchSnapshot();
     })
     .catch(err => expect(err).toBeNull());
 
@@ -92,7 +96,8 @@ test("Registry should correctly serve rendered and unrendered components", done 
 test("server-side-side rendering", done => {
   JSDOM.fromURL(serverUrl + `?name=SuperMario`, {})
     .then(dom => {
-      expect(dom.serialize()).toMatchSnapshot();
+      const domVersionless = dom.serialize().replace(semverRegex, "6.6.6");
+      expect(domVersionless).toMatchSnapshot();
       done();
     })
     .catch(err => {
