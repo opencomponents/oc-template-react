@@ -1,7 +1,7 @@
 {
   "name": "acceptance-setup",
   "private": true,
-  "version": "0.0.5",
+  "version": "0.0.6",
   "devDependencies": {
     "fs-extra": "^4.0.0",
     "jsdom": "^11.3.0",
