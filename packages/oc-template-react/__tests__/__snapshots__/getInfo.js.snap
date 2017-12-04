@@ -11,12 +11,12 @@ Object {
     Object {
       "global": "React",
       "name": "react",
-      "url": "https://unpkg.com/react@16.1.1/umd/react.production.min.js",
+      "url": "https://unpkg.com/react@16.2.0/umd/react.production.min.js",
     },
     Object {
       "global": "ReactDOM",
       "name": "react-dom",
-      "url": "https://unpkg.com/react-dom@16.1.1/umd/react-dom.production.min.js",
+      "url": "https://unpkg.com/react-dom@16.2.0/umd/react-dom.production.min.js",
     },
   ],
   "type": "oc-template-react",
