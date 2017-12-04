@@ -23,5 +23,19 @@ describe("When the module is called", () => {
         done();
       });
     });
+
+    describe("but the evaluated js causes an error", () => {
+      const jsError = "throw new Error('Error in template');";
+      beforeEach(() => {
+        require("minimal-request").__setResponse(jsError);
+      });
+
+      test("should send the error to the callback", done => {
+        predicate((err, res) => {
+          expect(err.message).toBe("Error in template");
+          done();
+        });
+      });
+    });
   });
 });

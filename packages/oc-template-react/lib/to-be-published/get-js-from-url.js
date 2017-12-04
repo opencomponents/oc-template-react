@@ -19,7 +19,12 @@ module.exports = ({ url, key, globals, timeout = 5000, extractor }) => cb => {
       }
 
       const context = Object.assign({}, globals);
-      vm.runInNewContext(jsAsText, context);
+
+      try {
+        vm.runInNewContext(jsAsText, context);
+      } catch (err) {
+        return cb(err);
+      }
       const cached = extractor(key, context);
       cb(null, cached);
     }
