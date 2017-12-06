@@ -59,7 +59,7 @@ module.exports = function webpackConfigGenerator(options) {
           cssLoader,
           {
             test: /\.jsx?$/,
-            exclude: /node_modules/,
+            exclude: /node_modules\/(?!(oc-template-react-compiler\/utils))/,
             use: [
               {
                 loader: require.resolve("babel-loader"),
@@ -116,7 +116,7 @@ module.exports = function webpackConfigGenerator(options) {
           cssLoader,
           {
             test: /\.js$/,
-            exclude: /node_modules/,
+            exclude: /node_modules\/(?!(oc-template-react-compiler\/utils))/,
             use: loaders.concat([
               {
                 loader: require.resolve("babel-loader"),
