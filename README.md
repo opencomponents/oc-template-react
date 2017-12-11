@@ -61,6 +61,8 @@ yourEnhancedApp = withDataProvider(yourApp);
 
 `getData` accept two arguments: `(params, callback) => callback(err, result)`. It will perform a post back request to the component endpoint with the specified query perams invoking the callback with the results.
 
+For more details, check the [`example app`](/acceptance-components/react-app/app.js)
+
 #### withSettingProvider
 
 An Higher order component that will make a `getSetting` function available via props.
