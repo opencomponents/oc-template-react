@@ -20,6 +20,15 @@ collectors:
   # pull requests for updates to any version
   - type: js-npm
     versions: "Y.Y.Y"
+  # pull request to update externals
+  - type: find-replace
+    settings:
+      paths:
+      - package.json
+      patterns:
+      - 'https://unpkg.com/{name}@{version_clean}/prop-types.min.js'
+      - 'https://unpkg.com/{name}@{version_clean}/umd/react.production.min.js'
+      - 'https://unpkg.com/{name}@{version_clean}/umd/react-dom.production.min.js'
 
 - type: js-npm
   path: packages/oc-template-react-compiler
