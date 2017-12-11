@@ -6,15 +6,33 @@ import {
 
 import styles from "./styles.css";
 
-const App = props => (
-  <div className={styles.special}>
-    <h1>Hello {props.name}</h1>
-    <pre>{props.getData.toString()}</pre>
-    <p>component name: {props.getSetting("name")}</p>
-    <p>component version: {props.getSetting("version")}</p>
-    <p>registry baseUrl: {props.getSetting("baseUrl")}</p>
-    <p>component staticPath: {props.getSetting("staticPath")}</p>
-  </div>
-);
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: props.name
+    };
+  }
+
+  componentDidMount() {
+    this.props.getData({ name: "Pippo" }, (err, data) => {
+      this.setState({ name: data.name });
+    });
+  }
+
+  render() {
+    const { getSetting } = this.props;
+    const { name } = this.state;
+    return (
+      <div className={styles.special}>
+        <h1 id="1">Hello {name}</h1>
+        <p>component name: {getSetting("name")}</p>
+        <p>component version: {getSetting("version")}</p>
+        <p>registry baseUrl: {getSetting("baseUrl")}</p>
+        <p>component staticPath: {getSetting("staticPath")}</p>
+      </div>
+    );
+  }
+}
 
 export default withSettingProvider(withDataProvider(App));
