@@ -4,7 +4,8 @@ const server = require("../server");
 const { cli, Registry } = require("oc");
 const path = require("path");
 const r = require("request-promise-native");
-const JSDOM = require("jsdom").JSDOM;
+const jsdom = require("jsdom");
+const JSDOM = jsdom.JSDOM;
 const fs = require("fs-extra");
 
 jest.unmock("minimal-request");
@@ -99,6 +100,25 @@ test("server-side-side rendering", done => {
       const domVersionless = dom.serialize().replace(semverRegex, "6.6.6");
       expect(domVersionless).toMatchSnapshot();
       done();
+    })
+    .catch(err => {
+      expect(err).toBeNull();
+    });
+});
+
+test("client-side-side rendering", done => {
+  const virtualConsole = new jsdom.VirtualConsole();
+  JSDOM.fromURL(`${registryUrl}react-app/~preview?name=SuperMario`, {
+    resources: "usable",
+    runScripts: "dangerously",
+    virtualConsole
+  })
+    .then(dom => {
+      setTimeout(() => {
+        const nameNode = dom.window.document.getElementById("1");
+        expect(nameNode).toMatchSnapshot();
+        done();
+      }, 1000);
     })
     .catch(err => {
       expect(err).toBeNull();
