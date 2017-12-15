@@ -8,7 +8,7 @@ const MemoryFS = require("memory-fs");
 const path = require("path");
 const reactComponentWrapper = require("oc-react-component-wrapper");
 
-const webpackConfigurator = require("./to-abstract-base-template-utils/webpackConfigurator");
+const webpackConfigurator = require("oc-webpack").configurator;
 const higherOrderServerTemplate = require("./higherOrderServerTemplate");
 
 module.exports = (options, callback) => {
@@ -39,7 +39,6 @@ module.exports = (options, callback) => {
   );
 
   const config = webpackConfigurator({
-    confTarget: "server",
     serverPath: higherOrderServerPath,
     publishFileName,
     dependencies,
