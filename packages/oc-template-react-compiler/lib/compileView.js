@@ -36,7 +36,6 @@ module.exports = (options, callback) => {
 
   const compile = (options, cb) => {
     const config = webpackConfigurator({
-      confTarget: "view",
       viewPath: options.viewPath,
       externals: externals.reduce((externals, dep) => {
         externals[dep.name] = dep.global;

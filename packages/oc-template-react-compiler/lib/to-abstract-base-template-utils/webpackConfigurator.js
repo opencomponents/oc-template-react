@@ -46,111 +46,47 @@ module.exports = function webpackConfigGenerator(options) {
 
   const cacheDirectory = !production;
 
-  if (options.confTarget === "view") {
-    return {
-      entry: options.viewPath,
-      output: {
-        path: buildPath,
-        filename: options.publishFileName
-      },
-      externals: options.externals,
-      module: {
-        rules: [
-          cssLoader,
-          {
-            test: /\.jsx?$/,
-            exclude: /node_modules\/(?!(oc-template-react-compiler\/utils))/,
-            use: [
-              {
-                loader: require.resolve("babel-loader"),
-                options: {
-                  cacheDirectory,
-                  babelrc: false,
-                  presets: [
-                    [
-                      require.resolve("babel-preset-env"),
-                      { modules: false, loose: true }
-                    ],
-                    [require.resolve("babel-preset-react")]
+  return {
+    entry: options.viewPath,
+    output: {
+      path: buildPath,
+      filename: options.publishFileName
+    },
+    externals: options.externals,
+    module: {
+      rules: [
+        cssLoader,
+        {
+          test: /\.jsx?$/,
+          exclude: /node_modules\/(?!(oc-template-react-compiler\/utils))/,
+          use: [
+            {
+              loader: require.resolve("babel-loader"),
+              options: {
+                cacheDirectory,
+                babelrc: false,
+                presets: [
+                  [
+                    require.resolve("babel-preset-env"),
+                    { modules: false, loose: true }
                   ],
-                  plugins: [
-                    [
-                      require.resolve(
-                        "babel-plugin-transform-object-rest-spread"
-                      )
-                    ]
-                  ]
-                }
+                  [require.resolve("babel-preset-react")]
+                ],
+                plugins: [
+                  [require.resolve("babel-plugin-transform-object-rest-spread")]
+                ]
               }
-            ]
-          }
-        ]
-      },
-      plugins,
-      resolve: {
-        alias: {
-          react: path.join(__dirname, "../../node_modules/react"),
-          "react-dom": path.join(__dirname, "../../node_modules/react-dom")
+            }
+          ]
         }
+      ]
+    },
+    plugins,
+    resolve: {
+      alias: {
+        react: path.join(__dirname, "../../node_modules/react"),
+        "react-dom": path.join(__dirname, "../../node_modules/react-dom")
       }
-    };
-  } else {
-    let loaders = [];
-    if (production) {
-      loaders = loaders.concat({
-        loader: require.resolve("infinite-loop-loader")
-      });
     }
-
-    return {
-      entry: options.serverPath,
-      target: "node",
-      output: {
-        path: buildPath,
-        filename: options.publishFileName,
-        libraryTarget: "commonjs2"
-      },
-      externals: externalDependenciesHandlers(options.dependencies),
-      module: {
-        rules: [
-          cssLoader,
-          {
-            test: /\.js$/,
-            exclude: /node_modules\/(?!(oc-template-react-compiler\/utils))/,
-            use: loaders.concat([
-              {
-                loader: require.resolve("babel-loader"),
-                options: {
-                  cacheDirectory,
-                  babelrc: false,
-                  presets: [
-                    [
-                      require.resolve("babel-preset-env"),
-                      {
-                        modules: false,
-                        targets: {
-                          node: 6
-                        }
-                      }
-                    ],
-                    require.resolve("babel-preset-react")
-                  ],
-                  plugins: [
-                    [
-                      require.resolve(
-                        "babel-plugin-transform-object-rest-spread"
-                      )
-                    ]
-                  ]
-                }
-              }
-            ])
-          }
-        ]
-      },
-      plugins,
-      logger: options.logger || console,
-      stats: options.stats
-    };
-  }
+  };
 };
