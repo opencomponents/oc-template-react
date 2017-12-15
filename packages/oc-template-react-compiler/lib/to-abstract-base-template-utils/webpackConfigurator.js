@@ -85,7 +85,8 @@ module.exports = function webpackConfigGenerator(options) {
     resolve: {
       alias: {
         react: path.join(__dirname, "../../node_modules/react"),
-        "react-dom": path.join(__dirname, "../../node_modules/react-dom")
+        "react-dom": path.join(__dirname, "../../node_modules/react-dom"),
+        "prop-types": path.join(__dirname, "../../node_modules/prop-types")
       }
     }
   };
