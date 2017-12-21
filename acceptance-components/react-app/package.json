@@ -21,7 +21,8 @@
     }
   },
   "dependencies": {
-    "oc-template-react-compiler": "3.0.2"
+    "oc-template-react-compiler": "3.0.2",
+    "normalize.css": "^7.0.0"
   },
   "devDependencies": {
     "oc-template-react-compiler": "3.0.2"
