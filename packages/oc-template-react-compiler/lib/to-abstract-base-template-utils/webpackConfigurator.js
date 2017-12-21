@@ -20,9 +20,19 @@ module.exports = function webpackConfigGenerator(options) {
         {
           loader: require.resolve("css-loader"),
           options: {
-            importLoaders: 2,
+            importLoaders: 1,
             modules: true,
             localIdentName
+          }
+        },
+        {
+          loader: require.resolve("postcss-loader"),
+          options: {
+            plugins: [
+              require("postcss-import"),
+              require("postcss-extend"),
+              require("postcss-icss-values")
+            ]
           }
         }
       ]
