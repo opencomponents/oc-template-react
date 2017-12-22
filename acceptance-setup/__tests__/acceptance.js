@@ -118,7 +118,7 @@ test("client-side-side rendering", done => {
         const nameNode = dom.window.document.getElementById("1");
         expect(nameNode).toMatchSnapshot();
         done();
-      }, 1000);
+      }, 2000);
     })
     .catch(err => {
       expect(err).toBeNull();
