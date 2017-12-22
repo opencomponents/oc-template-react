@@ -1,7 +1,7 @@
 {
   "name": "react-app",
   "private": true,
-  "version": "1.0.8",
+  "version": "1.0.9",
   "oc": {
     "files": {
       "data": "server.js",
@@ -21,10 +21,10 @@
     }
   },
   "dependencies": {
-    "oc-template-react-compiler": "3.0.2",
-    "normalize.css": "^7.0.0"
+    "normalize.css": "^7.0.0",
+    "oc-template-react-compiler": "3.1.0"
   },
   "devDependencies": {
-    "oc-template-react-compiler": "3.0.2"
+    "oc-template-react-compiler": "3.1.0"
   }
 }
