@@ -28,6 +28,7 @@ module.exports = function webpackConfigGenerator(options) {
         {
           loader: require.resolve("postcss-loader"),
           options: {
+            ident: 'postcss',
             plugins: [
               require("postcss-import"),
               require("postcss-extend"),
