@@ -8,3 +8,22 @@
   background: palevioletred;
   color: white;
 }
+
+/*
+ * to test postcss (postcss-icss-values) plugin
+ * this should return:
+ *
+ *  .superSpecial {
+ *    color: blue;
+ *  }
+ *
+ *  -- colors.css --
+ *
+ *  @value bgColor: blue;
+ *
+ */
+@value bgColor from './colors.css';
+
+.superSpecial {
+  color: bgColor;
+}
