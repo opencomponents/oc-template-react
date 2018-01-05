@@ -14,16 +14,14 @@
  * this should return:
  *
  *  .superSpecial {
- *    color: blue;
+ *    color: white;
+ *    background-color: blue;
  *  }
- *
- *  -- colors.css --
- *
- *  @value bgColor: blue;
  *
  */
 @value bgColor from './colors.css';
 
 .superSpecial {
-  color: bgColor;
+  composes: textColor from './colors.css';
+  background-color: bgColor;
 }
