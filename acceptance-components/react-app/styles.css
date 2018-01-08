@@ -4,11 +4,6 @@
  */
 @import "normalize.css"; 
 
-.special {
-  background: palevioletred;
-  color: white;
-}
-
 /*
  * to test postcss (postcss-icss-values) plugin
  * this should return:
@@ -19,7 +14,14 @@
  *  }
  *
  */
-@value bgColor from './colors.css';
+@value bgColor from "./colors.css";
+
+.special {
+  background: palevioletred;
+  color: white;
+}
+
+
 
 .superSpecial {
   composes: textColor from './colors.css';

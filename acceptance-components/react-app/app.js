@@ -25,7 +25,9 @@ class App extends React.Component {
     const { name } = this.state;
     return (
       <div className={styles.special}>
-        <h1 id="1">Hello {name}</h1>
+        <h1 className={styles.superSpecial} id="1">
+          Hello {name}
+        </h1>
         <p>component name: {getSetting("name")}</p>
         <p>component version: {getSetting("version")}</p>
         <p>registry baseUrl: {getSetting("baseUrl")}</p>
