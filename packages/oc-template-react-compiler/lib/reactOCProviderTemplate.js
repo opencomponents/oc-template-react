@@ -12,8 +12,11 @@ const reactOCProviderTemplate = ({ viewPath }) => `
           baseUrl: this.props._baseUrl,
           parameters
         }, (err, data) => {
+          if (err) {
+            return cb(err);
+          }
           const { _staticPath, _baseUrl, _componentName, _componentVersion, ...rest } = data.reactComponent.props; 
-          cb(err, rest, data.reactComponent.props)
+          cb(null, rest, data.reactComponent.props);
         });
       };
       const getSetting = setting => {

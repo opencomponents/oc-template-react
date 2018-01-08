@@ -3,14 +3,14 @@
 exports[`valid component 1`] = `
 Object {
   "bundle": Object {
-    "hashKey": "af2e39f7cbfc8d80476719c112753f6b27a15104",
+    "hashKey": "e27d291a7650b65d4c9cc86c618caf53f81aff9e",
   },
   "template": Object {
-    "hashKey": "932050388da000e7b6e8ed0fdeba87d3d68cd461",
+    "hashKey": "cec5594b66060240d79a1548d5d517f095b156b2",
     "src": "template.js",
     "type": "oc-template-react",
   },
 }
 `;
 
-exports[`valid component 2`] = `"var oc=oc||{};oc.components=oc.components||{};oc.components['932050388da000e7b6e8ed0fdeba87d3d68cd461']=function(model){ return \`<div class=\\"oc-reactRoot-react-component\\">\${ model.__html ? model.__html : '' }</div> <style>null</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"global\\":\\"PropTypes\\",\\"url\\":\\"https://unpkg.com/prop-types@15.6.0/prop-types.min.js\\",\\"name\\":\\"prop-types\\"},{\\"global\\":\\"React\\",\\"url\\":\\"https://unpkg.com/react@16.2.0/umd/react.production.min.js\\",\\"name\\":\\"react\\"},{\\"global\\":\\"ReactDOM\\",\\"url\\":\\"https://unpkg.com/react-dom@16.2.0/umd/react-dom.production.min.js\\",\\"name\\":\\"react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', 'af2e39f7cbfc8d80476719c112753f6b27a15104'], '\${model.reactComponent.props._staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }"`;
+exports[`valid component 2`] = `"var oc=oc||{};oc.components=oc.components||{};oc.components['cec5594b66060240d79a1548d5d517f095b156b2']=function(model){ return \`<div class=\\"oc-reactRoot-react-component\\">\${ model.__html ? model.__html : '' }</div> <style>null</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"global\\":\\"PropTypes\\",\\"url\\":\\"https://unpkg.com/prop-types@15.6.0/prop-types.min.js\\",\\"name\\":\\"prop-types\\"},{\\"global\\":\\"React\\",\\"url\\":\\"https://unpkg.com/react@16.2.0/umd/react.production.min.js\\",\\"name\\":\\"react\\"},{\\"global\\":\\"ReactDOM\\",\\"url\\":\\"https://unpkg.com/react-dom@16.2.0/umd/react-dom.production.min.js\\",\\"name\\":\\"react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', 'e27d291a7650b65d4c9cc86c618caf53f81aff9e'], '\${model.reactComponent.props._staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }"`;
