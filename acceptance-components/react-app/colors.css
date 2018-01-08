@@ -1,5 +1,4 @@
-@value bgColor: blue;
-
+@value bgColor: pink;
 .textColor {
-    color: white;
+    color: green;
 }

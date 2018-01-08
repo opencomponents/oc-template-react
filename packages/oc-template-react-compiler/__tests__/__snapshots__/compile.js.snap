@@ -18,7 +18,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "b99fed55265967216372d2dc4cfe02bc22bcca58",
+        "hashKey": "a5048e07c890c6ec1b6fbec1ef92896489c870e6",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -46,7 +46,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package1/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"b99fed55265967216372d2dc4cfe02bc22bcca58\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"6438bf9f7d78b825b44c4967654540044d36d4fc\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"a5048e07c890c6ec1b6fbec1ef92896489c870e6\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"6438bf9f7d78b825b44c4967654540044d36d4fc\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -59,7 +59,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package1/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['b99fed55265967216372d2dc4cfe02bc22bcca58']=function(model){ return \`<div id=\\"oc-reactRoot-react-component\\" class=\\"oc-reactRoot-react-component\\" >\${ model.__html ? model.__html : '' }</div> <style>null</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"prop-types\\",\\"global\\":\\"PropTypes\\",\\"url\\":\\"cdn.com/prop-types\\"},{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', 'af2e39f7cbfc8d80476719c112753f6b27a15104'], '\${model.reactComponent.props._staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['a5048e07c890c6ec1b6fbec1ef92896489c870e6']=function(model){ return \`<div class=\\"oc-reactRoot-react-component\\">\${ model.__html ? model.__html : '' }</div> <style>null</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"prop-types\\",\\"global\\":\\"PropTypes\\",\\"url\\":\\"cdn.com/prop-types\\"},{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', 'af2e39f7cbfc8d80476719c112753f6b27a15104'], '\${model.reactComponent.props._staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
   },
 ]
 `;
@@ -82,7 +82,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "9b60954ca4d085d84f92e031d4590e9adc684e9a",
+        "hashKey": "e1cebbfbdaa873772ec65e517b97f0e2f85a5729",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -110,7 +110,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package1/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"9b60954ca4d085d84f92e031d4590e9adc684e9a\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"2d11ae676d1cf585cd51d483a71e03b83f8eb217\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"e1cebbfbdaa873772ec65e517b97f0e2f85a5729\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"2d11ae676d1cf585cd51d483a71e03b83f8eb217\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -127,7 +127,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package1/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['9b60954ca4d085d84f92e031d4590e9adc684e9a']=function(model){ return \`<div id=\\"oc-reactRoot-react-component-with-css\\" class=\\"oc-reactRoot-react-component-with-css\\" >\${ model.__html ? model.__html : '' }</div> <style>.awesome__2lltUggH{font-family:'Hiragino Sans','ヒラギノ角ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',Roboto,'Droid Sans','游ゴシック',YuGothic,'メイリオ',Meiryo,sans-serif;background:#db7093}</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"prop-types\\",\\"global\\":\\"PropTypes\\",\\"url\\":\\"cdn.com/prop-types\\"},{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', 'f6841aa7690e16718431de7ffcb3894451fee2ff'], '\${model.reactComponent.props._staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component-with-css\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['e1cebbfbdaa873772ec65e517b97f0e2f85a5729']=function(model){ return \`<div class=\\"oc-reactRoot-react-component-with-css\\">\${ model.__html ? model.__html : '' }</div> <style>.awesome__2lltUggH{font-family:'Hiragino Sans','ヒラギノ角ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',Roboto,'Droid Sans','游ゴシック',YuGothic,'メイリオ',Meiryo,sans-serif;background:#db7093}</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"prop-types\\",\\"global\\":\\"PropTypes\\",\\"url\\":\\"cdn.com/prop-types\\"},{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', 'f6841aa7690e16718431de7ffcb3894451fee2ff'], '\${model.reactComponent.props._staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component-with-css\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
   },
 ]
 `;
@@ -148,7 +148,7 @@ Object {
       },
       "static": Array [],
       "template": Object {
-        "hashKey": "b99fed55265967216372d2dc4cfe02bc22bcca58",
+        "hashKey": "a5048e07c890c6ec1b6fbec1ef92896489c870e6",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -165,7 +165,7 @@ exports[`Should handle empty static folder 2`] = `
 Array [
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package2/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"b99fed55265967216372d2dc4cfe02bc22bcca58\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"6438bf9f7d78b825b44c4967654540044d36d4fc\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"a5048e07c890c6ec1b6fbec1ef92896489c870e6\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"6438bf9f7d78b825b44c4967654540044d36d4fc\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -178,7 +178,7 @@ Array [
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package2/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['b99fed55265967216372d2dc4cfe02bc22bcca58']=function(model){ return \`<div id=\\"oc-reactRoot-react-component\\" class=\\"oc-reactRoot-react-component\\" >\${ model.__html ? model.__html : '' }</div> <style>null</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"prop-types\\",\\"global\\":\\"PropTypes\\",\\"url\\":\\"cdn.com/prop-types\\"},{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', 'af2e39f7cbfc8d80476719c112753f6b27a15104'], '\${model.reactComponent.props._staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['a5048e07c890c6ec1b6fbec1ef92896489c870e6']=function(model){ return \`<div class=\\"oc-reactRoot-react-component\\">\${ model.__html ? model.__html : '' }</div> <style>null</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"prop-types\\",\\"global\\":\\"PropTypes\\",\\"url\\":\\"cdn.com/prop-types\\"},{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', 'af2e39f7cbfc8d80476719c112753f6b27a15104'], '\${model.reactComponent.props._staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
   },
 ]
 `;
@@ -199,7 +199,7 @@ Object {
       },
       "static": Array [],
       "template": Object {
-        "hashKey": "9b60954ca4d085d84f92e031d4590e9adc684e9a",
+        "hashKey": "e1cebbfbdaa873772ec65e517b97f0e2f85a5729",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -216,7 +216,7 @@ exports[`Should handle empty static folder 4`] = `
 Array [
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package2/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"9b60954ca4d085d84f92e031d4590e9adc684e9a\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"2d11ae676d1cf585cd51d483a71e03b83f8eb217\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"e1cebbfbdaa873772ec65e517b97f0e2f85a5729\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"2d11ae676d1cf585cd51d483a71e03b83f8eb217\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -233,7 +233,7 @@ Array [
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package2/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['9b60954ca4d085d84f92e031d4590e9adc684e9a']=function(model){ return \`<div id=\\"oc-reactRoot-react-component-with-css\\" class=\\"oc-reactRoot-react-component-with-css\\" >\${ model.__html ? model.__html : '' }</div> <style>.awesome__2lltUggH{font-family:'Hiragino Sans','ヒラギノ角ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',Roboto,'Droid Sans','游ゴシック',YuGothic,'メイリオ',Meiryo,sans-serif;background:#db7093}</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"prop-types\\",\\"global\\":\\"PropTypes\\",\\"url\\":\\"cdn.com/prop-types\\"},{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', 'f6841aa7690e16718431de7ffcb3894451fee2ff'], '\${model.reactComponent.props._staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component-with-css\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['e1cebbfbdaa873772ec65e517b97f0e2f85a5729']=function(model){ return \`<div class=\\"oc-reactRoot-react-component-with-css\\">\${ model.__html ? model.__html : '' }</div> <style>.awesome__2lltUggH{font-family:'Hiragino Sans','ヒラギノ角ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',Roboto,'Droid Sans','游ゴシック',YuGothic,'メイリオ',Meiryo,sans-serif;background:#db7093}</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"prop-types\\",\\"global\\":\\"PropTypes\\",\\"url\\":\\"cdn.com/prop-types\\"},{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', 'f6841aa7690e16718431de7ffcb3894451fee2ff'], '\${model.reactComponent.props._staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component-with-css\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
   },
 ]
 `;
@@ -251,7 +251,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "b99fed55265967216372d2dc4cfe02bc22bcca58",
+        "hashKey": "a5048e07c890c6ec1b6fbec1ef92896489c870e6",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -279,7 +279,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package4/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"b99fed55265967216372d2dc4cfe02bc22bcca58\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"a5048e07c890c6ec1b6fbec1ef92896489c870e6\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -288,7 +288,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package4/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['b99fed55265967216372d2dc4cfe02bc22bcca58']=function(model){ return \`<div id=\\"oc-reactRoot-react-component\\" class=\\"oc-reactRoot-react-component\\" >\${ model.__html ? model.__html : '' }</div> <style>null</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"prop-types\\",\\"global\\":\\"PropTypes\\",\\"url\\":\\"cdn.com/prop-types\\"},{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', 'af2e39f7cbfc8d80476719c112753f6b27a15104'], '\${model.reactComponent.props._staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['a5048e07c890c6ec1b6fbec1ef92896489c870e6']=function(model){ return \`<div class=\\"oc-reactRoot-react-component\\">\${ model.__html ? model.__html : '' }</div> <style>null</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"prop-types\\",\\"global\\":\\"PropTypes\\",\\"url\\":\\"cdn.com/prop-types\\"},{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', 'af2e39f7cbfc8d80476719c112753f6b27a15104'], '\${model.reactComponent.props._staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
   },
 ]
 `;
@@ -306,7 +306,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "9b60954ca4d085d84f92e031d4590e9adc684e9a",
+        "hashKey": "e1cebbfbdaa873772ec65e517b97f0e2f85a5729",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -334,7 +334,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package4/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"9b60954ca4d085d84f92e031d4590e9adc684e9a\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"e1cebbfbdaa873772ec65e517b97f0e2f85a5729\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -347,7 +347,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package4/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['9b60954ca4d085d84f92e031d4590e9adc684e9a']=function(model){ return \`<div id=\\"oc-reactRoot-react-component-with-css\\" class=\\"oc-reactRoot-react-component-with-css\\" >\${ model.__html ? model.__html : '' }</div> <style>.awesome__2lltUggH{font-family:'Hiragino Sans','ヒラギノ角ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',Roboto,'Droid Sans','游ゴシック',YuGothic,'メイリオ',Meiryo,sans-serif;background:#db7093}</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"prop-types\\",\\"global\\":\\"PropTypes\\",\\"url\\":\\"cdn.com/prop-types\\"},{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', 'f6841aa7690e16718431de7ffcb3894451fee2ff'], '\${model.reactComponent.props._staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component-with-css\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['e1cebbfbdaa873772ec65e517b97f0e2f85a5729']=function(model){ return \`<div class=\\"oc-reactRoot-react-component-with-css\\">\${ model.__html ? model.__html : '' }</div> <style>.awesome__2lltUggH{font-family:'Hiragino Sans','ヒラギノ角ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',Roboto,'Droid Sans','游ゴシック',YuGothic,'メイリオ',Meiryo,sans-serif;background:#db7093}</style> <script> window.oc = window.oc || {}; oc.cmd = oc.cmd || []; oc.cmd.push(function(oc){ oc.requireSeries([{\\"name\\":\\"prop-types\\",\\"global\\":\\"PropTypes\\",\\"url\\":\\"cdn.com/prop-types\\"},{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){ oc.require( ['oc', 'reactComponents', 'f6841aa7690e16718431de7ffcb3894451fee2ff'], '\${model.reactComponent.props._staticPath}react-component.js', function(ReactComponent){ var targetNode = document.getElementById(\\"oc-reactRoot-react-component-with-css\\"); targetNode.setAttribute(\\"id\\",\\"\\"); ReactDOM.render(React.createElement(ReactComponent, \${JSON.stringify(model.reactComponent.props)}),targetNode); } ); }); }); </script> \`; }",
   },
 ]
 `;

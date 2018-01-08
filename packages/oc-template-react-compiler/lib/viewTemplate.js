@@ -5,9 +5,7 @@ const viewTemplate = ({
   bundleHash,
   bundleName
 }) => `function(model){
-  return \`<div id="${reactRoot}" class="${
-  reactRoot
-}" >\${ model.__html ? model.__html : '' }</div>
+  return \`<div class="${reactRoot}">\${ model.__html ? model.__html : '' }</div>
     <style>${css}</style>
     <script>
       window.oc = window.oc || {};
