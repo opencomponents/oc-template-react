@@ -28,11 +28,12 @@ module.exports = function webpackConfigGenerator(options) {
         {
           loader: require.resolve("postcss-loader"),
           options: {
-            ident: 'postcss',
+            ident: "postcss",
             plugins: [
               require("postcss-import"),
               require("postcss-extend"),
-              require("postcss-icss-values")
+              require("postcss-icss-values"),
+              require("autoprefixer")
             ]
           }
         }
