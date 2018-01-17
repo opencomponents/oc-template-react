@@ -16,14 +16,15 @@
  */
 @value bgColor from "./colors.css";
 
-.special {
+.just-special {
   background: palevioletred;
   color: white;
+  display: flex;
 }
 
 
 
-.superSpecial {
+.super-special {
   composes: textColor from './colors.css';
   background-color: bgColor;
 }
