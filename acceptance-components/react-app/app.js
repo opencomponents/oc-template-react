@@ -4,7 +4,7 @@ import {
   withSettingProvider
 } from "oc-template-react-compiler/utils";
 
-import styles from "./styles.css";
+import styles, { superSpecial } from "./styles.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -24,8 +24,8 @@ class App extends React.Component {
     const { getSetting } = this.props;
     const { name } = this.state;
     return (
-      <div className={styles.special}>
-        <h1 className={styles.superSpecial} id="1">
+      <div className={styles["just-special"]}>
+        <h1 className={superSpecial} id="1">
           Hello {name}
         </h1>
         <p>component name: {getSetting("name")}</p>
