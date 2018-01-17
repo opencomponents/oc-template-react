@@ -19,6 +19,7 @@
 .special {
   background: palevioletred;
   color: white;
+  display: flex;
 }
 
 
