@@ -50,7 +50,7 @@ Externals are not bundled when packaging and publishing the component, for bette
   - [postcss-import](https://github.com/postcss/postcss-import)
   - [postcss-extend](https://github.com/travco/postcss-extend)
   - [postcss-icss-values](https://github.com/css-modules/postcss-icss-values)
-
+  - [autoprefixer](https://github.com/postcss/autoprefixer)
 
 
 ## Utils
