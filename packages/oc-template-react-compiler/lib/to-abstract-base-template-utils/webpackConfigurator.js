@@ -22,7 +22,8 @@ module.exports = function webpackConfigGenerator(options) {
           options: {
             importLoaders: 1,
             modules: true,
-            localIdentName
+            localIdentName,
+            camelCase: true
           }
         },
         {
