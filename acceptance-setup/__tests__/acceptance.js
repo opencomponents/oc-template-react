@@ -108,6 +108,8 @@ test("server-side-side rendering", done => {
 
 test("client-side-side rendering", done => {
   const virtualConsole = new jsdom.VirtualConsole();
+  const mockLog = jest.fn(() => {});
+  virtualConsole.on("log", mockLog);
   JSDOM.fromURL(`${registryUrl}react-app/~preview?name=SuperMario`, {
     resources: "usable",
     runScripts: "dangerously",
@@ -115,6 +117,7 @@ test("client-side-side rendering", done => {
   })
     .then(dom => {
       setTimeout(() => {
+        expect(mockLog.mock.calls).toMatchSnapshot();
         const nameNode = dom.window.document.getElementById("1");
         expect(nameNode).toMatchSnapshot();
         done();
