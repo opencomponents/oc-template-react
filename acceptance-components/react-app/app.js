@@ -18,6 +18,9 @@ class App extends React.Component {
     this.props.getData({ name: "Pippo" }, (err, data) => {
       this.setState({ name: data.name });
     });
+
+    // Don't do this if you don't want to be fired
+    oc.events.on("oc:mounted", (ev, props) => console.log(props));
   }
 
   render() {
