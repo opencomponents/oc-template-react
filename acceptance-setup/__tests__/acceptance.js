@@ -22,8 +22,10 @@ let registry;
 let testServer;
 
 const semverRegex = /\bv?(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[\da-z-]+(?:\.[\da-z-]+)*)?(?:\+[\da-z-]+(?:\.[\da-z-]+)*)?\b/gi;
+const consoleError = global.console.error;
 
 beforeAll(done => {
+  global.console.error = jest.fn();
   fs.removeSync(path.join(ocComponentPath, "_package"));
   cli.package(
     {
@@ -61,6 +63,7 @@ beforeAll(done => {
 });
 
 afterAll(done => {
+  global.console.error = consoleError;
   testServer.close(() => {
     registry.close(() => {
       fs.removeSync(path.join(ocComponentPath, "_package"));
