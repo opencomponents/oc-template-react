@@ -16,7 +16,8 @@ export const data = (context, callback) => {
       _componentName: "${componentName}",
       _componentVersion: "${componentVersion}"
     });
-    const srcPath = (context.env && context.env.name === "local") ? context.staticPath : "https:" + context.staticPath ;
+    const srcPathHasProtocol = context.staticPath.indexOf("http") === 0;
+    const srcPath = srcPathHasProtocol ? context.staticPath : ("https:" + context.staticPath);
     return callback(null, Object.assign({}, {
       reactComponent: {
         key: "${bundleHashKey}",
