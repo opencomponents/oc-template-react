@@ -1,6 +1,5 @@
 /**
  * @testEnvironment jsdom
- * @ jsdom
  */
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
