@@ -1,6 +1,6 @@
 {
   "name": "oc-template-react-compiler",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "description": "OC-Template-REACT-Compiler",
   "main": "index.js",
   "repository": {
@@ -42,9 +42,9 @@
     "oc-get-unix-utc-timestamp": "1.0.1",
     "oc-hash-builder": "1.0.1",
     "oc-minify-file": "1.0.12",
-    "oc-react-component-wrapper": "1.0.1",
+    "oc-react-component-wrapper": "1.0.2",
     "oc-statics-compiler": "2.0.8",
-    "oc-template-react": "2.0.3",
+    "oc-template-react": "2.0.4",
     "oc-templates-messages": "1.0.1",
     "oc-view-wrapper": "1.0.2",
     "oc-webpack": "2.2.0",
