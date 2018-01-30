@@ -68,9 +68,8 @@ module.exports = (options, callback) => {
         css = fontFamilyUnicodeParser(
           memoryFs.readFileSync(`/build/main.css`, "UTF8")
         );
-        if (production) {
-          css = minifyFile(".css", css);
-        }
+
+        css = minifyFile(".css", css);
         const cssPath = path.join(publishPath, `styles.css`);
         fs.outputFileSync(cssPath, css);
       }
