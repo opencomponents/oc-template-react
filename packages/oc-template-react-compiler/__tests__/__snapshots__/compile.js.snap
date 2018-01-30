@@ -82,7 +82,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "b40c84a2e66faa0db33d22862e3607e1ef54e928",
+        "hashKey": "b9f063a5007090d0a5128ce6d32ad4cd7bcaef9f",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -110,7 +110,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package1/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"b40c84a2e66faa0db33d22862e3607e1ef54e928\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"249a3e1c4c9df342ce1c7b25d9b75609d6b4411b\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"b9f063a5007090d0a5128ce6d32ad4cd7bcaef9f\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"249a3e1c4c9df342ce1c7b25d9b75609d6b4411b\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -123,11 +123,11 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package1/styles.css",
-    "source": ".awesome__2lltUggH{font-family:'Hiragino Sans','ヒラギノ角ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',Roboto,'Droid Sans','游ゴシック',YuGothic,'メイリオ',Meiryo,sans-serif;background:#db7093}",
+    "source": ".awesome__2lltUggH{font-family:\\"Hiragino Sans\\",\\"ヒラギノ角ゴシック\\",\\"Hiragino Kaku Gothic ProN\\",\\"ヒラギノ角ゴ ProN W3\\",Roboto,\\"Droid Sans\\",\\"游ゴシック\\",YuGothic,\\"メイリオ\\",Meiryo,sans-serif;background:#db7093}",
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package1/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['b40c84a2e66faa0db33d22862e3607e1ef54e928']=function(model){ var modelHTML = model.__html ? model.__html : ''; var staticPath = model.reactComponent.props._staticPath; var props = JSON.stringify(model.reactComponent.props); return '<div id=\\"oc-reactRoot-react-component-with-css\\" class=\\"oc-reactRoot-react-component-with-css\\">' + modelHTML + '</div>' + '<style>.awesome__2lltUggH{font-family:'Hiragino Sans','ヒラギノ角ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',Roboto,'Droid Sans','游ゴシック',YuGothic,'メイリオ',Meiryo,sans-serif;background:#db7093}</style>' + '<script>' + 'window.oc = window.oc || {};' + 'oc.cmd = oc.cmd || [];' + 'oc.cmd.push(function(oc){' + 'oc.requireSeries([{\\"name\\":\\"prop-types\\",\\"global\\":\\"PropTypes\\",\\"url\\":\\"cdn.com/prop-types\\"},{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){' + 'oc.require(' + '[\\"oc\\", \\"reactComponents\\", \\"b25c7d679a467ff32db6c6e6c77a09f69ef090a4\\"],' + '\\"' + staticPath + 'react-component.js\\",' + 'function(ReactComponent){' + 'var targetNode = document.getElementById(\\"oc-reactRoot-react-component-with-css\\");' + 'targetNode.setAttribute(\\"id\\",\\"\\");' + 'ReactDOM.render(React.createElement(ReactComponent,' + props + '),targetNode);' + '}' + ');' + '});' + '});' + '</script>' }",
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['b9f063a5007090d0a5128ce6d32ad4cd7bcaef9f']=function(model){ var modelHTML = model.__html ? model.__html : ''; var staticPath = model.reactComponent.props._staticPath; var props = JSON.stringify(model.reactComponent.props); return '<div id=\\"oc-reactRoot-react-component-with-css\\" class=\\"oc-reactRoot-react-component-with-css\\">' + modelHTML + '</div>' + '<style>.awesome__2lltUggH{font-family:\\"Hiragino Sans\\",\\"ヒラギノ角ゴシック\\",\\"Hiragino Kaku Gothic ProN\\",\\"ヒラギノ角ゴ ProN W3\\",Roboto,\\"Droid Sans\\",\\"游ゴシック\\",YuGothic,\\"メイリオ\\",Meiryo,sans-serif;background:#db7093}</style>' + '<script>' + 'window.oc = window.oc || {};' + 'oc.cmd = oc.cmd || [];' + 'oc.cmd.push(function(oc){' + 'oc.requireSeries([{\\"name\\":\\"prop-types\\",\\"global\\":\\"PropTypes\\",\\"url\\":\\"cdn.com/prop-types\\"},{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){' + 'oc.require(' + '[\\"oc\\", \\"reactComponents\\", \\"b25c7d679a467ff32db6c6e6c77a09f69ef090a4\\"],' + '\\"' + staticPath + 'react-component.js\\",' + 'function(ReactComponent){' + 'var targetNode = document.getElementById(\\"oc-reactRoot-react-component-with-css\\");' + 'targetNode.setAttribute(\\"id\\",\\"\\");' + 'ReactDOM.render(React.createElement(ReactComponent,' + props + '),targetNode);' + '}' + ');' + '});' + '});' + '</script>' }",
   },
 ]
 `;
@@ -199,7 +199,7 @@ Object {
       },
       "static": Array [],
       "template": Object {
-        "hashKey": "b40c84a2e66faa0db33d22862e3607e1ef54e928",
+        "hashKey": "b9f063a5007090d0a5128ce6d32ad4cd7bcaef9f",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -216,7 +216,7 @@ exports[`Should handle empty static folder 4`] = `
 Array [
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package2/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"b40c84a2e66faa0db33d22862e3607e1ef54e928\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"249a3e1c4c9df342ce1c7b25d9b75609d6b4411b\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"b9f063a5007090d0a5128ce6d32ad4cd7bcaef9f\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"249a3e1c4c9df342ce1c7b25d9b75609d6b4411b\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -229,11 +229,11 @@ Array [
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package2/styles.css",
-    "source": ".awesome__2lltUggH{font-family:'Hiragino Sans','ヒラギノ角ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',Roboto,'Droid Sans','游ゴシック',YuGothic,'メイリオ',Meiryo,sans-serif;background:#db7093}",
+    "source": ".awesome__2lltUggH{font-family:\\"Hiragino Sans\\",\\"ヒラギノ角ゴシック\\",\\"Hiragino Kaku Gothic ProN\\",\\"ヒラギノ角ゴ ProN W3\\",Roboto,\\"Droid Sans\\",\\"游ゴシック\\",YuGothic,\\"メイリオ\\",Meiryo,sans-serif;background:#db7093}",
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package2/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['b40c84a2e66faa0db33d22862e3607e1ef54e928']=function(model){ var modelHTML = model.__html ? model.__html : ''; var staticPath = model.reactComponent.props._staticPath; var props = JSON.stringify(model.reactComponent.props); return '<div id=\\"oc-reactRoot-react-component-with-css\\" class=\\"oc-reactRoot-react-component-with-css\\">' + modelHTML + '</div>' + '<style>.awesome__2lltUggH{font-family:'Hiragino Sans','ヒラギノ角ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',Roboto,'Droid Sans','游ゴシック',YuGothic,'メイリオ',Meiryo,sans-serif;background:#db7093}</style>' + '<script>' + 'window.oc = window.oc || {};' + 'oc.cmd = oc.cmd || [];' + 'oc.cmd.push(function(oc){' + 'oc.requireSeries([{\\"name\\":\\"prop-types\\",\\"global\\":\\"PropTypes\\",\\"url\\":\\"cdn.com/prop-types\\"},{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){' + 'oc.require(' + '[\\"oc\\", \\"reactComponents\\", \\"b25c7d679a467ff32db6c6e6c77a09f69ef090a4\\"],' + '\\"' + staticPath + 'react-component.js\\",' + 'function(ReactComponent){' + 'var targetNode = document.getElementById(\\"oc-reactRoot-react-component-with-css\\");' + 'targetNode.setAttribute(\\"id\\",\\"\\");' + 'ReactDOM.render(React.createElement(ReactComponent,' + props + '),targetNode);' + '}' + ');' + '});' + '});' + '</script>' }",
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['b9f063a5007090d0a5128ce6d32ad4cd7bcaef9f']=function(model){ var modelHTML = model.__html ? model.__html : ''; var staticPath = model.reactComponent.props._staticPath; var props = JSON.stringify(model.reactComponent.props); return '<div id=\\"oc-reactRoot-react-component-with-css\\" class=\\"oc-reactRoot-react-component-with-css\\">' + modelHTML + '</div>' + '<style>.awesome__2lltUggH{font-family:\\"Hiragino Sans\\",\\"ヒラギノ角ゴシック\\",\\"Hiragino Kaku Gothic ProN\\",\\"ヒラギノ角ゴ ProN W3\\",Roboto,\\"Droid Sans\\",\\"游ゴシック\\",YuGothic,\\"メイリオ\\",Meiryo,sans-serif;background:#db7093}</style>' + '<script>' + 'window.oc = window.oc || {};' + 'oc.cmd = oc.cmd || [];' + 'oc.cmd.push(function(oc){' + 'oc.requireSeries([{\\"name\\":\\"prop-types\\",\\"global\\":\\"PropTypes\\",\\"url\\":\\"cdn.com/prop-types\\"},{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){' + 'oc.require(' + '[\\"oc\\", \\"reactComponents\\", \\"b25c7d679a467ff32db6c6e6c77a09f69ef090a4\\"],' + '\\"' + staticPath + 'react-component.js\\",' + 'function(ReactComponent){' + 'var targetNode = document.getElementById(\\"oc-reactRoot-react-component-with-css\\");' + 'targetNode.setAttribute(\\"id\\",\\"\\");' + 'ReactDOM.render(React.createElement(ReactComponent,' + props + '),targetNode);' + '}' + ');' + '});' + '});' + '</script>' }",
   },
 ]
 `;
@@ -306,7 +306,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "b40c84a2e66faa0db33d22862e3607e1ef54e928",
+        "hashKey": "b9f063a5007090d0a5128ce6d32ad4cd7bcaef9f",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -334,7 +334,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package4/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"b40c84a2e66faa0db33d22862e3607e1ef54e928\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"b9f063a5007090d0a5128ce6d32ad4cd7bcaef9f\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -343,11 +343,11 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package4/styles.css",
-    "source": ".awesome__2lltUggH{font-family:'Hiragino Sans','ヒラギノ角ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',Roboto,'Droid Sans','游ゴシック',YuGothic,'メイリオ',Meiryo,sans-serif;background:#db7093}",
+    "source": ".awesome__2lltUggH{font-family:\\"Hiragino Sans\\",\\"ヒラギノ角ゴシック\\",\\"Hiragino Kaku Gothic ProN\\",\\"ヒラギノ角ゴ ProN W3\\",Roboto,\\"Droid Sans\\",\\"游ゴシック\\",YuGothic,\\"メイリオ\\",Meiryo,sans-serif;background:#db7093}",
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package4/template.js",
-    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['b40c84a2e66faa0db33d22862e3607e1ef54e928']=function(model){ var modelHTML = model.__html ? model.__html : ''; var staticPath = model.reactComponent.props._staticPath; var props = JSON.stringify(model.reactComponent.props); return '<div id=\\"oc-reactRoot-react-component-with-css\\" class=\\"oc-reactRoot-react-component-with-css\\">' + modelHTML + '</div>' + '<style>.awesome__2lltUggH{font-family:'Hiragino Sans','ヒラギノ角ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',Roboto,'Droid Sans','游ゴシック',YuGothic,'メイリオ',Meiryo,sans-serif;background:#db7093}</style>' + '<script>' + 'window.oc = window.oc || {};' + 'oc.cmd = oc.cmd || [];' + 'oc.cmd.push(function(oc){' + 'oc.requireSeries([{\\"name\\":\\"prop-types\\",\\"global\\":\\"PropTypes\\",\\"url\\":\\"cdn.com/prop-types\\"},{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){' + 'oc.require(' + '[\\"oc\\", \\"reactComponents\\", \\"b25c7d679a467ff32db6c6e6c77a09f69ef090a4\\"],' + '\\"' + staticPath + 'react-component.js\\",' + 'function(ReactComponent){' + 'var targetNode = document.getElementById(\\"oc-reactRoot-react-component-with-css\\");' + 'targetNode.setAttribute(\\"id\\",\\"\\");' + 'ReactDOM.render(React.createElement(ReactComponent,' + props + '),targetNode);' + '}' + ');' + '});' + '});' + '</script>' }",
+    "source": "var oc=oc||{};oc.components=oc.components||{};oc.components['b9f063a5007090d0a5128ce6d32ad4cd7bcaef9f']=function(model){ var modelHTML = model.__html ? model.__html : ''; var staticPath = model.reactComponent.props._staticPath; var props = JSON.stringify(model.reactComponent.props); return '<div id=\\"oc-reactRoot-react-component-with-css\\" class=\\"oc-reactRoot-react-component-with-css\\">' + modelHTML + '</div>' + '<style>.awesome__2lltUggH{font-family:\\"Hiragino Sans\\",\\"ヒラギノ角ゴシック\\",\\"Hiragino Kaku Gothic ProN\\",\\"ヒラギノ角ゴ ProN W3\\",Roboto,\\"Droid Sans\\",\\"游ゴシック\\",YuGothic,\\"メイリオ\\",Meiryo,sans-serif;background:#db7093}</style>' + '<script>' + 'window.oc = window.oc || {};' + 'oc.cmd = oc.cmd || [];' + 'oc.cmd.push(function(oc){' + 'oc.requireSeries([{\\"name\\":\\"prop-types\\",\\"global\\":\\"PropTypes\\",\\"url\\":\\"cdn.com/prop-types\\"},{\\"name\\":\\"react\\",\\"global\\":\\"React\\",\\"url\\":\\"cdn.com/react\\"},{\\"name\\":\\"react-dom\\",\\"global\\":\\"ReactDOM\\",\\"url\\":\\"cdn.com/react-dom\\"}], function(){' + 'oc.require(' + '[\\"oc\\", \\"reactComponents\\", \\"b25c7d679a467ff32db6c6e6c77a09f69ef090a4\\"],' + '\\"' + staticPath + 'react-component.js\\",' + 'function(ReactComponent){' + 'var targetNode = document.getElementById(\\"oc-reactRoot-react-component-with-css\\");' + 'targetNode.setAttribute(\\"id\\",\\"\\");' + 'ReactDOM.render(React.createElement(ReactComponent,' + props + '),targetNode);' + '}' + ');' + '});' + '});' + '</script>' }",
   },
 ]
 `;

@@ -69,7 +69,9 @@ module.exports = (options, callback) => {
           memoryFs.readFileSync(`/build/main.css`, "UTF8")
         );
 
-        css = minifyFile(".css", css);
+        // We convert single quotes to double quotes in order to
+        // support the viewTemplate's string interpolation
+        css = minifyFile(".css", css).replace(/\'/g, '"');
         const cssPath = path.join(publishPath, `styles.css`);
         fs.outputFileSync(cssPath, css);
       }
