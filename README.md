@@ -7,10 +7,18 @@ react-templates & utilties for the [OpenComponents](https://github.com/opentable
 
 Module for handling React templates in OC
 
-[![Build Status](https://secure.travis-ci.org/opencomponents/oc-template-react.png?branch=master)](http://travis-ci.org/opencomponents/oc-template-react)
 [![codecov](https://codecov.io/gh/opencomponents/oc-template-react/branch/master/graph/badge.svg)](https://codecov.io/gh/opencomponents/oc-template-react)
 [![Known Vulnerabilities](https://snyk.io/test/github/opencomponents/oc-template-react/badge.svg)](https://snyk.io/test/github/opencomponents/oc-template-react)
 [![npm version](https://badge.fury.io/js/oc-template-react.svg)](http://badge.fury.io/js/oc-template-react)
+
+| Node6             | Node7             | Node8            | 
+|-------------------|-------------------|-------------------|
+| [![Node6][1]][4] | [![Node7][2]][4] | [![Node8][3]][4] |
+
+[1]: https://travis-matrix-badges.herokuapp.com/repos/opencomponents/oc-template-react/branches/master/1
+[2]: https://travis-matrix-badges.herokuapp.com/repos/opencomponents/oc-template-react/branches/master/2
+[3]: https://travis-matrix-badges.herokuapp.com/repos/opencomponents/oc-template-react/branches/master/3
+[4]: https://travis-ci.org/opencomponents/base-templates
 
 ## Packages included in this repo
 
