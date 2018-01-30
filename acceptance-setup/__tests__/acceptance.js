@@ -1,3 +1,7 @@
+/**
+ * @testEnvironment jsdom
+ */
+
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
 
 const server = require("../server");
@@ -22,10 +26,8 @@ let registry;
 let testServer;
 
 const semverRegex = /\bv?(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[\da-z-]+(?:\.[\da-z-]+)*)?(?:\+[\da-z-]+(?:\.[\da-z-]+)*)?\b/gi;
-const consoleError = global.console.error;
 
 beforeAll(done => {
-  global.console.error = jest.fn();
   fs.removeSync(path.join(ocComponentPath, "_package"));
   cli.package(
     {
@@ -63,7 +65,6 @@ beforeAll(done => {
 });
 
 afterAll(done => {
-  global.console.error = consoleError;
   testServer.close(() => {
     registry.close(() => {
       fs.removeSync(path.join(ocComponentPath, "_package"));
@@ -93,8 +94,8 @@ test("Registry should correctly serve rendered and unrendered components", done 
     .catch(err => expect(err).toBeNull());
 
   Promise.all([rendered, unrendered])
-    .then(done)
-    .catch(done);
+    .then(() => done())
+    .catch(err => done(err));
 });
 
 test("server-side-side rendering", done => {
@@ -104,9 +105,7 @@ test("server-side-side rendering", done => {
       expect(domVersionless).toMatchSnapshot();
       done();
     })
-    .catch(err => {
-      expect(err).toBeNull();
-    });
+    .catch(err => done(err));
 });
 
 test("client-side-side rendering", done => {
@@ -126,7 +125,5 @@ test("client-side-side rendering", done => {
         done();
       }, 5000);
     })
-    .catch(err => {
-      expect(err).toBeNull();
-    });
+    .catch(err => done(err));
 });
