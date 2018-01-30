@@ -4,7 +4,6 @@
   "version": "0.0.15",
   "devDependencies": {
     "fs-extra": "5.0.0",
-    "jsdom": "^11.3.0",
     "request": "^2.83.0",
     "request-promise-native": "^1.0.5"
   }
