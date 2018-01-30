@@ -18,7 +18,7 @@ Module for handling React templates in OC
 [1]: https://travis-matrix-badges.herokuapp.com/repos/opencomponents/oc-template-react/branches/master/1
 [2]: https://travis-matrix-badges.herokuapp.com/repos/opencomponents/oc-template-react/branches/master/2
 [3]: https://travis-matrix-badges.herokuapp.com/repos/opencomponents/oc-template-react/branches/master/3
-[4]: https://travis-ci.org/opencomponents/base-templates
+[4]: https://travis-ci.org/opencomponents/oc-template-react
 
 ## Packages included in this repo
 
