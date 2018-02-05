@@ -13,7 +13,7 @@ const viewTemplate = ({
     'window.oc = window.oc || {};' +
     'oc.cmd = oc.cmd || [];' +
     'oc.cmd.push(function(oc){' +
-      'oc.addStylesToHead("${css}");' +
+      'oc.addStylesToHead(\\'${css}\\');' +
       'oc.requireSeries(${JSON.stringify(externals)}, function(){' +
         'oc.require(' +
           '["oc", "reactComponents", "${bundleHash}"],' + 
