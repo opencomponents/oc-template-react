@@ -25,7 +25,7 @@
   "dependencies": {
     "minimal-request": "3.0.0",
     "nice-cache": "0.0.5",
-    "oc-generic-template-renderer": "2.0.1",
+    "oc-generic-template-renderer": "2.0.2",
     "prop-types": "15.6.0",
     "react": "16.2.0",
     "react-dom": "16.2.0"
