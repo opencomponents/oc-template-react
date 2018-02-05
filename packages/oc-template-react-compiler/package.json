@@ -45,7 +45,7 @@
     "oc-react-component-wrapper": "1.0.2",
     "oc-statics-compiler": "2.0.9",
     "oc-template-react": "2.0.5",
-    "oc-templates-messages": "1.0.1",
+    "oc-templates-messages": "1.0.2",
     "oc-view-wrapper": "1.0.3",
     "oc-webpack": "2.2.0",
     "postcss-extend": "^1.0.5",
