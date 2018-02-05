@@ -8,13 +8,12 @@ const viewTemplate = ({
   var modelHTML =  model.__html ? model.__html : '';
   var staticPath = model.reactComponent.props._staticPath;
   var props = JSON.stringify(model.reactComponent.props);
-  var cssTag = '<style data-react-root="${reactRoot}">${css}</style>';
   return '<div id="${reactRoot}" class="${reactRoot}">' + modelHTML + '</div>' +
     '<script>' +
     'window.oc = window.oc || {};' +
     'oc.cmd = oc.cmd || [];' +
     'oc.cmd.push(function(oc){' +
-      'oc.$(\\'' + cssTag + '\\').appendTo(document.head);' +
+      'oc.addStylesToHead("${css}");' +
       'oc.requireSeries(${JSON.stringify(externals)}, function(){' +
         'oc.require(' +
           '["oc", "reactComponents", "${bundleHash}"],' + 
