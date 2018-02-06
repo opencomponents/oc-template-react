@@ -13,9 +13,7 @@ const higherOrderServerTemplate = require("./higherOrderServerTemplate");
 
 module.exports = (options, callback) => {
   const serverFileName = options.componentPackage.oc.files.data;
-  let serverPath = path.resolve(
-    path.join(options.componentPath, serverFileName)
-  );
+  let serverPath = path.join(options.componentPath, serverFileName);
   if (process.platform === "win32") {
     serverPath = serverPath.split("\\").join("\\\\");
   }
@@ -34,10 +32,11 @@ module.exports = (options, callback) => {
     bundleHashKey: options.compiledViewInfo.bundle.hashKey
   });
   const higherOrderServerName = "higherOrderServer.js";
-  const higherOrderServerPath = path.resolve(
-    path.join(publishPath, "temp", higherOrderServerName)
+  const higherOrderServerPath = path.join(
+    publishPath,
+    "temp",
+    higherOrderServerName
   );
-
   const config = webpackConfigurator({
     serverPath: higherOrderServerPath,
     publishFileName,
