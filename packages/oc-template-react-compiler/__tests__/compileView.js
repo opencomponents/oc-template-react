@@ -32,7 +32,7 @@ test("invalid component", done => {
     __dirname,
     "../../../mocks/invalid-jsx-component"
   );
-  const publishPath = path.join(componentPath, "_packageCompileViewTest");
+  const publishPath = path.join(componentPath, "_packageCompileViewTest2");
   const publishFileName = "template.js";
 
   const options = {
