@@ -114,6 +114,10 @@ _.each(components, scenarios => {
 });
 
 test("When server compilation fails should return an error", done => {
+  const publishPath = path.join(
+    componentPath("react-component"),
+    "_compile-tests-package5"
+  );
   const options = {
     componentPackage: (function() {
       const manifest = componentPackage("react-component");
@@ -124,19 +128,20 @@ test("When server compilation fails should return an error", done => {
       version: "1.0.0"
     },
     componentPath: componentPath("react-component"),
-    publishPath: path.join(
-      componentPath("react-component"),
-      "_compile-tests-package5"
-    )
+    publishPath
   };
 
   execute(options, err => {
     expect(err).toContain("Module not found");
-    done();
+    fs.remove(publishPath, done);
   });
 });
 
 test("When files writing fails should return an error", done => {
+  const publishPath = path.join(
+    componentPath("react-component"),
+    "_compile-tests-package6"
+  );
   const spy = jest
     .spyOn(fs, "ensureDir")
     .mockImplementation(jest.fn((a, cb) => cb("sorry I failed")));
@@ -147,15 +152,12 @@ test("When files writing fails should return an error", done => {
       version: "1.0.0"
     },
     componentPath: componentPath("react-component"),
-    publishPath: path.join(
-      componentPath("react-component"),
-      "_compile-tests-package6"
-    )
+    publishPath
   };
 
   execute(options, err => {
     expect(err).toMatchSnapshot();
     spy.mockRestore();
-    done();
+    fs.remove(publishPath, done);
   });
 });

@@ -31,11 +31,10 @@ module.exports = (options, callback) => {
     componentVersion,
     bundleHashKey: options.compiledViewInfo.bundle.hashKey
   });
-  const higherOrderServerName = "higherOrderServer.js";
+  const tempFolder = path.join(serverPath, "../temp");
   const higherOrderServerPath = path.join(
-    publishPath,
-    "temp",
-    higherOrderServerName
+    tempFolder,
+    "__oc_higherOrderServer.js"
   );
 
   const config = webpackConfigurator({
@@ -51,12 +50,12 @@ module.exports = (options, callback) => {
       next =>
         fs.outputFile(higherOrderServerPath, higherOrderServerContent, next),
       next => compiler(config, next),
-      (data, next) => fs.remove(higherOrderServerPath, err => next(err, data)),
       (data, next) => fs.ensureDir(publishPath, err => next(err, data)),
       (data, next) => {
+        const basePath = path.join(serverPath, "../temp/build");
         const memoryFs = new MemoryFS(data);
         const compiledServer = memoryFs.readFileSync(
-          `/build/${config.output.filename}`,
+          `${basePath}/${config.output.filename}`,
           "UTF8"
         );
         fs.writeFile(
@@ -76,6 +75,6 @@ module.exports = (options, callback) => {
         );
       }
     ],
-    callback
+    (err, data) => fs.remove(tempFolder, err2 => callback(err, data))
   );
 };
