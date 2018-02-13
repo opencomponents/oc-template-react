@@ -18,7 +18,10 @@ const viewTemplate = require("./viewTemplate");
 
 module.exports = (options, callback) => {
   const viewFileName = options.componentPackage.oc.files.template.src;
-  const viewPath = path.join(options.componentPath, viewFileName);
+  let viewPath = path.join(options.componentPath, viewFileName);
+  if (process.platform === "win32") {
+    viewPath = viewPath.split("\\").join("\\\\");
+  }
   const publishPath = options.publishPath;
   const publishFileName = options.publishFileName || "template.js";
   const componentPackage = options.componentPackage;
