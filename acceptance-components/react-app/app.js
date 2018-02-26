@@ -20,7 +20,7 @@ class App extends React.Component {
     });
 
     // Don't do this if you don't want to be fired
-    oc.events.on("oc:mounted", (ev, props) => console.log(props));
+    oc.events.on("oc:componentDidMount", (ev, props) => console.log(props));
   }
 
   render() {
