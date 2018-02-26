@@ -122,9 +122,6 @@ test("client-side-side rendering", done => {
         expect(mockLog.mock.calls).toMatchSnapshot();
         const nameNode = dom.window.document.getElementById("1");
         expect(nameNode).toMatchSnapshot();
-        expect(
-          dom.window.document.getElementsByTagName("style")[1].textContent
-        ).toMatchSnapshot();
         done();
       }, 5000);
     })
