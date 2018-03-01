@@ -18,8 +18,7 @@
         "mandatory": false,
         "type": "string"
       }
-    },
-    "customWebpackRules": "customWebpackRules.config.js"
+    }
   },
   "dependencies": {
     "normalize.css": "^7.0.0",
