@@ -46,7 +46,8 @@ module.exports = (options, callback) => {
       }, {}),
       publishFileName,
       production,
-      customWebpackRules: options.customWebpackRules
+      customWebpackRules: options.customWebpackRules,
+      componentPath: options.componentPath
     });
     compiler(config, (err, data) => {
       if (err) {
@@ -108,7 +109,8 @@ module.exports = (options, callback) => {
         compile(
           {
             viewPath: reactOCProviderPath,
-            customWebpackRules: options.componentPackage.oc.customWebpackRules
+            customWebpackRules: options.componentPackage.oc.customWebpackRules,
+            componentPath: options.componentPath
           },
           next
         ),

@@ -16,14 +16,13 @@ module.exports = function webpackConfigGenerator(options) {
 
   let customRulesLoader = [];
   if (options.customWebpackRules) {
-    console.log("`````` path ", path.parse(__dirname));
     const customPath = path.join(
-      __dirname,
-      "../../../../",
+      options.componentPath,
       options.customWebpackRules
     );
     try {
       customRulesLoader = require(customPath);
+      console.log("loading custom Webpack rules from -", customPath);
     } catch (err) {
       console.log("WARNING: Custom Webpack Rules Compile Error - ", err);
     }
