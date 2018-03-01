@@ -52,7 +52,7 @@
     "postcss-icss-values": "^2.0.1",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.9",
-    "prop-types": "15.6.0",
+    "prop-types": "15.6.1",
     "react": "16.2.0",
     "webpack": "^3.5.5"
   },
