@@ -9,7 +9,8 @@
         "src": "app.js",
         "type": "oc-template-react"
       }
-    }
+    },
+    "customWebpackRules": "customWebpackRules.config.js"
   },
   "devDependencies": {
     "oc-template-react-compiler": "*"
