@@ -6,7 +6,7 @@ Object {
     Object {
       "global": "PropTypes",
       "name": "prop-types",
-      "url": "https://unpkg.com/prop-types@15.6.0/prop-types.min.js",
+      "url": "https://unpkg.com/prop-types@15.6.1/prop-types.min.js",
     },
     Object {
       "global": "React",
