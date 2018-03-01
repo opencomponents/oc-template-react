@@ -45,9 +45,7 @@ module.exports = (options, callback) => {
         return externals;
       }, {}),
       publishFileName,
-      production,
-      customWebpackRules: options.customWebpackRules,
-      componentPath: options.componentPath
+      production
     });
     compiler(config, (err, data) => {
       if (err) {
@@ -105,15 +103,7 @@ module.exports = (options, callback) => {
   async.waterfall(
     [
       next => fs.outputFile(reactOCProviderPath, reactOCProviderContent, next),
-      next =>
-        compile(
-          {
-            viewPath: reactOCProviderPath,
-            customWebpackRules: options.componentPackage.oc.customWebpackRules,
-            componentPath: options.componentPath
-          },
-          next
-        ),
+      next => compile({ viewPath: reactOCProviderPath }, next),
       (compiled, next) =>
         fs.remove(reactOCProviderPath, err => next(err, compiled)),
       (compiled, next) => fs.ensureDir(publishPath, err => next(err, compiled)),

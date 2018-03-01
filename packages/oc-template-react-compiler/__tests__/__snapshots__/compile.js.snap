@@ -7,7 +7,6 @@ Object {
   },
   "name": "react-component",
   "oc": Object {
-    "customWebpackRules": "customWebpackRules.config.js",
     "date": "",
     "files": Object {
       "dataProvider": Object {
@@ -47,7 +46,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package1/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"152b837874b750db913223c0e9417aa8375bd3e3\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"bb7495f62d9b11d749718b9ebf0b75a6751fffa0\\",\\"src\\":\\"server.js\\"}},\\"customWebpackRules\\":\\"customWebpackRules.config.js\\",\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"152b837874b750db913223c0e9417aa8375bd3e3\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"bb7495f62d9b11d749718b9ebf0b75a6751fffa0\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -72,7 +71,6 @@ Object {
   },
   "name": "react-component-with-css",
   "oc": Object {
-    "customWebpackRules": "customWebpackRules.config.js",
     "date": "",
     "files": Object {
       "dataProvider": Object {
@@ -112,7 +110,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package1/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"e4e92841d07fdc1c00e9e7b4bad95cd66a9d221c\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"249a3e1c4c9df342ce1c7b25d9b75609d6b4411b\\",\\"src\\":\\"server.js\\"}},\\"customWebpackRules\\":\\"customWebpackRules.config.js\\",\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"e4e92841d07fdc1c00e9e7b4bad95cd66a9d221c\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"249a3e1c4c9df342ce1c7b25d9b75609d6b4411b\\",\\"src\\":\\"server.js\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -141,7 +139,6 @@ Object {
   },
   "name": "react-component",
   "oc": Object {
-    "customWebpackRules": "customWebpackRules.config.js",
     "date": "",
     "files": Object {
       "dataProvider": Object {
@@ -168,7 +165,7 @@ exports[`Should handle empty static folder 2`] = `
 Array [
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package2/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"152b837874b750db913223c0e9417aa8375bd3e3\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"bb7495f62d9b11d749718b9ebf0b75a6751fffa0\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"customWebpackRules\\":\\"customWebpackRules.config.js\\",\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"152b837874b750db913223c0e9417aa8375bd3e3\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"bb7495f62d9b11d749718b9ebf0b75a6751fffa0\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -193,7 +190,6 @@ Object {
   },
   "name": "react-component-with-css",
   "oc": Object {
-    "customWebpackRules": "customWebpackRules.config.js",
     "date": "",
     "files": Object {
       "dataProvider": Object {
@@ -220,7 +216,7 @@ exports[`Should handle empty static folder 4`] = `
 Array [
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package2/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"e4e92841d07fdc1c00e9e7b4bad95cd66a9d221c\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"249a3e1c4c9df342ce1c7b25d9b75609d6b4411b\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"customWebpackRules\\":\\"customWebpackRules.config.js\\",\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"e4e92841d07fdc1c00e9e7b4bad95cd66a9d221c\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"},\\"dataProvider\\":{\\"type\\":\\"node.js\\",\\"hashKey\\":\\"249a3e1c4c9df342ce1c7b25d9b75609d6b4411b\\",\\"src\\":\\"server.js\\"},\\"static\\":[]},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -249,7 +245,6 @@ Object {
   },
   "name": "react-component",
   "oc": Object {
-    "customWebpackRules": "customWebpackRules.config.js",
     "date": "",
     "files": Object {
       "static": Array [
@@ -284,7 +279,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component/_compile-tests-package4/package.json",
-    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"152b837874b750db913223c0e9417aa8375bd3e3\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"}},\\"customWebpackRules\\":\\"customWebpackRules.config.js\\",\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"152b837874b750db913223c0e9417aa8375bd3e3\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {
@@ -305,7 +300,6 @@ Object {
   },
   "name": "react-component-with-css",
   "oc": Object {
-    "customWebpackRules": "customWebpackRules.config.js",
     "date": "",
     "files": Object {
       "static": Array [
@@ -340,7 +334,7 @@ say(text);
   },
   Object {
     "path": "../../../mocks/react-component-with-css/_compile-tests-package4/package.json",
-    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"e4e92841d07fdc1c00e9e7b4bad95cd66a9d221c\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"}},\\"customWebpackRules\\":\\"customWebpackRules.config.js\\",\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
+    "source": "{\\"name\\":\\"react-component-with-css\\",\\"version\\":\\"1.0.0\\",\\"oc\\":{\\"files\\":{\\"static\\":[\\"assets\\"],\\"template\\":{\\"type\\":\\"oc-template-react\\",\\"hashKey\\":\\"e4e92841d07fdc1c00e9e7b4bad95cd66a9d221c\\",\\"src\\":\\"template.js\\",\\"version\\":\\"6.6.6\\"}},\\"version\\":\\"1.0.0\\",\\"packaged\\":true,},\\"devDependencies\\":{\\"oc-template-react-compiler\\":\\"*\\"}}
 ",
   },
   Object {

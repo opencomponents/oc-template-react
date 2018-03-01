@@ -9,24 +9,9 @@ const webpack = require("oc-webpack").webpack;
 module.exports = function webpackConfigGenerator(options) {
   const buildPath = options.buildPath || "/build";
   const production = options.production;
-
   const localIdentName = !production
     ? "oc__[path][name]-[ext]__[local]__[hash:base64:8]"
     : "[local]__[hash:base64:8]";
-
-  let customRulesLoader = [];
-  if (options.customWebpackRules) {
-    const customPath = path.join(
-      options.componentPath,
-      options.customWebpackRules
-    );
-    try {
-      customRulesLoader = require(customPath);
-      console.log("loading custom Webpack rules from -", customPath);
-    } catch (err) {
-      console.log("WARNING: Custom Webpack Rules Compile Error - ", err);
-    }
-  }
 
   const cssLoader = {
     test: /\.css$/,
@@ -106,8 +91,7 @@ module.exports = function webpackConfigGenerator(options) {
               }
             }
           ]
-        },
-        ...customRulesLoader
+        }
       ]
     },
     plugins,
