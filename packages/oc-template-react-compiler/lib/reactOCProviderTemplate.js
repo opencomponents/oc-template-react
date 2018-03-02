@@ -6,7 +6,7 @@ const reactOCProviderTemplate = ({ viewPath }) => `
   class OCProvider extends React.Component {
     componentDidMount(){
       const { _staticPath, _baseUrl, _componentName, _componentVersion, ...rest } = this.props;
-      window.oc.events.fire('oc:mounted',  rest);
+      window.oc.events.fire('oc:componentDidMount',  rest);
     }
 
     getChildContext() {
