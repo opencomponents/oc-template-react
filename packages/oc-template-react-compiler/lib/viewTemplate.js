@@ -9,12 +9,12 @@ const viewTemplate = ({
   var staticPath = model.reactComponent.props._staticPath;
   var props = JSON.stringify(model.reactComponent.props);
   return '<div id="${reactRoot}" class="${reactRoot}">' + modelHTML + '</div>' +
-    '<style>${css}</style>' +
+    '${css ? "<style>" + css + "</style>" : ""}' +
     '<script>' +
     'window.oc = window.oc || {};' +
     'oc.cmd = oc.cmd || [];' +
     'oc.cmd.push(function(oc){' +
-      'oc.events.fire(\\'oc:cssDidMount\\', \\'${css}\\');' +
+    '${css ? "oc.events.fire(\\'oc:cssDidMount\\', \\'" + css + "\\');" : ""}' +
       'oc.requireSeries(${JSON.stringify(externals)}, function(){' +
         'oc.require(' +
           '["oc", "reactComponents", "${bundleHash}"],' + 
