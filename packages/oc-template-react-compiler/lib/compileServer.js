@@ -50,17 +50,34 @@ module.exports = (options, callback) => {
       next =>
         fs.outputFile(higherOrderServerPath, higherOrderServerContent, next),
       next => compiler(config, next),
-      (data, next) => fs.ensureDir(publishPath, err => next(err, data)),
       (data, next) => {
         const basePath = path.join(serverPath, "../temp/build");
-        const memoryFs = new MemoryFS(data);
-        const compiledServer = memoryFs.readFileSync(
-          `${basePath}/${config.output.filename}`,
-          "UTF8"
-        );
-        fs.writeFile(
-          path.join(publishPath, publishFileName),
-          compiledServer,
+        const memory = new MemoryFS(data);
+        const getCompiled = fileName =>
+          memory.readFileSync(`${basePath}/${fileName}`, "UTF8");
+
+        return fs.ensureDir(publishPath, err => {
+          if (err) return next(err);
+          const result = { "server.js": getCompiled(config.output.filename) };
+
+          if (!production) {
+            try {
+              result["server.js.map"] = getCompiled(
+                `${config.output.filename}.map`
+              );
+            } catch (e) {
+              // skip sourcemap if it doesn't exist
+            }
+          }
+
+          next(null, result);
+        });
+      },
+      (compiledFiles, next) =>
+        async.eachOf(
+          compiledFiles,
+          (fileContent, fileName, next) =>
+            fs.writeFile(path.join(publishPath, fileName), fileContent, next),
           err =>
             next(
               err,
@@ -68,12 +85,13 @@ module.exports = (options, callback) => {
                 ? null
                 : {
                     type: "node.js",
-                    hashKey: hashBuilder.fromString(compiledServer),
+                    hashKey: hashBuilder.fromString(
+                      compiledFiles[publishFileName]
+                    ),
                     src: publishFileName
                   }
             )
-        );
-      }
+        )
     ],
     (err, data) => fs.remove(tempFolder, err2 => callback(err, data))
   );
