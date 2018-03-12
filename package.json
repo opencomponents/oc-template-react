@@ -26,6 +26,13 @@
     "testEnvironment": "node",
     "roots": ["packages", "acceptance-setup"],
     "coverageDirectory": "./coverage/",
-    "collectCoverage": true
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "packages/**/*.js",
+      "!packages/coverage/**/*",
+      "!node_modules/**",
+      "!packages/**/scaffold/**/*",
+      "!packages/**/utils/**/*"
+    ]
   }
 }
