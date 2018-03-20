@@ -45,7 +45,8 @@ module.exports = function webpackConfigGenerator(options) {
   let plugins = [
     new ExtractTextPlugin({
       filename: "[name].css",
-      allChunks: true
+      allChunks: true,
+      ignoreOrder: true
     }),
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify(
