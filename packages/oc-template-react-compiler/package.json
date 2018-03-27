@@ -47,7 +47,7 @@
     "oc-template-react": "2.0.8",
     "oc-templates-messages": "1.0.2",
     "oc-view-wrapper": "1.0.3",
-    "oc-webpack": "2.3.1",
+    "oc-webpack": "2.3.2",
     "postcss-extend": "^1.0.5",
     "postcss-icss-values": "^2.0.1",
     "postcss-import": "^11.0.0",
