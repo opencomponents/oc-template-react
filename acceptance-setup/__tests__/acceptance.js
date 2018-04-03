@@ -111,6 +111,7 @@ test("server-side-side rendering", done => {
 test("client-side-side rendering", done => {
   const virtualConsole = new jsdom.VirtualConsole();
   const mockLog = jest.fn(() => {});
+  const cssLog = jest.fn();
   virtualConsole.on("log", mockLog);
   JSDOM.fromURL(`${registryUrl}react-app/~preview?name=SuperMario`, {
     resources: "usable",
@@ -118,13 +119,19 @@ test("client-side-side rendering", done => {
     virtualConsole
   })
     .then(dom => {
+      dom.window.oc = dom.window.oc || {};
+      dom.window.oc.cmd = dom.window.oc.cmd || [];
+      dom.window.oc.cmd.push(function(oc) {
+        oc.events.on("oc:cssDidMount", (ev, css) => {
+          cssLog(css);
+        });
+      });
+
       setTimeout(() => {
         expect(mockLog.mock.calls).toMatchSnapshot();
         const nameNode = dom.window.document.getElementById("1");
         expect(nameNode).toMatchSnapshot();
-        expect(
-          dom.window.document.getElementsByTagName("style")[1].textContent
-        ).toMatchSnapshot();
+        expect(cssLog.mock.calls).toMatchSnapshot();
         done();
       }, 5000);
     })

@@ -1,6 +1,6 @@
 {
   "name": "oc-template-react",
-  "version": "2.0.6",
+  "version": "2.0.8",
   "description": "OC-Template-React",
   "main": "index.js",
   "repository": {
@@ -25,8 +25,8 @@
   "dependencies": {
     "minimal-request": "3.0.0",
     "nice-cache": "0.0.5",
-    "oc-generic-template-renderer": "2.0.2",
-    "prop-types": "15.6.0",
+    "oc-generic-template-renderer": "2.0.4",
+    "prop-types": "15.6.1",
     "react": "16.2.0",
     "react-dom": "16.2.0"
   },
@@ -39,7 +39,7 @@
   "externals": {
     "prop-types": {
       "global": "PropTypes",
-      "url": "https://unpkg.com/prop-types@15.6.0/prop-types.min.js"
+      "url": "https://unpkg.com/prop-types@15.6.1/prop-types.min.js"
     },
     "react": {
       "global": "React",
