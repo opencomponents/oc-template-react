@@ -45,7 +45,8 @@ module.exports = (options, callback) => {
         return externals;
       }, {}),
       publishFileName,
-      production
+      production,
+      buildIncludes: componentPackage.oc.files.template.buildIncludes || []
     });
     compiler(config, (err, data) => {
       if (err) {
