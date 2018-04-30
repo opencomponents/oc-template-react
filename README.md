@@ -62,6 +62,19 @@ Externals are not bundled when packaging and publishing the component, for bette
   - [postcss-extend](https://github.com/travco/postcss-extend)
   - [postcss-icss-values](https://github.com/css-modules/postcss-icss-values)
   - [autoprefixer](https://github.com/postcss/autoprefixer)
+- `White list dependencies` to be inlcuded in the build process done by the compiler. To whitelist dependencies installed in the node_modules folder, add in the package.json of the component a `buildIncludes` list:
+  ```json
+    ...
+    oc : {
+      files: {
+        template: {
+          ...
+          buildIncludes: ['react-components-to-build']
+        }
+      }
+    }
+  ```
+
 
 
 ## Utils
