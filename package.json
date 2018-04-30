@@ -41,5 +41,9 @@
       "!packages/**/scaffold/**/*",
       "!packages/**/utils/**/*"
     ]
+  },
+  "dependencies": {
+    "normalize.css": "^7.0.0",
+    "oc-template-react-compiler": "^5.0.2"
   }
 }
