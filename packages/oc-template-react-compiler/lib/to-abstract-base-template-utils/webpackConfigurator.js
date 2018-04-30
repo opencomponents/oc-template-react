@@ -72,7 +72,6 @@ module.exports = function webpackConfigGenerator(options) {
         cssLoader,
         {
           test: /\.jsx?$/,
-          exclude: /node_modules\/(?!(oc-template-react-compiler\/utils))/,
           use: [
             {
               loader: require.resolve("babel-loader"),
