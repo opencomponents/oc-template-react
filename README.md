@@ -73,7 +73,7 @@ Externals are not bundled when packaging and publishing the component, for bette
         }
       }
     }
-  
+  ```
 
 
 
