@@ -28,7 +28,7 @@
     "oc-generic-template-renderer": "2.0.4",
     "prop-types": "15.6.1",
     "react": "16.3.2",
-    "react-dom": "16.2.0"
+    "react-dom": "16.3.2"
   },
   "files": [
     "lib",
@@ -47,7 +47,7 @@
     },
     "react-dom": {
       "global": "ReactDOM",
-      "url": "https://unpkg.com/react-dom@16.2.0/umd/react-dom.production.min.js"
+      "url": "https://unpkg.com/react-dom@16.3.2/umd/react-dom.production.min.js"
     }
   }
 }

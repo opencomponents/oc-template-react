@@ -16,7 +16,7 @@ Object {
     Object {
       "global": "ReactDOM",
       "name": "react-dom",
-      "url": "https://unpkg.com/react-dom@16.2.0/umd/react-dom.production.min.js",
+      "url": "https://unpkg.com/react-dom@16.3.2/umd/react-dom.production.min.js",
     },
   ],
   "type": "oc-template-react",
