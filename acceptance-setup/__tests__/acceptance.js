@@ -46,6 +46,7 @@ beforeAll(done => {
         port: registryPort,
         baseUrl: registryUrl,
         env: { name: "local" },
+        hotReloading: false,
         templates: [require("../../packages/oc-template-react")]
       });
 
@@ -113,7 +114,7 @@ test("client-side-side rendering", done => {
   const mockLog = jest.fn(() => {});
   const cssLog = jest.fn();
   virtualConsole.on("log", mockLog);
-  JSDOM.fromURL(`${registryUrl}react-app/~preview?name=SuperMario`, {
+  JSDOM.fromURL(registryUrl + `react-app/~preview?name=SuperMario`, {
     resources: "usable",
     runScripts: "dangerously",
     virtualConsole
