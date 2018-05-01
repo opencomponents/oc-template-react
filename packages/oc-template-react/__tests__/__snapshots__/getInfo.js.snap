@@ -11,7 +11,7 @@ Object {
     Object {
       "global": "React",
       "name": "react",
-      "url": "https://unpkg.com/react@16.2.0/umd/react.production.min.js",
+      "url": "https://unpkg.com/react@16.3.2/umd/react.production.min.js",
     },
     Object {
       "global": "ReactDOM",
