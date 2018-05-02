@@ -4,11 +4,11 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const MinifyPlugin = require("babel-minify-webpack-plugin");
 const externalDependenciesHandlers = require("oc-external-dependencies-handler");
 const path = require("path");
-const webpack = require("oc-webpack").webpack;
+const webpack = require("webpack");
 
 const createExcludeRegex = require("./createExcludeRegex");
 
-module.exports = function webpackConfigGenerator(options) {
+module.exports = options => {
   const buildPath = options.buildPath || "/build";
   const production = options.production;
   const buildIncludes = options.buildIncludes.concat(
@@ -67,6 +67,7 @@ module.exports = function webpackConfigGenerator(options) {
   const cacheDirectory = !production;
 
   return {
+    mode: production ? "production" : "development",
     entry: options.viewPath,
     output: {
       path: buildPath,
