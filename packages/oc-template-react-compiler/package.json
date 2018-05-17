@@ -53,7 +53,7 @@
     "postcss-loader": "^2.0.9",
     "prop-types": "15.6.1",
     "react": "16.3.2",
-    "webpack": "4.6.0"
+    "webpack": "^4.8.3"
   },
   "files": [
     "index.js",
