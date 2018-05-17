@@ -68,6 +68,12 @@ module.exports = options => {
 
   return {
     mode: production ? "production" : "development",
+    optimization: {
+      // https://webpack.js.org/configuration/optimization/
+      // Override production mode optimization for minification
+      // As it currently breakes the build, still rely on babel-minify-webpack-plugin instead
+      minimize: false
+    },
     entry: options.viewPath,
     output: {
       path: buildPath,
