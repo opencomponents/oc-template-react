@@ -1,4 +1,4 @@
-const createExcludeRegex = require("../lib/to-abstract-base-template-utils/createExcludeRegex");
+const createExcludeRegex = require("../lib/to-abstract-base-template-utils/oc-webpack/lib/configurator/createExcludeRegex");
 
 test("should create a regex that match against any node module set aside given ones", () => {
   const regex = createExcludeRegex([
