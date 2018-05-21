@@ -1,7 +1,6 @@
 "use strict";
 
 const async = require("async");
-const compiler = require("oc-webpack").compiler;
 const fs = require("fs-extra");
 const hashBuilder = require("oc-hash-builder");
 const MemoryFS = require("memory-fs");
@@ -11,7 +10,11 @@ const path = require("path");
 const reactComponentWrapper = require("oc-react-component-wrapper");
 const strings = require("oc-templates-messages");
 
-const webpackConfigurator = require("./to-abstract-base-template-utils/webpackConfigurator");
+const {
+  compiler,
+  configurator: webpackConfigurator
+} = require("./to-abstract-base-template-utils/oc-webpack");
+
 const fontFamilyUnicodeParser = require("./to-abstract-base-template-utils/font-family-unicode-parser");
 const reactOCProviderTemplate = require("./reactOCProviderTemplate");
 const viewTemplate = require("./viewTemplate");
