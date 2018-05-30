@@ -1,6 +1,6 @@
 "use strict";
 
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const MinifyPlugin = require("babel-minify-webpack-plugin");
 const externalDependenciesHandlers = require("oc-external-dependencies-handler");
 const path = require("path");
@@ -21,35 +21,34 @@ module.exports = options => {
 
   const cssLoader = {
     test: /\.css$/,
-    loader: ExtractTextPlugin.extract({
-      use: [
-        {
-          loader: require.resolve("css-loader"),
-          options: {
-            importLoaders: 1,
-            modules: true,
-            localIdentName,
-            camelCase: true
-          }
-        },
-        {
-          loader: require.resolve("postcss-loader"),
-          options: {
-            ident: "postcss",
-            plugins: [
-              require("postcss-import"),
-              require("postcss-extend"),
-              require("postcss-icss-values"),
-              require("autoprefixer")
-            ]
-          }
+    use: [
+      MiniCssExtractPlugin.loader,
+      {
+        loader: require.resolve("css-loader"),
+        options: {
+          importLoaders: 1,
+          modules: true,
+          localIdentName,
+          camelCase: true
         }
-      ]
-    })
+      },
+      {
+        loader: require.resolve("postcss-loader"),
+        options: {
+          ident: "postcss",
+          plugins: [
+            require("postcss-import"),
+            require("postcss-extend"),
+            require("postcss-icss-values"),
+            require("autoprefixer")
+          ]
+        }
+      }
+    ]
   };
 
   let plugins = [
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: "[name].css",
       allChunks: true,
       ignoreOrder: true
