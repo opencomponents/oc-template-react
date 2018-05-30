@@ -12,7 +12,7 @@ const strings = require("oc-templates-messages");
 
 const {
   compiler,
-  configurator: webpackConfigurator
+  configurator: { client: webpackConfigurator }
 } = require("./to-abstract-base-template-utils/oc-webpack");
 
 const fontFamilyUnicodeParser = require("./to-abstract-base-template-utils/font-family-unicode-parser");

@@ -1,14 +1,16 @@
 "use strict";
 
 const async = require("async");
-const compiler = require("oc-webpack").compiler;
 const fs = require("fs-extra");
 const hashBuilder = require("oc-hash-builder");
 const MemoryFS = require("memory-fs");
 const path = require("path");
 const reactComponentWrapper = require("oc-react-component-wrapper");
 
-const webpackConfigurator = require("oc-webpack").configurator;
+const {
+  compiler,
+  configurator: { server: webpackConfigurator }
+} = require("./to-abstract-base-template-utils/oc-webpack");
 const higherOrderServerTemplate = require("./higherOrderServerTemplate");
 
 module.exports = (options, callback) => {
