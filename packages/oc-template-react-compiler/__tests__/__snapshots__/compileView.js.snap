@@ -3,14 +3,14 @@
 exports[`valid component 1`] = `
 Object {
   "bundle": Object {
-    "hashKey": "c246e2c2247889e20b39dbdf1f1bce65b2aebf24",
+    "hashKey": "dummyData",
   },
   "template": Object {
-    "hashKey": "c4c177969e57c4a49daa3134368ff715fb189560",
+    "hashKey": "dummyData",
     "src": "template.js",
     "type": "oc-template-react",
   },
 }
 `;
 
-exports[`valid component 2`] = `"var oc=oc||{};oc.components=oc.components||{};oc.components['c4c177969e57c4a49daa3134368ff715fb189560']=function(model){ var modelHTML = model.__html ? model.__html : ''; var staticPath = model.reactComponent.props._staticPath; var props = JSON.stringify(model.reactComponent.props); return '<div id=\\"oc-reactRoot-react-component\\" class=\\"oc-reactRoot-react-component\\">' + modelHTML + '</div>' + '' + '<script>' + 'window.oc = window.oc || {};' + 'oc.cmd = oc.cmd || [];' + 'oc.cmd.push(function(oc){' + '' + 'oc.requireSeries([{\\"global\\":\\"PropTypes\\",\\"url\\":\\"https://unpkg.com/prop-types@15.6.1/prop-types.min.js\\",\\"name\\":\\"prop-types\\"},{\\"global\\":\\"React\\",\\"url\\":\\"https://unpkg.com/react@16.3.2/umd/react.production.min.js\\",\\"name\\":\\"react\\"},{\\"global\\":\\"ReactDOM\\",\\"url\\":\\"https://unpkg.com/react-dom@16.3.2/umd/react-dom.production.min.js\\",\\"name\\":\\"react-dom\\"}], function(){' + 'oc.require(' + '[\\"oc\\", \\"reactComponents\\", \\"c246e2c2247889e20b39dbdf1f1bce65b2aebf24\\"],' + '\\"' + staticPath + 'react-component.js\\",' + 'function(ReactComponent){' + 'var targetNode = document.getElementById(\\"oc-reactRoot-react-component\\");' + 'targetNode.setAttribute(\\"id\\",\\"\\");' + 'ReactDOM.render(React.createElement(ReactComponent,' + props + '),targetNode);' + '}' + ');' + '});' + '});' + '</script>' }"`;
+exports[`valid component 2`] = `"var oc=oc||{};oc.components=oc.components||{};oc.components['dummyData']=function(model){ var modelHTML = model.__html ? model.__html : ''; var staticPath = model.reactComponent.props._staticPath; var props = JSON.stringify(model.reactComponent.props); return '<div id=\\"oc-reactRoot-react-component\\" class=\\"oc-reactRoot-react-component\\">' + modelHTML + '</div>' + '' + '<script>' + 'window.oc = window.oc || {};' + 'oc.cmd = oc.cmd || [];' + 'oc.cmd.push(function(oc){' + '' + 'oc.requireSeries([{\\"global\\":\\"PropTypes\\",\\"url\\":\\"https://unpkg.com/prop-types@15.6.1/prop-types.min.js\\",\\"name\\":\\"prop-types\\"},{\\"global\\":\\"React\\",\\"url\\":\\"https://unpkg.com/react@16.3.2/umd/react.production.min.js\\",\\"name\\":\\"react\\"},{\\"global\\":\\"ReactDOM\\",\\"url\\":\\"https://unpkg.com/react-dom@16.3.2/umd/react-dom.production.min.js\\",\\"name\\":\\"react-dom\\"}], function(){' + 'oc.require(' + '[\\"oc\\", \\"reactComponents\\", \\"c246e2c2247889e20b39dbdf1f1bce65b2aebf24\\"],' + '\\"' + staticPath + 'react-component.js\\",' + 'function(ReactComponent){' + 'var targetNode = document.getElementById(\\"oc-reactRoot-react-component\\");' + 'targetNode.setAttribute(\\"id\\",\\"\\");' + 'ReactDOM.render(React.createElement(ReactComponent,' + props + '),targetNode);' + '}' + ');' + '});' + '});' + '</script>' }"`;

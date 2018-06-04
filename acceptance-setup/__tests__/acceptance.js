@@ -77,7 +77,13 @@ afterAll(done => {
 test("Registry should correctly serve rendered and unrendered components", done => {
   const rendered = r(registryUrl + `react-app/?name=SuperMario`)
     .then(function(body) {
-      const bodyVersionless = body.replace(semverRegex, "6.6.6");
+      const bodyVersionless = body
+        .replace(semverRegex, "6.6.6")
+        .replace(/data-hash=\\\".*?\\\"/, "")
+        .replace(
+          /\[\\\"oc\\\",.*?\\\"reactComponents\\\",.*?\\\".*?\\\"\]/,
+          '["oc", "reactComponents", "dummyContent"]'
+        );
       expect(bodyVersionless).toMatchSnapshot();
     })
     .catch(err => expect(err).toBeNull());
@@ -89,7 +95,9 @@ test("Registry should correctly serve rendered and unrendered components", done 
     }
   })
     .then(function(body) {
-      const bodyVersionless = body.replace(semverRegex, "6.6.6");
+      const bodyVersionless = body
+        .replace(semverRegex, "6.6.6")
+        .replace(/\"key\"\:\".*?\"/g, "");
       expect(bodyVersionless).toMatchSnapshot();
     })
     .catch(err => expect(err).toBeNull());
@@ -102,7 +110,13 @@ test("Registry should correctly serve rendered and unrendered components", done 
 test("server-side-side rendering", done => {
   JSDOM.fromURL(serverUrl + `?name=SuperMario`, {})
     .then(dom => {
-      const domVersionless = dom.serialize().replace(semverRegex, "6.6.6");
+      const domVersionless = dom
+        .serialize()
+        .replace(semverRegex, "6.6.6")
+        .replace(
+          /\[\"oc\",.*?\"reactComponents\",.*?\".*?\"\]/,
+          '["oc", "reactComponents", "dummyContent"]'
+        );
       expect(domVersionless).toMatchSnapshot();
       done();
     })

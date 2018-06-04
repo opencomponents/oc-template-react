@@ -45,7 +45,7 @@ module.exports = (port, cb) => {
             <title>A page</title>
           </head>
           <body>
-          ${renderedComponents[1]}
+          ${renderedComponents[1].replace(/data-hash=\".*?\"/, "")}
           ${renderedComponents[0]}
           </body>
         </html>

@@ -83,7 +83,8 @@ const execute = (options, cb) => {
     result.oc.date = "";
     result.oc.files.template.version = "";
     nodeDir.paths(options.publishPath, (err2, res2) => {
-      const files = _.chain(res2.files)
+      const files = _
+        .chain(res2.files)
         .map(filePath => {
           const source = fs.readFileSync(filePath, "UTF8");
           return {
@@ -105,6 +106,10 @@ _.each(components, scenarios => {
     test(testName, done => {
       execute(scenario, (err, { result, files }) => {
         expect(err).toBeNull();
+        if (result.oc.files.dataProvider) {
+          result.oc.files.dataProvider.hashKey = "dummyData";
+        }
+        result.oc.files.template.hashKey = "dummyData";
         expect(result).toMatchSnapshot();
         expect(files).toMatchSnapshot();
         done();

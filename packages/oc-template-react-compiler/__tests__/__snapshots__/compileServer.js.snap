@@ -2,7 +2,7 @@
 
 exports[`Should correctly compile the server 1`] = `
 Object {
-  "hashKey": "a75995ea264d18328ead9fa7570d5500850393cc",
+  "hashKey": "dummyData",
   "src": "server.js",
   "type": "node.js",
 }

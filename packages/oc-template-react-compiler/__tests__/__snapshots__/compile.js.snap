@@ -10,7 +10,7 @@ Object {
     "date": "",
     "files": Object {
       "dataProvider": Object {
-        "hashKey": "495900e7359b5772bc8e3eae45798819441e1ad5",
+        "hashKey": "dummyData",
         "src": "server.js",
         "type": "node.js",
       },
@@ -18,7 +18,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "dcd6b4dd830ed344920bf06e34e37b1462401186",
+        "hashKey": "dummyData",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -74,7 +74,7 @@ Object {
     "date": "",
     "files": Object {
       "dataProvider": Object {
-        "hashKey": "ae3ebca0dc848408c6ef9ba6166a7947e7e04e46",
+        "hashKey": "dummyData",
         "src": "server.js",
         "type": "node.js",
       },
@@ -82,7 +82,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "928dce2a3e69dcfc75f0a4b7a7f8a9a6af42c71b",
+        "hashKey": "dummyData",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -142,13 +142,13 @@ Object {
     "date": "",
     "files": Object {
       "dataProvider": Object {
-        "hashKey": "495900e7359b5772bc8e3eae45798819441e1ad5",
+        "hashKey": "dummyData",
         "src": "server.js",
         "type": "node.js",
       },
       "static": Array [],
       "template": Object {
-        "hashKey": "dcd6b4dd830ed344920bf06e34e37b1462401186",
+        "hashKey": "dummyData",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -193,13 +193,13 @@ Object {
     "date": "",
     "files": Object {
       "dataProvider": Object {
-        "hashKey": "ae3ebca0dc848408c6ef9ba6166a7947e7e04e46",
+        "hashKey": "dummyData",
         "src": "server.js",
         "type": "node.js",
       },
       "static": Array [],
       "template": Object {
-        "hashKey": "928dce2a3e69dcfc75f0a4b7a7f8a9a6af42c71b",
+        "hashKey": "dummyData",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -251,7 +251,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "dcd6b4dd830ed344920bf06e34e37b1462401186",
+        "hashKey": "dummyData",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
@@ -306,7 +306,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "928dce2a3e69dcfc75f0a4b7a7f8a9a6af42c71b",
+        "hashKey": "dummyData",
         "src": "template.js",
         "type": "oc-template-react",
         "version": "",
