@@ -26,6 +26,10 @@ test("valid component", done => {
       fs
         .readFileSync(path.join(publishPath, publishFileName), "UTF8")
         .replace(viewHashKey, "dummyData")
+        .replace(
+          /\[\"oc\",.*?\"reactComponents\",.*?\".*?\"\]/g,
+          '["oc", "reactComponents", "dummyContent"]'
+        )
     ).toMatchSnapshot();
     fs.removeSync(publishPath);
     done();

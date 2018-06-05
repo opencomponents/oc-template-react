@@ -89,7 +89,15 @@ const execute = (options, cb) => {
           const source = fs.readFileSync(filePath, "UTF8");
           return {
             source: !filePath.match(/\.png$/)
-              ? source.replace(/"date":\d+/, "")
+              ? source
+                  .replace(/"date":\d+/, "")
+                  .replace(/\"hashKey\"\:\".*?\"\,/g, "")
+                  .replace(/omponents\['.*?'\]/g, "omponents['dummyContent']")
+                  .replace(/key\:\'.*?\'/g, "")
+                  .replace(
+                    /\[\"oc\",.*?\"reactComponents\",.*?\".*?\"\]/g,
+                    '["oc", "reactComponents", "dummyContent"]'
+                  )
               : "img-binary",
             path: path.relative(__dirname, filePath)
           };
