@@ -18,9 +18,18 @@ test("valid component", done => {
   };
 
   compileView(options, (err, compiledViewInfo) => {
+    compiledViewInfo.bundle.hashKey = "dummyData";
+    const viewHashKey = compiledViewInfo.template.hashKey;
+    compiledViewInfo.template.hashKey = "dummyData";
     expect(compiledViewInfo).toMatchSnapshot();
     expect(
-      fs.readFileSync(path.join(publishPath, publishFileName), "UTF8")
+      fs
+        .readFileSync(path.join(publishPath, publishFileName), "UTF8")
+        .replace(viewHashKey, "dummyData")
+        .replace(
+          /\[\"oc\",.*?\"reactComponents\",.*?\".*?\"\]/g,
+          '["oc", "reactComponents", "dummyContent"]'
+        )
     ).toMatchSnapshot();
     fs.removeSync(publishPath);
     done();
