@@ -1,6 +1,6 @@
 {
   "name": "oc-template-react",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "description": "OC-Template-React",
   "main": "index.js",
   "repository": {
@@ -38,8 +38,11 @@
   ],
   "externals": {
     "Object.assign": {
-      "global": ["Object", "assign"],
-      "url":"https://unpkg.com/es6-object-assign@1.1.0/dist/object-assign-auto.min.js"
+      "global": [
+        "Object",
+        "assign"
+      ],
+      "url": "https://unpkg.com/es6-object-assign@1.1.0/dist/object-assign-auto.min.js"
     },
     "prop-types": {
       "global": "PropTypes",

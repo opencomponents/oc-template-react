@@ -1,6 +1,6 @@
 {
   "name": "oc-template-react-compiler",
-  "version": "5.1.3",
+  "version": "5.1.4",
   "description": "OC-Template-REACT-Compiler",
   "main": "index.js",
   "repository": {
@@ -44,7 +44,7 @@
     "oc-minify-file": "1.0.14",
     "oc-react-component-wrapper": "1.0.2",
     "oc-statics-compiler": "2.0.10",
-    "oc-template-react": "2.0.11",
+    "oc-template-react": "2.0.12",
     "oc-templates-messages": "1.0.2",
     "oc-view-wrapper": "1.0.3",
     "postcss-extend": "^1.0.5",
