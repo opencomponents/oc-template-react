@@ -23,6 +23,7 @@ test("Should correctly compile the server", done => {
     }),
     (err, compiledServerInfo) => {
       expect(err).toBeNull();
+      compiledServerInfo.hashKey = "dummyData";
       expect(compiledServerInfo).toMatchSnapshot();
       expect(
         fs.readFileSync(path.join(publishPath, publishFileName), "UTF8")
