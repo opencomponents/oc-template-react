@@ -2,9 +2,9 @@
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const MinifyPlugin = require("babel-minify-webpack-plugin");
-const externalDependenciesHandlers = require("oc-external-dependencies-handler");
 const path = require("path");
 const webpack = require("webpack");
+const _ = require("lodash");
 
 const createExcludeRegex = require("../createExcludeRegex");
 
@@ -64,6 +64,7 @@ module.exports = options => {
   }
 
   const cacheDirectory = !production;
+  const polyfills = ["Object.assign"];
 
   return {
     mode: production ? "production" : "development",
@@ -78,7 +79,7 @@ module.exports = options => {
       path: buildPath,
       filename: options.publishFileName
     },
-    externals: options.externals,
+    externals: _.omit(options.externals, polyfills),
     module: {
       rules: [
         cssLoader,
