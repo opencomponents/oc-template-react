@@ -54,7 +54,7 @@
     },
     "react-dom": {
       "global": "ReactDOM",
-      "url": "https://unpkg.com/react-dom@16.4.0/umd/react-dom.production.min.js"
+      "url": "https://unpkg.com/react-dom@16.4.1/umd/react-dom.production.min.js"
     }
   }
 }
