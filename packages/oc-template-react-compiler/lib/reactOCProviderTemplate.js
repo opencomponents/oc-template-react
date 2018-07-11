@@ -1,6 +1,6 @@
 const reactOCProviderTemplate = ({ viewPath }) => `
-  import PropTypes from 'prop-types';
   import React from 'react';
+  import { Provider } from 'oc-template-react-compiler/utils/ocContext';
   import View from '${viewPath}';
 
   class OCProvider extends React.Component {
@@ -9,7 +9,7 @@ const reactOCProviderTemplate = ({ viewPath }) => `
       window.oc.events.fire('oc:componentDidMount',  rest);
     }
 
-    getChildContext() {
+    buildActions() {
       const getData = (parameters, cb) => {
         return window.oc.getData({
           name: this.props._componentName,
@@ -37,17 +37,16 @@ const reactOCProviderTemplate = ({ viewPath }) => `
     }
 
     render() {
-      const { _staticPath, _baseUrl, _componentName, _componentVersion, ...rest } = this.props;        
+      const { _staticPath, _baseUrl, _componentName, _componentVersion, ...rest } = this.props;
+      const actions = this.buildActions();
       return (
-        <View {...rest} />
+        <Provider value={actions}>
+          <View {...rest} />
+        </Provider>
       );
     }
   }
 
-  OCProvider.childContextTypes = {
-    getData: PropTypes.func,
-    getSetting: PropTypes.func
-  };
   export default OCProvider
 `;
 

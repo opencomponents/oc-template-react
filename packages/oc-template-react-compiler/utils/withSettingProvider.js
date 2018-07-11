@@ -1,18 +1,20 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { Consumer } from "./ocContext";
 
 const withSettingProvider = BaseComponent => {
-  const Enhanced = (props, context) => {
-    const propsWithGetSetting = {
-      ...props,
-      getSetting: context.getSetting
-    };
+  const Enhanced = props => {
+    return (
+      <Consumer>
+        {context => {
+          const propsWithGetSetting = {
+            ...props,
+            getSetting: context.getSetting
+          };
 
-    return <BaseComponent {...propsWithGetSetting} />;
-  };
-
-  Enhanced.contextTypes = {
-    getSetting: PropTypes.func
+          return <BaseComponent {...propsWithGetSetting} />;
+        }}
+      </Consumer>
+    );
   };
 
   return Enhanced;
