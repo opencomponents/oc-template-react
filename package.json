@@ -42,7 +42,6 @@
     ]
   },
   "dependencies": {
-    "normalize.css": "^7.0.0",
-    "oc-template-react-compiler": "^5.1.4"
+    "normalize.css": "^7.0.0"
   }
 }
