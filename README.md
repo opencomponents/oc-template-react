@@ -11,9 +11,9 @@ Module for handling React templates in OC
 [![Known Vulnerabilities](https://snyk.io/test/github/opencomponents/oc-template-react/badge.svg)](https://snyk.io/test/github/opencomponents/oc-template-react)
 [![npm version](https://badge.fury.io/js/oc-template-react.svg)](http://badge.fury.io/js/oc-template-react)
 
-| Node6             | Node7             | Node8            | 
+| Node8             | Node9             | Node10            | 
 |-------------------|-------------------|-------------------|
-| [![Node6][1]][4] | [![Node7][2]][4] | [![Node8][3]][4] |
+| [![Node8][1]][4]  | [![Node9][2]][4]  | [![Node10][3]][4] |
 
 [1]: https://travis-matrix-badges.herokuapp.com/repos/opencomponents/oc-template-react/branches/master/1
 [2]: https://travis-matrix-badges.herokuapp.com/repos/opencomponents/oc-template-react/branches/master/2
