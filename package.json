@@ -5,7 +5,7 @@
     "jest": "23.5.0",
     "lerna": "^2.4.0",
     "lint-staged": "8.1.0",
-    "oc": "0.45.1",
+    "oc": "0.45.2",
     "prettier-eslint-cli": "^4.2.0"
   },
   "scripts": {
