@@ -48,7 +48,7 @@
     "oc-templates-messages": "1.0.2",
     "oc-view-wrapper": "1.0.3",
     "postcss-extend": "1.0.5",
-    "postcss-icss-values": "2.0.1",
+    "postcss-icss-values": "2.0.2",
     "postcss-import": "12.0.1",
     "postcss-loader": "3.0.0",
     "prop-types": "15.6.2",
