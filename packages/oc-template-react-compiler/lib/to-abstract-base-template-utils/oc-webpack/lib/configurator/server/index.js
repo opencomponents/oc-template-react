@@ -31,6 +31,9 @@ module.exports = function webpackConfigGenerator(options) {
                 node: 6
               }
             }
+          ],
+          [
+            require.resolve("babel-preset-react")
           ]
         ],
         plugins: [
