@@ -4,19 +4,27 @@ exports[`should return the correct info 1`] = `
 Object {
   "externals": Array [
     Object {
+      "global": Array [
+        "Object",
+        "assign",
+      ],
+      "name": "Object.assign",
+      "url": "https://unpkg.com/es6-object-assign@1.1.0/dist/object-assign-auto.min.js",
+    },
+    Object {
       "global": "PropTypes",
       "name": "prop-types",
-      "url": "https://unpkg.com/prop-types@15.6.1/prop-types.min.js",
+      "url": "https://unpkg.com/prop-types@x.x.x/prop-types.min.js",
     },
     Object {
       "global": "React",
       "name": "react",
-      "url": "https://unpkg.com/react@16.2.0/umd/react.production.min.js",
+      "url": "https://unpkg.com/react@x.x.x/umd/react.production.min.js",
     },
     Object {
       "global": "ReactDOM",
       "name": "react-dom",
-      "url": "https://unpkg.com/react-dom@16.2.0/umd/react-dom.production.min.js",
+      "url": "https://unpkg.com/react-dom@x.x.x/umd/react-dom.production.min.js",
     },
   ],
   "type": "oc-template-react",

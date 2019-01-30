@@ -22,7 +22,7 @@ const viewTemplate = ({
           'function(ReactComponent){' +
             'var targetNode = document.getElementById("${reactRoot}");' +
             'targetNode.setAttribute("id","");' +
-            'ReactDOM.render(React.createElement(ReactComponent,' +  props + '),targetNode);' +
+            'ReactDOM.hydrate(React.createElement(ReactComponent,' +  props + '),targetNode);' +
           '}' +
         ');' +
       '});' +
