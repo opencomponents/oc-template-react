@@ -6,6 +6,5 @@
     "acceptance-components/*"
   ],
   "version": "independent",
-  "npmClient": "npm",
-  "npmClientArgs": ["--no-package-lock"]
+  "npmClient": "npm"
 }
