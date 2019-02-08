@@ -28,7 +28,7 @@
     "oc-generic-template-renderer": "2.0.4",
     "prop-types": "15.6.2",
     "react": "16.7.0",
-    "react-dom": "16.7.0"
+    "react-dom": "16.8.1"
   },
   "files": [
     "lib",
