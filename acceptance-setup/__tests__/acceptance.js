@@ -80,6 +80,7 @@ test("Registry should correctly serve rendered and unrendered components", done 
       const bodyVersionless = body
         .replace(semverRegex, "6.6.6")
         .replace(/data-hash=\\\".*?\\\"/, "")
+        .replace(/oc-reactRoot-react-app-.*?\"/g, 'oc-reactRoot-react-app-1.1"')
         .replace(
           /\[\\\"oc\\\",.*?\\\"reactComponents\\\",.*?\\\".*?\\\"\]/,
           '["oc", "reactComponents", "dummyContent"]'
@@ -113,6 +114,7 @@ test("server-side-side rendering", done => {
       const domVersionless = dom
         .serialize()
         .replace(semverRegex, "6.6.6")
+        .replace(/oc-reactRoot-react-app-.*?\"/g, 'oc-reactRoot-react-app-1.1"')
         .replace(
           /\[\"oc\",.*?\"reactComponents\",.*?\".*?\"\]/,
           '["oc", "reactComponents", "dummyContent"]'
