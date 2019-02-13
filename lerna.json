@@ -3,7 +3,8 @@
   "packages": [
     "packages/*",
     "acceptance-setup",
-    "acceptance-components/*"
+    "acceptance-components/*",
+    "mocks/*"
   ],
   "version": "independent",
   "npmClient": "npm",
