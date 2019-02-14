@@ -9,8 +9,8 @@ const viewTemplate = ({
   var staticPath = model.reactComponent.props._staticPath;
   var props = JSON.stringify(model.reactComponent.props);
   var randomId = Math.random() * 10000000;
-  var reactRoot = "${reactRoot}" + '-' + randomId;
-  return '<div id="'+ reactRoot +'" class="'+ reactRoot +'">' + modelHTML + '</div>' +
+  var reactRootId = "${reactRoot}-" + randomId;
+  return '<div id="'+ reactRootId +'" class="${reactRoot}">' + modelHTML + '</div>' +
     '${css ? "<style>" + css + "</style>" : ""}' +
     '<script>' +
     'window.oc = window.oc || {};' +
@@ -22,7 +22,7 @@ const viewTemplate = ({
           '["oc", "reactComponents", "${bundleHash}"],' + 
           '"' + staticPath + '${bundleName}.js",' +
           'function(ReactComponent){' +
-            'var targetNode = document.getElementById("'+ reactRoot +'");' +
+            'var targetNode = document.getElementById("'+ reactRootId +'");' +
             'targetNode.setAttribute("id","");' +
             'ReactDOM.hydrate(React.createElement(ReactComponent,' +  props + '),targetNode);' +
           '}' +
