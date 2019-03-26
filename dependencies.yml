@@ -1,47 +1,40 @@
-collectors:
+version: 2
+dependencies:
 
-- type: js-npm
-  path: /
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
+  - type: js
+    path: /
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
 
-- type: js-npm
-  path: packages/oc-react-component-wrapper
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
+  - type: js
+    path: acceptance-setup
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
 
-- type: js-npm
-  path: packages/oc-template-react
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    dependencies_not_matching: "^(react|react-dom|prop-types)$"
-    versions: "Y.Y.Y"
-  # pull request to update externals
-  - type: find-replace
-    dependencies: "^(react|react-dom|prop-types)$"
-    versions: "Y.Y.Y"
+  - type: js
+    path: packages/oc-react-component-wrapper
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
+
+  - type: js
+    path: packages/oc-template-react
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
     settings:
-      paths:
-      - packages/oc-template-react/package.json
-      patterns:
-      - 'https://unpkg.com/{name}@{version_clean}/'
-      - '"{name}": "{version_clean}",'
+      before_commit:
+      - "node dependencies"
 
-- type: js-npm
-  path: packages/oc-template-react-compiler
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
-
-- type: js-npm
-  path: acceptance-setup
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
+  - type: js
+    path: packages/oc-template-react-compiler
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
