@@ -35,7 +35,7 @@
     "infinite-loop-loader": "1.0.6",
     "lodash": "4.17.11",
     "memory-fs": "0.4.1",
-    "mini-css-extract-plugin": "0.5.0",
+    "mini-css-extract-plugin": "0.6.0",
     "node-dir": "0.1.17",
     "oc-external-dependencies-handler": "1.0.7",
     "oc-generic-template-compiler": "2.0.4",
