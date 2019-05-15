@@ -3,7 +3,7 @@
     "codecov": "3.4.0",
     "husky": "2.1.0",
     "jest": "24.7.1",
-    "lerna": "^2.4.0",
+    "lerna": "3.14.0",
     "lint-staged": "8.1.6",
     "oc": "0.47.0",
     "prettier-eslint-cli": "^4.2.0"
