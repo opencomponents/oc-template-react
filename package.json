@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "codecov": "3.4.0",
+    "codecov": "3.5.0",
     "husky": "2.3.0",
     "jest": "24.7.1",
     "lerna": "^2.4.0",
