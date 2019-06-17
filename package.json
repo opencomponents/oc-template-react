@@ -6,7 +6,7 @@
     "lerna": "^2.4.0",
     "lint-staged": "8.1.7",
     "oc": "0.48.0",
-    "prettier-eslint-cli": "^4.2.0"
+    "prettier-eslint-cli": "5.0.0"
   },
   "scripts": {
     "postinstall": "lerna bootstrap",
