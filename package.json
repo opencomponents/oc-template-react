@@ -16,7 +16,9 @@
     "updated": "lerna updated",
     "test": "jest",
     "publish": "lerna publish --exact",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "lint-staged": {
     "*.js": [
@@ -43,6 +45,8 @@
   },
   "dependencies": {
     "normalize.css": "8.0.1",
-    "oc-template-react-compiler": "^5.1.4"
-  }
+    "oc-template-react-compiler": "^5.1.4",
+    "snyk": "^1.192.2"
+  },
+  "snyk": true
 }
