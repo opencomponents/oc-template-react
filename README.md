@@ -57,6 +57,7 @@ Externals are not bundled when packaging and publishing the component, for bette
 ### features
 - `Server Side Rendering` = server side rendering should work as for any other OpenComponent
 - `css-modules` are supported.
+- `sass-modules` are supported.
 - `post-css` is supported with the following plugins:
   - [postcss-import](https://github.com/postcss/postcss-import)
   - [postcss-extend](https://github.com/travco/postcss-extend)
