@@ -43,6 +43,6 @@
   },
   "dependencies": {
     "normalize.css": "8.0.1",
-    "oc-template-react-compiler": "^5.1.9"
+    "oc-template-react-compiler": "^5.1.10"
   }
 }
