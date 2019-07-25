@@ -1,10 +1,10 @@
 {
   "devDependencies": {
     "codecov": "3.5.0",
-    "husky": "3.0.0",
+    "husky": "3.0.1",
     "jest": "24.8.0",
     "lerna": "^2.4.0",
-    "lint-staged": "8.2.1",
+    "lint-staged": "9.2.0",
     "oc": "0.48.1",
     "prettier-eslint-cli": "5.0.0"
   },
@@ -43,6 +43,6 @@
   },
   "dependencies": {
     "normalize.css": "8.0.1",
-    "oc-template-react-compiler": "^5.1.4"
+    "oc-template-react-compiler": "^5.1.10"
   }
 }
