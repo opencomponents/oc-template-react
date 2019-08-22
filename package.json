@@ -2,7 +2,7 @@
   "devDependencies": {
     "codecov": "3.5.0",
     "husky": "3.0.4",
-    "jest": "24.8.0",
+    "jest": "24.9.0",
     "lerna": "^2.4.0",
     "lint-staged": "9.2.1",
     "oc": "0.48.1",
