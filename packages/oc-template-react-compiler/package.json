@@ -34,7 +34,7 @@
     "fs-extra": "8.1.0",
     "infinite-loop-loader": "1.0.6",
     "lodash": "4.17.15",
-    "memory-fs": "0.4.1",
+    "memory-fs": "0.5.0",
     "mini-css-extract-plugin": "0.8.0",
     "node-dir": "0.1.17",
     "oc-external-dependencies-handler": "1.0.8",
