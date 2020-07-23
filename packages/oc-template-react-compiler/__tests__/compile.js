@@ -83,8 +83,7 @@ const execute = (options, cb) => {
     result.oc.date = "";
     result.oc.files.template.version = "";
     nodeDir.paths(options.publishPath, (err2, res2) => {
-      const files = _
-        .chain(res2.files)
+      const files = _.chain(res2.files)
         .map(filePath => {
           const source = fs.readFileSync(filePath, "UTF8");
           return {
