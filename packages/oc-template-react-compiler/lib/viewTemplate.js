@@ -10,8 +10,8 @@ const viewTemplate = ({
   var props = JSON.stringify(model.reactComponent.props);
   var randomId = Math.random() * 10000000;
   var reactRootId = "${reactRoot}-" + randomId;
-  return '<div id="'+ reactRootId +'" class="${reactRoot}">' + modelHTML + '</div>' +
-    '${css ? "<style>" + css + "</style>" : ""}' +
+  return '${css ? "<style>" + css + "</style>" : ""}' +
+    '<div id="'+ reactRootId +'" class="${reactRoot}">' + modelHTML + '</div>' +
     '<script>' +
     'window.oc = window.oc || {};' +
     'oc.cmd = oc.cmd || [];' +
