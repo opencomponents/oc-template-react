@@ -6,4 +6,4 @@ Object {
 }
 `;
 
-exports[`Throw exception when js is not valid 1`] = `"Unexpected token )"`;
+exports[`Throw exception when js is not valid 1`] = `"Unexpected token ')'"`;
