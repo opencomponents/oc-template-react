@@ -1,7 +1,7 @@
 oc-template-react
 =================
 
-react-templates & utilties for the [OpenComponents](https://github.com/opentable/oc) template system
+react-templates & utilities for the [OpenComponents](https://github.com/opentable/oc) template system
 
 ***
 
