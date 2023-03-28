@@ -45,7 +45,7 @@ async function compileView(options) {
   const publishFileName = options.publishFileName || 'template.js';
   const componentPackage = options.componentPackage;
   const { getInfo } = require('../index');
-  const externals = getInfo().externals;
+  const externals = componentPackage.oc.files.template.externals || getInfo().externals;
   const production = !!options.production;
 
   const reactOCProviderContent = reactOCProviderTemplate({ viewPath });
