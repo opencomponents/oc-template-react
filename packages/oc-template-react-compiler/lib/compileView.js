@@ -1,135 +1,134 @@
-"use strict";
+const fs = require('fs-extra');
+const vite = require('vite');
+const react = require('@vitejs/plugin-react');
+const path = require('path');
+const EnvironmentPlugin = require('vite-plugin-environment').default;
+const hashBuilder = require('oc-hash-builder');
+const ocViewWrapper = require('oc-view-wrapper');
+const { callbackify } = require('util');
+const viewTemplate = require('./viewTemplate');
+const reactOCProviderTemplate = require('./reactOCProviderTemplate');
+const cssModules = require('./cssModulesPlugin');
 
-const async = require("async");
-const fs = require("fs-extra");
-const hashBuilder = require("oc-hash-builder");
-const MemoryFS = require("memory-fs");
-const minifyFile = require("oc-minify-file");
-const ocViewWrapper = require("oc-view-wrapper");
-const path = require("path");
-const reactComponentWrapper = require("oc-react-component-wrapper");
-const strings = require("oc-templates-messages");
+const clientName = 'clientBundle';
 
-const {
-  compiler,
-  configurator: { client: webpackConfigurator }
-} = require("./to-abstract-base-template-utils/oc-webpack");
-
-const fontFamilyUnicodeParser = require("./to-abstract-base-template-utils/font-family-unicode-parser");
-const reactOCProviderTemplate = require("./reactOCProviderTemplate");
-const viewTemplate = require("./viewTemplate");
-
-module.exports = (options, callback) => {
-  const viewFileName = options.componentPackage.oc.files.template.src;
-  let viewPath = path.join(options.componentPath, viewFileName);
-  if (process.platform === "win32") {
-    viewPath = viewPath.split("\\").join("\\\\");
+const partition = (array, predicate) => {
+  const matches = [];
+  const rest = [];
+  for (const element of array) {
+    if (predicate(element)) {
+      matches.push(element);
+    } else {
+      rest.push(element);
+    }
   }
+  return [matches, rest];
+};
+
+async function compileView(options) {
+  function processRelativePath(relativePath) {
+    let pathStr = path.join(options.componentPath, relativePath);
+    if (process.platform === 'win32') {
+      return pathStr.split('\\').join('\\\\');
+    }
+    return pathStr;
+  }
+
+  const staticFiles = options.componentPackage.oc.files.static;
+  const staticFolder = Array.isArray(staticFiles) ? staticFiles[0] : staticFiles;
+  const viewFileName = options.componentPackage.oc.files.template.src;
+  const componentPath = options.componentPath;
+  const viewPath = processRelativePath(viewFileName);
+
   const publishPath = options.publishPath;
-  const publishFileName = options.publishFileName || "template.js";
+  const tempPath = path.join(publishPath, 'temp');
+  const publishFileName = options.publishFileName || 'template.js';
   const componentPackage = options.componentPackage;
-  const { getInfo } = require("../index");
+  const { getInfo } = require('../index');
   const externals = componentPackage.oc.files.template.externals || getInfo().externals;
-  const production = options.production;
+  const production = !!options.production;
 
   const reactOCProviderContent = reactOCProviderTemplate({ viewPath });
-  const reactOCProviderName = "reactOCProvider.js";
-  const reactOCProviderPath = path.join(
-    publishPath,
-    "temp",
-    reactOCProviderName
-  );
+  const reactOCProviderName = 'reactOCProvider.tsx';
+  const reactOCProviderPath = path.join(tempPath, reactOCProviderName);
 
-  const compile = (options, cb) => {
-    const config = webpackConfigurator({
-      viewPath: options.viewPath,
-      externals: externals.reduce((externals, dep) => {
-        externals[dep.name] = dep.global;
-        return externals;
-      }, {}),
-      publishFileName,
-      production,
-      buildIncludes: componentPackage.oc.files.template.buildIncludes || []
-    });
-    compiler(config, (err, data) => {
-      if (err) {
-        return cb(err);
+  await fs.outputFile(reactOCProviderPath, reactOCProviderContent);
+
+  const globals = externals.reduce((externals, dep) => {
+    externals[dep.name] = dep.global;
+    return externals;
+  }, {});
+
+  const result = await vite.build({
+    appType: 'custom',
+    root: componentPath,
+    mode: production ? 'production' : 'development',
+    plugins: [react(), EnvironmentPlugin(['NODE_ENV']), cssModules()],
+    logLevel: 'silent',
+    build: {
+      sourcemap: !production,
+      lib: { entry: reactOCProviderPath, formats: ['iife'], name: clientName },
+      write: false,
+      minify: production,
+      rollupOptions: {
+        external: Object.keys(globals),
+        output: {
+          globals
+        }
       }
-
-      const memoryFs = new MemoryFS(data);
-      const bundle = memoryFs.readFileSync(
-        `/build/${config.output.filename}`,
-        "UTF8"
-      );
-
-      const bundleHash = hashBuilder.fromString(bundle);
-      const bundleName = "react-component";
-      const bundlePath = path.join(publishPath, `${bundleName}.js`);
-      const wrappedBundle = reactComponentWrapper(bundleHash, bundle);
-      fs.outputFileSync(bundlePath, wrappedBundle);
-
-      let css = null;
-      if (data.build["main.css"]) {
-        // This is an awesome hack by KimTaro that will blow your mind.
-        // Remove it once this get merged: https://github.com/webpack-contrib/css-loader/pull/523
-        css = fontFamilyUnicodeParser(
-          memoryFs.readFileSync(`/build/main.css`, "UTF8")
-        );
-
-        // We convert single quotes to double quotes in order to
-        // support the viewTemplate's string interpolation
-        css = minifyFile(".css", css).replace(/\'/g, '"');
-        const cssPath = path.join(publishPath, `styles.css`);
-        fs.outputFileSync(cssPath, css);
-      }
-
-      const reactRoot = `oc-reactRoot-${componentPackage.name}`;
-      const templateString = viewTemplate({
-        reactRoot,
-        css,
-        externals,
-        bundleHash,
-        bundleName
-      });
-
-      const templateStringCompressed = production
-        ? templateString.replace(/\s+/g, " ")
-        : templateString;
-      const hash = hashBuilder.fromString(templateStringCompressed);
-      const view = ocViewWrapper(hash, templateStringCompressed);
-      return cb(null, {
-        template: { view, hash },
-        bundle: { hash: bundleHash }
-      });
-    });
-  };
-
-  async.waterfall(
-    [
-      next => fs.outputFile(reactOCProviderPath, reactOCProviderContent, next),
-      next => compile({ viewPath: reactOCProviderPath }, next),
-      (compiled, next) =>
-        fs.remove(reactOCProviderPath, err => next(err, compiled)),
-      (compiled, next) => fs.ensureDir(publishPath, err => next(err, compiled)),
-      (compiled, next) =>
-        fs.writeFile(
-          path.join(publishPath, publishFileName),
-          compiled.template.view,
-          err => next(err, compiled)
-        )
-    ],
-    (err, compiled) => {
-      if (err) {
-        return callback(strings.errors.compilationFailed(viewFileName, err));
-      }
-      callback(null, {
-        template: {
-          type: options.componentPackage.oc.files.template.type,
-          hashKey: compiled.template.hash,
-          src: publishFileName
-        },
-        bundle: { hashKey: compiled.bundle.hash }
-      });
     }
+  });
+  const out = Array.isArray(result) ? result[0] : result;
+  const bundle = out.output.find((x) => x.facadeModuleId.endsWith(reactOCProviderName)).code;
+  const [cssAssets, otherAssets] = partition(
+    out.output.filter((x) => x.type === 'asset'),
+    (x) => x.fileName.endsWith('.css')
   );
-};
+  const cssStyles = cssAssets.map((x) => x.source.replace(/\n/g, '') ?? '').join(' ');
+  const bundleHash = hashBuilder.fromString(bundle);
+  const wrappedBundle = `(function() {
+    ${bundle}
+
+    return ${clientName};
+  })()`;
+
+  const reactRoot = `oc-reactRoot-${componentPackage.name}`;
+  const templateString = viewTemplate({
+    reactRoot,
+    css: cssStyles,
+    externals,
+    wrappedBundle,
+    hash: bundleHash
+  });
+  const templateStringCompressed = production
+    ? templateString.replace(/\s+/g, ' ')
+    : templateString;
+  const hash = hashBuilder.fromString(templateStringCompressed);
+  const view = ocViewWrapper(hash, templateStringCompressed);
+
+  await fs.unlink(reactOCProviderPath);
+  await fs.mkdir(publishPath, { recursive: true });
+  await fs.writeFile(path.join(publishPath, publishFileName), view);
+  if (staticFolder) {
+    for (const asset of otherAssets) {
+      // asset.fileName could have paths like assets/file.js
+      // so we need to create those extra directories
+      await fs.ensureFile(path.join(publishPath, staticFolder, asset.fileName));
+      await fs.writeFile(
+        path.join(publishPath, staticFolder, asset.fileName),
+        asset.source,
+        'utf-8'
+      );
+    }
+  }
+
+  return {
+    template: {
+      type: options.componentPackage.oc.files.template.type,
+      hashKey: hash,
+      src: publishFileName
+    }
+  };
+}
+
+module.exports = callbackify(compileView);
