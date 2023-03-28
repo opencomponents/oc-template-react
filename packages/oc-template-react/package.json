@@ -25,10 +25,9 @@
   "dependencies": {
     "minimal-request": "3.0.0",
     "nice-cache": "0.0.5",
-    "oc-generic-template-renderer": "2.0.4",
-    "prop-types": "15.7.2",
-    "react": "16.9.0",
-    "react-dom": "16.9.0"
+    "oc-generic-template-renderer": "2.0.9",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "files": [
     "lib",
@@ -37,24 +36,15 @@
     "LICENSE"
   ],
   "externals": {
-    "Object.assign": {
-      "global": [
-        "Object",
-        "assign"
-      ],
-      "url": "https://unpkg.com/es6-object-assign@1.1.0/dist/object-assign-auto.min.js"
-    },
-    "prop-types": {
-      "global": "PropTypes",
-      "url": "https://unpkg.com/prop-types@15.7.2/prop-types.min.js"
-    },
     "react": {
       "global": "React",
-      "url": "https://unpkg.com/react@16.9.0/umd/react.production.min.js"
+      "url": "https://unpkg.com/react@18.2.0/umd/react.production.min.js",
+      "devUrl": "https://unpkg.com/react@18.2.0/umd/react.development.js"
     },
     "react-dom": {
       "global": "ReactDOM",
-      "url": "https://unpkg.com/react-dom@16.9.0/umd/react-dom.production.min.js"
+      "url": "https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js",
+      "devUrl": "https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"
     }
   }
 }
