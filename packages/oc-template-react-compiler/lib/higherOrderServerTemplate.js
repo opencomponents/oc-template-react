@@ -1,12 +1,10 @@
-const higherOrderServerTemplate = ({
-  serverPath,
-  bundleHashKey,
-  componentName,
-  componentVersion
-}) => `
-import { data as dataProvider } from '${serverPath}';
-export const data = (context, callback) => {
-  dataProvider(context, (error, model) => {
+const removeExtension = (path) => path.replace(/\.(j|t)sx?$/, '');
+
+const higherOrderServerTemplate = ({ serverPath, componentName, componentVersion }) => `
+import { data as dataProvider } from '${removeExtension(serverPath)}';
+
+export const data = (context : any, callback : (error: any, data?: any) => void) => {
+  dataProvider(context, (error: any, model: any) => {
     if (error) {
       return callback(error);
     }
@@ -20,8 +18,6 @@ export const data = (context, callback) => {
     const srcPath = srcPathHasProtocol ? context.staticPath : ("https:" + context.staticPath);
     return callback(null, Object.assign({}, {
       reactComponent: {
-        key: "${bundleHashKey}",
-        src: srcPath + "react-component.js",
         props
       }
     }));

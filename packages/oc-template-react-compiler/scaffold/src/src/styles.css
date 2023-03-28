@@ -1,0 +1,30 @@
+.container {
+  background-color: #3b246c;
+  color: #fff;
+  font-family: sans-serif;
+  padding: 40px;
+}
+
+.button {
+  background-color: #a97613;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  color: inherit;
+  cursor: pointer;
+}
+
+.info {
+  margin-bottom: 20px;
+}
+
+.block {
+  margin: 6px 0;
+}
+
+.button:hover {
+  background-color: #c79535;
+}

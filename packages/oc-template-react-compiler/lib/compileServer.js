@@ -1,100 +1,75 @@
-"use strict";
+const vite = require('vite');
+const fs = require('fs-extra');
+const path = require('path');
+const { callbackify } = require('util');
+const coreModules = require('builtin-modules');
+const hashBuilder = require('oc-hash-builder');
+const higherOrderServerTemplate = require('./higherOrderServerTemplate');
 
-const async = require("async");
-const fs = require("fs-extra");
-const hashBuilder = require("oc-hash-builder");
-const MemoryFS = require("memory-fs");
-const path = require("path");
-const reactComponentWrapper = require("oc-react-component-wrapper");
+const nodeModuleMatcher = /^[a-z@][a-z\-/0-9.]+$/i;
 
-const {
-  compiler,
-  configurator: { server: webpackConfigurator }
-} = require("./to-abstract-base-template-utils/oc-webpack");
-const higherOrderServerTemplate = require("./higherOrderServerTemplate");
-
-module.exports = (options, callback) => {
+async function compileServer(options) {
+  const componentPath = options.componentPath;
   const serverFileName = options.componentPackage.oc.files.data;
   let serverPath = path.join(options.componentPath, serverFileName);
-  if (process.platform === "win32") {
-    serverPath = serverPath.split("\\").join("\\\\");
+  if (process.platform === 'win32') {
+    serverPath = serverPath.split('\\').join('\\\\');
   }
-  const publishFileName = options.publishFileName || "server.js";
+  const publishFileName = options.publishFileName || 'server.js';
   const publishPath = options.publishPath;
-  const stats = options.verbose ? "verbose" : "errors-only";
   const dependencies = options.componentPackage.dependencies || {};
   const componentName = options.componentPackage.name;
   const componentVersion = options.componentPackage.version;
-  const production = options.production;
+  const production = !!options.production;
 
   const higherOrderServerContent = higherOrderServerTemplate({
     serverPath,
     componentName,
-    componentVersion,
-    bundleHashKey: options.compiledViewInfo.bundle.hashKey
+    componentVersion
   });
-  const tempFolder = path.join(serverPath, "../temp");
-  const higherOrderServerPath = path.join(
-    tempFolder,
-    "__oc_higherOrderServer.js"
-  );
+  const tempFolder = path.join(publishPath, 'temp');
+  const higherOrderServerPath = path.join(tempFolder, '__oc_higherOrderServer.ts');
+  const externals = [...Object.keys(dependencies), ...coreModules];
 
-  const config = webpackConfigurator({
-    serverPath: higherOrderServerPath,
-    publishFileName,
-    dependencies,
-    stats,
-    production
-  });
+  try {
+    await fs.outputFile(higherOrderServerPath, higherOrderServerContent);
 
-  async.waterfall(
-    [
-      next =>
-        fs.outputFile(higherOrderServerPath, higherOrderServerContent, next),
-      next => compiler(config, next),
-      (data, next) => {
-        const basePath = path.join(serverPath, "../temp/build");
-        const memory = new MemoryFS(data);
-        const getCompiled = fileName =>
-          memory.readFileSync(`${basePath}/${fileName}`, "UTF8");
-
-        return fs.ensureDir(publishPath, err => {
-          if (err) return next(err);
-          const result = { "server.js": getCompiled(config.output.filename) };
-
-          if (!production) {
-            try {
-              result["server.js.map"] = getCompiled(
-                `${config.output.filename}.map`
-              );
-            } catch (e) {
-              // skip sourcemap if it doesn't exist
+    const result = await vite.build({
+      appType: 'custom',
+      root: componentPath,
+      mode: production ? 'production' : 'development',
+      logLevel: options.verbose ? 'info' : 'silent',
+      build: {
+        lib: { entry: higherOrderServerPath, formats: ['cjs'] },
+        write: false,
+        minify: production,
+        rollupOptions: {
+          external: (id) => {
+            if (nodeModuleMatcher.test(id)) {
+              if (!externals.includes(id)) {
+                throw new Error(`Missing dependencies from package.json => ${id}`);
+              }
+              return true;
             }
+            return false;
           }
+        }
+      }
+    });
+    const out = Array.isArray(result) ? result[0] : result;
+    const bundle = out.output[0].code;
 
-          next(null, result);
-        });
-      },
-      (compiledFiles, next) =>
-        async.eachOf(
-          compiledFiles,
-          (fileContent, fileName, next) =>
-            fs.writeFile(path.join(publishPath, fileName), fileContent, next),
-          err =>
-            next(
-              err,
-              err
-                ? null
-                : {
-                    type: "node.js",
-                    hashKey: hashBuilder.fromString(
-                      compiledFiles[publishFileName]
-                    ),
-                    src: publishFileName
-                  }
-            )
-        )
-    ],
-    (err, data) => fs.remove(tempFolder, err2 => callback(err, data))
-  );
-};
+    await fs.ensureDir(publishPath);
+    await fs.writeFile(path.join(publishPath, publishFileName), bundle);
+
+    return {
+      type: 'node.js',
+      hashKey: hashBuilder.fromString(bundle),
+      src: publishFileName
+    };
+  } finally {
+    await fs.remove(tempFolder);
+  }
+}
+
+module.exports = callbackify(compileServer);
