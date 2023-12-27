@@ -1,4 +1,8 @@
-oc-template-react
+# This package has been moved
+
+**Use the new oc-template-react template on [vite-templates](https://github.com/opencomponents/vite-templates)**
+
+## oc-template-react
 =================
 
 react-templates & utilities for the [OpenComponents](https://github.com/opentable/oc) template system
